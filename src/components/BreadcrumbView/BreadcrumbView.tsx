@@ -34,7 +34,19 @@ const ISTIO_TYPES = ['templates', 'adapters'];
 
 export class BreadcrumbView extends React.Component<BreadCumbViewProps, BreadCumbViewState> {
   static capitalize = (str: string) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    switch (str) {
+      case 'applications':
+        return '应用';
+        break;
+      case 'services':
+        return '服务';
+        break;
+      case 'workloads':
+        return '工作负载';
+        break;
+      default:
+        return '应用';
+    }
   };
 
   static getTab = (location: string) => {
