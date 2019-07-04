@@ -23,13 +23,13 @@ interface BreadCumbViewState {
 }
 
 const ItemNames = {
-  applications: 'App',
-  services: 'Service',
-  workloads: 'Workload',
-  istio: 'Istio Object'
+  applications: '应用',
+  services: '服务',
+  workloads: '工作负载',
+  istio: 'Istio对象'
 };
 
-const IstioName = 'Istio Config';
+const IstioName = 'Istio配置';
 const ISTIO_TYPES = ['templates', 'adapters'];
 
 export class BreadcrumbView extends React.Component<BreadCumbViewProps, BreadCumbViewState> {

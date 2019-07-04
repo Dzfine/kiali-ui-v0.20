@@ -6,8 +6,8 @@ import { MTLSStatuses } from '../../types/TLSStatus';
 export namespace Filters {
   export const nameFilter: FilterTypeWithFilter<NamespaceInfo> = {
     id: 'namespace_search',
-    title: 'Name',
-    placeholder: 'Filter by Name',
+    title: '名称',
+    placeholder: '按名称筛选',
     filterType: 'text',
     action: FILTER_ACTION_APPEND,
     filterValues: [],

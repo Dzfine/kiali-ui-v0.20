@@ -186,6 +186,7 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
         onChangeUsername={this.handleUsernameChange}
         isValidUsername={this.state.isValidUsername && this.props.status !== LoginStatus.error}
         passwordLabel="密码"
+        loginButtonLabel="登录"
         passwordValue={this.state.password}
         onChangePassword={this.handlePasswordChange}
         isValidPassword={this.state.isValidPassword && this.props.status !== LoginStatus.error}

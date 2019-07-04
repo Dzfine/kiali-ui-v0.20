@@ -182,19 +182,19 @@ class WorkloadDetails extends React.Component<RouteComponentProps<WorkloadId>, W
           <div>
             <Nav bsClass="nav nav-tabs nav-tabs-pf">
               <NavItem eventKey="info">
-                <div>Info</div>
+                <div>概览</div>
               </NavItem>
               <NavItem eventKey="traffic">
-                <div>Traffic</div>
+                <div>流量</div>
               </NavItem>
               <NavItem eventKey="logs">
-                <div>Logs</div>
+                <div>日志</div>
               </NavItem>
               <NavItem eventKey="in_metrics">
-                <div>Inbound Metrics</div>
+                <div>入站指标</div>
               </NavItem>
               <NavItem eventKey="out_metrics">
-                <div>Outbound Metrics</div>
+                <div>出站指标</div>
               </NavItem>
               {isLabeled &&
                 this.state.workload.runtimes.map(runtime => {

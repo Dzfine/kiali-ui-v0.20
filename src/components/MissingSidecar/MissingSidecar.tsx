@@ -40,8 +40,8 @@ MissingSidecar.propTypes = {
 };
 
 MissingSidecar.defaultProps = {
-  text: '丢失Sidecar',
-  textTooltip: '丢失Sidecar',
+  text: '缺失Sidecar',
+  textTooltip: '缺失Sidecar',
   tooltip: false,
   type: icons.istio.missingSidecar.type,
   name: icons.istio.missingSidecar.name,

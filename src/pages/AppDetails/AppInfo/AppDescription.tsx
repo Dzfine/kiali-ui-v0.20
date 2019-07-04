@@ -153,7 +153,7 @@ class AppDescription extends React.Component<AppDescriptionProps, AppDescription
               <Col xs={0} sm={0} md={1} lg={1} />
               <Col xs={12} sm={6} md={3} lg={3}>
                 <div className="progress-description">
-                  <strong>Health</strong>
+                  <strong>运行状态</strong>
                 </div>
                 <HealthIndicator
                   id={app.name}

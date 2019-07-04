@@ -5,18 +5,18 @@ import { removeDuplicatesArray } from '../../utils/Common';
 export const presenceValues: FilterValue[] = [
   {
     id: 'present',
-    title: 'Present'
+    title: '存在'
   },
   {
     id: 'notpresent',
-    title: 'Not Present'
+    title: '不存在'
   }
 ];
 
 export const istioSidecarFilter: FilterType = {
   id: 'istiosidecar',
   title: 'Istio Sidecar',
-  placeholder: 'Filter by IstioSidecar Validation',
+  placeholder: '按IStiosidecar验证筛选',
   filterType: 'select',
   action: FILTER_ACTION_UPDATE,
   filterValues: presenceValues
@@ -24,8 +24,8 @@ export const istioSidecarFilter: FilterType = {
 
 export const healthFilter: FilterType = {
   id: 'health',
-  title: 'Health',
-  placeholder: 'Filter by Health',
+  title: '健康',
+  placeholder: '按健康状态筛选',
   filterType: 'select',
   action: FILTER_ACTION_APPEND,
   filterValues: [

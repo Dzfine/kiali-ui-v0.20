@@ -31,7 +31,7 @@ class PfInfoCard extends React.Component<CardProps> {
             )}
             {this.props.title && this.props.showOnGraphLink && (
               <>
-                {'  '}(<Link to={this.props.showOnGraphLink}>Show on graph</Link>)
+                {'  '}(<Link to={this.props.showOnGraphLink}>显示图标信息</Link>)
               </>
             )}
           </h2>
