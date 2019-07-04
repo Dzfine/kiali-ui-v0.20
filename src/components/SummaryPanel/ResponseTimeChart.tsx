@@ -84,7 +84,7 @@ export default class ResponseTimeChart extends React.Component<ResponseTimeChart
               />
             ) : (
               <div>
-                <Icon type="pf" name="info" /> Not enough traffic to generate chart.
+                <Icon type="pf" name="info" /> 没有足够的流量来生成图表。
               </div>
             )}
           </div>

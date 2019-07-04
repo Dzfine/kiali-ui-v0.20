@@ -187,7 +187,7 @@ export const renderNoTraffic = (protocol?: string) => {
   return (
     <>
       <div>
-        <Icon type="pf" name="info" /> No {protocol ? protocol : ''} traffic logged.
+        <Icon type="pf" name="info" /> 无 {protocol ? protocol : ''} 流量记录.
       </div>
     </>
   );

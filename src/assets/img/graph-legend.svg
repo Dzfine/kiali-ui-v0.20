@@ -206,7 +206,7 @@
       <tspan
          id="tspan26"
          y="17"
-         x="32">Warning</tspan>
+         x="32">警告</tspan>
     </text>
     <circle
        style="fill:#ffffff;stroke:#ec7a08"
@@ -228,7 +228,7 @@
       <tspan
          id="tspan32"
          y="18"
-         x="32">Error</tspan>
+         x="32">错误</tspan>
     </text>
     <circle
        style="fill:#ffffff;stroke:#cc0000"
@@ -248,11 +248,11 @@
     <tspan
        x="328.92664"
        y="83.208984"
-       id="tspan38">Unused</tspan>
+       id="tspan38">未使用的</tspan>
     <tspan
        x="328.92664"
        y="101.20898"
-       id="tspan40">(no traffic yet)</tspan>
+       id="tspan40">(暂无流量)</tspan>
   </text>
   <path
      d="m 305.74019,101.59179 c 6.90356,0 12.5,-5.596436 12.5,-12.499996 0,-6.90356 -5.59644,-12.5 -12.5,-12.5 -6.90356,0 -12.5,5.59644 -12.5,12.5 0,6.90356 5.59644,12.499996 12.5,12.499996 z"
@@ -270,11 +270,11 @@
     <tspan
        id="tspan443"
        y="42.110806"
-       x="465.21585">External</tspan>
+       x="465.21585">外部</tspan>
     <tspan
        id="tspan445"
        y="60.110821"
-       x="465.21585">Namespace</tspan>
+       x="465.21585">命名空间</tspan>
   </text>
   <text
      id="Node-Colors"
@@ -287,7 +287,7 @@
     <tspan
        x="206.15048"
        y="15.985174"
-       id="tspan47">Node Colors</tspan>
+       id="tspan47">节点颜色</tspan>
   </text>
   <text
      id="Edges"
@@ -300,7 +300,7 @@
     <tspan
        x="566.95782"
        y="16.004065"
-       id="tspan51">Edges</tspan>
+       id="tspan51">边</tspan>
   </text>
   <text
      y="25.775566"
@@ -315,7 +315,7 @@
        id="tspan58"
        y="38.296696"
        x="610.33081"
-       style="stroke-width:0.96316379">20% Error</tspan>
+       style="stroke-width:0.96316379">20% 错误</tspan>
   </text>
   <text
      y="25.775566"
@@ -330,7 +330,7 @@
        id="tspan61"
        y="57.559978"
        x="610.41547"
-       style="stroke-width:0.96316379">0.1 - 20% Error</tspan>
+       style="stroke-width:0.96316379">0.1 - 20% 错误</tspan>
   </text>
   <text
      y="25.775566"
@@ -345,7 +345,7 @@
        id="tspan64"
        y="76.82325"
        x="610.41547"
-       style="stroke-width:0.96316379">0.1% Error</tspan>
+       style="stroke-width:0.96316379">0.1% 错误</tspan>
   </text>
   <text
      y="25.775566"
@@ -360,7 +360,7 @@
        id="tspan67"
        y="115.3498"
        x="610.04297"
-       style="stroke-width:0.96316379">Idle</tspan>
+       style="stroke-width:0.96316379">空闲</tspan>
   </text>
   <text
      y="25.775566"
@@ -375,7 +375,7 @@
        id="tspan70"
        y="96.086533"
        x="611.21118"
-       style="stroke-width:0.96316379">TCP Connection</tspan>
+       style="stroke-width:0.96316379">TCP连接</tspan>
   </text>
   <text
      id="Traffic-Animations"
@@ -388,7 +388,7 @@
     <tspan
        x="745.43591"
        y="16.227936"
-       id="tspan79">Traffic Animations</tspan>
+       id="tspan79">流量展示效果</tspan>
   </text>
   <g
      id="g1254"
@@ -404,7 +404,7 @@
       <tspan
          x="807.56897"
          y="38.221191"
-         id="tspan82">Normal Request</tspan>
+         id="tspan82">正常请求</tspan>
     </text>
     <path
        d="m 747.79348,35.104005 h 43.77551"
@@ -429,7 +429,7 @@
     <tspan
        x="44.401901"
        y="52.250866"
-       id="tspan95">Workload</tspan>
+       id="tspan95">工作负载</tspan>
   </text>
   <circle
      style="fill:#ffffff;fill-rule:evenodd;stroke:#8b8d8f;stroke-width:1"
@@ -448,7 +448,7 @@
     <tspan
        x="148.18471"
        y="51.505718"
-       id="tspan100">App</tspan>
+       id="tspan100">应用</tspan>
   </text>
   <g
      id="g1210"
@@ -465,7 +465,7 @@
          sodipodi:role="line"
          id="tspan379"
          x="42.295891"
-         y="74.345116">Unknown</tspan>
+         y="74.345116">未知</tspan>
     </text>
     <text
        id="text1105-4"
@@ -479,7 +479,7 @@
          sodipodi:role="line"
          id="tspan407"
          x="44.219482"
-         y="121.59705">Entry</tspan>
+         y="121.59705">入口</tspan>
     </text>
     <text
        y="87.451225"
@@ -493,7 +493,7 @@
          sodipodi:role="line"
          id="tspan379-6"
          x="42.410244"
-         y="87.451225">Source</tspan>
+         y="87.451225">来源</tspan>
     </text>
   </g>
   <text
@@ -507,7 +507,7 @@
     <tspan
        x="5.9251285"
        y="16.656784"
-       id="tspan121">Node Shapes</tspan>
+       id="tspan121">节点形状</tspan>
   </text>
   <path
      transform="matrix(0.88669661,0,0,0.91033252,-5.1188476,3.2136786)"
@@ -539,7 +539,7 @@
       <tspan
          id="tspan108"
          y="82.524506"
-         x="145.94601">Service</tspan>
+         x="145.94601">服务</tspan>
     </text>
     <path
        inkscape:transform-center-x="6.8550593e-06"
@@ -571,7 +571,7 @@
        id="tspan2034"
        y="16.451801"
        x="422.27261"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Open Sans';-inkscape-font-specification:'Open Sans'">Node Background</tspan>
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Open Sans';-inkscape-font-specification:'Open Sans'">节点图标</tspan>
   </text>
   <flowRoot
      xml:space="preserve"
@@ -701,11 +701,11 @@
     <tspan
        id="tspan443-6"
        y="83.451729"
-       x="465.22311">Restricted</tspan>
+       x="465.22311">受限</tspan>
     <tspan
        id="tspan445-7"
        y="101.45175"
-       x="465.22311">Namespace</tspan>
+       x="465.22311">命名空间</tspan>
   </text>
   <g
      id="g1259"
@@ -721,7 +721,7 @@
       <tspan
          x="946.42987"
          y="39.604004"
-         id="tspan85-5-7">Circuit Breaker</tspan>
+         id="tspan85-5-7">断路器</tspan>
     </text>
     <path
        id="path1166-5"
@@ -740,7 +740,7 @@
     <tspan
        x="916.1319"
        y="16.304569"
-       id="tspan79-6-2">Node Badges</tspan>
+       id="tspan79-6-2">节点标记</tspan>
   </text>
   <g
      id="g1264"
@@ -756,7 +756,7 @@
       <tspan
          x="945.79071"
          y="62.019951"
-         id="tspan85-5-5-1">Missing Sidecar</tspan>
+         id="tspan85-5-5-1">缺失Sidecar</tspan>
     </text>
     <path
        inkscape:connector-curvature="0"
@@ -818,7 +818,7 @@
       <tspan
          x="945.79077"
          y="86.949471"
-         id="tspan85-5-2-7">Virtual Services</tspan>
+         id="tspan85-5-2-7">虚拟服务</tspan>
     </text>
   </g>
   <text
@@ -834,7 +834,7 @@
        id="tspan67-6"
        y="134.455"
        x="610.12762"
-       style="stroke-width:0.96316379">mTLS (badge)</tspan>
+       style="stroke-width:0.96316379">mTLS (标记)</tspan>
   </text>
   <path
      id="path8855"
@@ -860,7 +860,7 @@
       <tspan
          x="807.67236"
          y="86.981697"
-         id="tspan85-6">TCP Traffic</tspan>
+         id="tspan85-6">TCP流量</tspan>
     </text>
     <g
        transform="translate(0,4.5348013)"
@@ -910,7 +910,7 @@
       <tspan
          x="806.67346"
          y="62.019951"
-         id="tspan85">Failed Request</tspan>
+         id="tspan85">失败的请求</tspan>
     </text>
     <g
        transform="translate(-0.44773892,0.85330122)"
@@ -947,7 +947,7 @@
          sodipodi:role="line"
          id="tspan385"
          x="145.52643"
-         y="75.508934">Service</tspan>
+         y="75.508934">服务</tspan>
     </text>
   </g>
   <g

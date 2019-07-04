@@ -16,13 +16,13 @@ const conf = {
     defaultPollInterval: 15 * MILLISECONDS,
     /** Options in refresh */
     pollInterval: {
-      0: 'Pause',
-      10000: 'Every 10s',
-      15000: 'Every 15s',
-      30000: 'Every 30s',
-      60000: 'Every 1m',
-      300000: 'Every 5m',
-      900000: 'Every 15m'
+      0: '暂停',
+      10000: '每隔10s',
+      15000: '每隔15s',
+      30000: '每隔30s',
+      60000: '每隔1min',
+      300000: '每隔5min',
+      900000: '每隔15min'
     },
     /** Graphs layouts types */
     graphLayouts: {

@@ -34,25 +34,25 @@ export interface Status {
 }
 
 export const FAILURE: Status = {
-  name: 'Failure',
+  name: '失败',
   color: PfColors.Red100,
   priority: 3,
   icon: 'error-circle-o'
 };
 export const DEGRADED: Status = {
-  name: 'Degraded',
+  name: '降级',
   color: PfColors.Orange400,
   priority: 2,
   icon: 'warning-triangle-o'
 };
 export const HEALTHY: Status = {
-  name: 'Healthy',
+  name: '健康',
   color: PfColors.Green400,
   priority: 1,
   icon: 'ok'
 };
 export const NA: Status = {
-  name: 'No health information',
+  name: '无健康信息',
   color: PfColors.Gray,
   priority: 0,
   text: 'N/A'
@@ -167,7 +167,7 @@ export class ServiceHealth extends Health {
         const reqErrorsRatio = getRequestErrorsStatus(requests.errorRatio);
         const reqErrorsText = reqErrorsRatio.status === NA ? 'No requests' : reqErrorsRatio.value.toFixed(2) + '%';
         const item: HealthItem = {
-          title: 'Error Rate over ' + getName(ctx.rateInterval).toLowerCase(),
+        title: getName(ctx.rateInterval) + '的错误比率',
           status: reqErrorsRatio.status,
           text: reqErrorsText
         };
@@ -229,7 +229,7 @@ export class AppHealth extends Health {
         const reqOut = getRequestErrorsStatus(requests.outboundErrorRatio);
         const both = mergeStatus(reqIn.status, reqOut.status);
         const item: HealthItem = {
-          title: 'Error Rate over ' + getName(ctx.rateInterval).toLowerCase(),
+        title: getName(ctx.rateInterval) + '的错误比率',
           status: both,
           children: [getRequestErrorsSubItem(reqIn, 'Inbound'), getRequestErrorsSubItem(reqOut, 'Outbound')]
         };
@@ -258,7 +258,7 @@ export class WorkloadHealth extends Health {
       // Pods
       const podsStatus = ratioCheck(workloadStatus.available, workloadStatus.replicas);
       const item: HealthItem = {
-        title: 'Pods Status',
+        title: 'Pods状态',
         status: podsStatus,
         text: String(workloadStatus.available + ' / ' + workloadStatus.replicas)
       };
@@ -271,7 +271,7 @@ export class WorkloadHealth extends Health {
         const reqOut = getRequestErrorsStatus(requests.outboundErrorRatio);
         const both = mergeStatus(reqIn.status, reqOut.status);
         const item: HealthItem = {
-          title: 'Error Rate over ' + getName(ctx.rateInterval).toLowerCase(),
+        title: getName(ctx.rateInterval) + '的错误比率',
           status: both,
           children: [getRequestErrorsSubItem(reqIn, 'Inbound'), getRequestErrorsSubItem(reqOut, 'Outbound')]
         };

@@ -73,7 +73,7 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
       if (this.props.namespaces.length === 1) {
         return (
           <>
-            namespace <b>{this.props.namespaces[0].name}</b>
+            命名空间 <b>{this.props.namespaces[0].name}</b>
           </>
         );
       } else {
@@ -86,7 +86,7 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
           this.props.namespaces[this.props.namespaces.length - 1].name;
         return (
           <>
-            namespaces <b>{namespacesString}</b>
+            命名空间 <b>{namespacesString}</b>
           </>
         );
       }
@@ -99,7 +99,7 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
       return (
         <EmptyState className={emptyStateStyle}>
           <EmptyStateIcon name="error-circle-o" />
-          <EmptyStateTitle>Error loading Graph</EmptyStateTitle>
+          <EmptyStateTitle>加载图表时出错</EmptyStateTitle>
           <EmptyStateInfo>{this.props.error}</EmptyStateInfo>
         </EmptyState>
       );
@@ -107,7 +107,7 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
     if (this.props.isLoading) {
       return (
         <EmptyState className={emptyStateStyle}>
-          <EmptyStateTitle>Loading Graph</EmptyStateTitle>
+          <EmptyStateTitle>正在加载图表</EmptyStateTitle>
         </EmptyState>
       );
     }
@@ -115,10 +115,8 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
     if (this.props.namespaces.length === 0) {
       return (
         <EmptyState className={emptyStateStyle}>
-          <EmptyStateTitle>No namespace is selected</EmptyStateTitle>
-          <EmptyStateInfo>
-            There is currently no namespace selected, please select one using the Namespace selection button.
-          </EmptyStateInfo>
+          <EmptyStateTitle>无命名空间被选中</EmptyStateTitle>
+          <EmptyStateInfo>当前没有选择命名空间，请选择命名空间。</EmptyStateInfo>
         </EmptyState>
       );
     }
@@ -128,19 +126,14 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
     if (isGraphEmpty) {
       return (
         <EmptyState className={emptyStateStyle}>
-          <EmptyStateTitle>Empty Graph</EmptyStateTitle>
+          <EmptyStateTitle>空图表</EmptyStateTitle>
           <EmptyStateInfo>
-            There is currently no graph available for {this.namespacesText()}. This could either mean there is no
-            service mesh available for {this.props.namespaces.length === 1 ? 'this namespace' : 'these namespaces'} or
-            the service mesh has yet to see request traffic.
-            {this.props.isDisplayingUnusedNodes && (
-              <> You are currently displaying 'Unused nodes', send requests to the service mesh and click 'Refresh'.</>
-            )}
+            {this.namespacesText()}当前没有可读的图表。这可能意味着没有可用于
+            {this.props.namespaces.length === 1 ? '该命名空间' : '这些命名空间'}
+            的服务网格，或者服务网格尚未查看请求流量。
+            {this.props.isDisplayingUnusedNodes && <> 当前显示“未使用的节点”, 需将请求发送给服务网格并点击刷新按钮。</>}
             {!this.props.isDisplayingUnusedNodes && (
-              <>
-                {' '}
-                You can enable 'Unused nodes' to display service mesh nodes that have yet to see any request traffic.
-              </>
+              <> 您可以启用“未使用的节点”来显示尚未查看任何请求流量的服务网格节点。</>
             )}
           </EmptyStateInfo>
           <EmptyStateAction>
@@ -149,7 +142,7 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
               bsSize="large"
               onClick={this.props.isDisplayingUnusedNodes ? this.props.action : this.props.displayUnusedNodes}
             >
-              {(this.props.isDisplayingUnusedNodes && <>Refresh</>) || <>Display unused nodes</>}
+              {(this.props.isDisplayingUnusedNodes && <>刷新</>) || <>显示未使用的节点</>}
             </Button>
           </EmptyStateAction>
         </EmptyState>

@@ -234,7 +234,7 @@ export class StatefulFilters extends React.Component<StatefulFiltersProps, State
           {this.props.children}
           {activeFilters && activeFilters.length > 0 && (
             <Toolbar.Results>
-              <Filter.ActiveLabel>{'Active Filters:'}</Filter.ActiveLabel>
+              <Filter.ActiveLabel>{'有效过滤选项:'}</Filter.ActiveLabel>
               <Filter.List>
                 {activeFilters.map((item, index) => {
                   return (
@@ -251,7 +251,7 @@ export class StatefulFilters extends React.Component<StatefulFiltersProps, State
                   this.clearFilters();
                 }}
               >
-                Clear All Filters
+                清除所有过滤选项
               </a>
             </Toolbar.Results>
           )}

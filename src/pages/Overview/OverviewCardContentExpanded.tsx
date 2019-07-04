@@ -58,9 +58,9 @@ class OverviewCardContentExpanded extends React.Component<Props> {
       status.inError.length + status.inWarning.length + status.inSuccess.length + status.notAvailable.length;
     let text: string;
     if (nbItems === 1) {
-      text = switchType(this.props.type, '1 Application', '1 Service', '1 Workload');
+      text = switchType(this.props.type, '1 应用', '1 服务', '1 工作负载');
     } else {
-      text = nbItems + switchType(this.props.type, ' Applications', ' Services', ' Workloads');
+      text = nbItems + switchType(this.props.type, ' 应用', ' 服务', ' 工作负载');
     }
     const mainLink = <Link to={`/${targetPage}?namespaces=${name}`}>{text}</Link>;
     if (nbItems === status.notAvailable.length) {
@@ -134,7 +134,7 @@ class OverviewCardContentExpanded extends React.Component<Props> {
     if (this.props.metrics && this.props.metrics.length > 0) {
       return (
         <>
-          {'Traffic, ' + getName(this.props.duration).toLowerCase()}
+          {'有流量, ' + getName(this.props.duration).toLowerCase()}
           <SparklineChart
             id={'card-sparkline-' + name}
             data={{ x: 'x', columns: graphUtils.toC3Columns(this.props.metrics, 'RPS'), type: 'area' }}
@@ -147,7 +147,7 @@ class OverviewCardContentExpanded extends React.Component<Props> {
         </>
       );
     }
-    return <div style={{ marginTop: 20 }}>No traffic</div>;
+    return <div style={{ marginTop: 20 }}>无流量</div>;
   }
 }
 

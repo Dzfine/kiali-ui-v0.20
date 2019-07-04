@@ -126,13 +126,13 @@ export default class SummaryPanelGroup extends React.Component<SummaryPanelPropT
         <div className="panel-body">
           {serviceList.length > 0 && (
             <div>
-              <strong>Services: </strong>
+              <strong>服务: </strong>
               {serviceList}
             </div>
           )}
           {workloadList.length > 0 && (
             <div>
-              <strong>Workloads: </strong>
+              <strong>工作负载: </strong>
               {workloadList}
             </div>
           )}
@@ -250,7 +250,7 @@ export default class SummaryPanelGroup extends React.Component<SummaryPanelPropT
               type={icons.istio.circuitBreaker.type}
               style={{ width: '10px' }}
             />
-            <span style={{ paddingLeft: '4px' }}>Has Circuit Breaker</span>
+            <span style={{ paddingLeft: '4px' }}>Has 断路器</span>
           </div>
         )}
         {hasVS && (
@@ -260,7 +260,7 @@ export default class SummaryPanelGroup extends React.Component<SummaryPanelPropT
               type={icons.istio.virtualService.type}
               style={{ width: '10px' }}
             />
-            <span style={{ paddingLeft: '4px' }}>Has Virtual Service</span>
+            <span style={{ paddingLeft: '4px' }}>Has 虚拟服务</span>
           </div>
         )}
       </>
@@ -311,11 +311,11 @@ export default class SummaryPanelGroup extends React.Component<SummaryPanelPropT
 
   private renderSparklines = group => {
     if (this.state.loading && !this.state.requestCountIn) {
-      return <strong>Loading charts...</strong>;
+      return <strong>加载图表...</strong>;
     } else if (this.state.metricsLoadError) {
       return (
         <div>
-          <Icon type="pf" name="warning-triangle-o" /> <strong>Error loading metrics: </strong>
+          <Icon type="pf" name="warning-triangle-o" /> <strong>加载指标时出错：</strong>
           {this.state.metricsLoadError}
         </div>
       );

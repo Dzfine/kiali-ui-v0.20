@@ -120,16 +120,16 @@ class AppDetails extends React.Component<RouteComponentProps<AppId>, AppDetailsS
           <div>
             <Nav bsClass="nav nav-tabs nav-tabs-pf">
               <NavItem eventKey="info">
-                <div>Info</div>
+                <div>概览</div>
               </NavItem>
               <NavItem eventKey="traffic">
-                <div>Traffic</div>
+                <div>流量</div>
               </NavItem>
               <NavItem eventKey="in_metrics">
-                <div>Inbound Metrics</div>
+                <div>入站指标</div>
               </NavItem>
               <NavItem eventKey="out_metrics">
-                <div>Outbound Metrics</div>
+                <div>出站指标</div>
               </NavItem>
               {this.state.app.runtimes.map(runtime => {
                 return runtime.dashboardRefs.map(dashboard => {

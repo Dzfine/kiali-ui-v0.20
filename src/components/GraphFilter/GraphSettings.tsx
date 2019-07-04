@@ -86,14 +86,14 @@ class GraphSettings extends React.PureComponent<GraphSettingsProps> {
     const visibilityLayers: VisibilityLayersType[] = [
       {
         id: 'filterNodes',
-        labelText: 'Node Names',
+        labelText: '节点名称',
         value: showNodeLabels,
         onChange: toggleGraphNodeLabels
       },
       {
         id: 'filterServiceNodes',
         disabled: this.props.graphType === GraphType.SERVICE,
-        labelText: 'Service Nodes',
+        labelText: '服务节点',
         value: showServiceNodes,
         onChange: toggleServiceNodes
       },
@@ -105,7 +105,7 @@ class GraphSettings extends React.PureComponent<GraphSettingsProps> {
       },
       {
         id: 'filterUnusedNodes',
-        labelText: 'Unused Nodes',
+        labelText: '未使用的节点',
         value: showUnusedNodes,
         onChange: toggleUnusedNodes
       }
@@ -114,25 +114,25 @@ class GraphSettings extends React.PureComponent<GraphSettingsProps> {
     const badges: VisibilityLayersType[] = [
       {
         id: 'filterCB',
-        labelText: 'Circuit Breakers',
+        labelText: '断路器',
         value: showCircuitBreakers,
         onChange: toggleGraphCircuitBreakers
       },
       {
         id: 'filterVS',
-        labelText: 'Virtual Services',
+        labelText: '虚拟服务',
         value: showVirtualServices,
         onChange: toggleGraphVirtualServices
       },
       {
         id: 'filterSidecars',
-        labelText: 'Missing Sidecars',
+        labelText: '缺失的Sidecars',
         value: showMissingSidecars,
         onChange: toggleGraphMissingSidecars
       },
       {
         id: 'filterSecurity',
-        labelText: 'Security',
+        labelText: '安全性',
         value: showSecurity,
         onChange: toggleGraphSecurity
       }
@@ -168,7 +168,7 @@ class GraphSettings extends React.PureComponent<GraphSettingsProps> {
       <Popover id="layers-popover">
         {displaySettingItems}
         <div className={spacerStyle} />
-        <label>Badges:</label>
+        <label>标记:</label>
         {badgeItems}
         <div className={spacerStyle} />
       </Popover>
@@ -177,7 +177,7 @@ class GraphSettings extends React.PureComponent<GraphSettingsProps> {
     return (
       <OverlayTrigger overlay={graphSettingsPopover} placement="bottom" trigger={['click']} rootClose={true}>
         <Button className="dropdown button-group" id="graph_settings">
-          Display <Icon name="angle-down" />
+          显示 <Icon name="angle-down" />
         </Button>
       </OverlayTrigger>
     );

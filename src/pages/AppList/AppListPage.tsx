@@ -8,7 +8,7 @@ const AppListPage: React.SFC<{}> = () => {
   return (
     <>
       <Breadcrumb title={true}>
-        <Breadcrumb.Item active={true}>Applications</Breadcrumb.Item>
+        <Breadcrumb.Item active={true}>应用</Breadcrumb.Item>
       </Breadcrumb>
       <AppListContainer
         pagination={ListPagesHelper.currentPagination()}

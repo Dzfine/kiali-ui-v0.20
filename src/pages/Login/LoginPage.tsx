@@ -97,13 +97,13 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
         this.props.authenticate(this.state.username, this.state.password);
         this.setState({ showHelperText: false, errorInput: '' });
       } else {
-        let message = 'Invalid login credentials.';
+        let message = '无效的登录凭证。';
         message +=
           !!!this.state.username && !!!this.state.password
-            ? 'Username and password are required.'
+            ? '用户名和密码为必填项。'
             : !!this.state.username
-            ? 'Password is required.'
-            : 'Username is required.';
+            ? '密码是必填项。'
+            : '用户名是必填项。';
 
         this.setState({
           showHelperText: true,
@@ -143,14 +143,13 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
     if (authenticationConfig.secretMissing) {
       messages.push(
         this.renderMessage(
-          'The Kiali secret is missing. Users are prohibited from accessing Kiali until an administrator \
-      creates a valid secret. Please refer to the Kiali documentation for more details.',
+          `Kiali的密码丢失。在管理员创建有效的密码之前，禁止用户访问Kiali。相关更多详细信息，请参阅Kiali文档。`,
           'danger'
         )
       );
     }
     if (this.props.status === LoginStatus.expired) {
-      messages.push(this.renderMessage('Your session has expired or was terminated in another window.', 'warning'));
+      messages.push(this.renderMessage('您的登录状态已过期或已在另一窗口中终止。', 'warning'));
     }
     if (!authenticationConfig.secretMissing && this.props.status === LoginStatus.error) {
       messages.push(this.props.message);
@@ -159,9 +158,9 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
   };
 
   render() {
-    let loginLabel = 'Log In';
+    let loginLabel = '登录';
     if (authenticationConfig.strategy === AuthStrategy.openshift) {
-      loginLabel = 'Log In With OpenShift';
+      loginLabel = '以OpenShift登录';
     }
     /**
      * Note: When using background-filter.svg, you must also include #image_overlay as the fragment identifier
@@ -180,17 +179,17 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
 
     const loginForm = (
       <LoginForm
-        usernameLabel="Username"
+        usernameLabel="用户名"
         showHelperText={this.state.showHelperText || this.props.message !== '' || messages.length > 0}
         helperText={<>{messages}</>}
         usernameValue={this.state.username}
         onChangeUsername={this.handleUsernameChange}
         isValidUsername={this.state.isValidUsername && this.props.status !== LoginStatus.error}
-        passwordLabel="Password"
+        passwordLabel="密码"
         passwordValue={this.state.password}
         onChangePassword={this.handlePasswordChange}
         isValidPassword={this.state.isValidPassword && this.props.status !== LoginStatus.error}
-        rememberMeAriaLabel="Remember me Checkbox"
+        rememberMeAriaLabel="记住选项"
         onLoginButtonClick={(e: any) => this.handleSubmit(e)}
         style={{ marginTop: '10px' }}
       />
@@ -199,10 +198,10 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
     const listItem = (
       <>
         <ListItem>
-          <LoginFooterItem href="https://www.kiali.io/">Documentation</LoginFooterItem>
+          <LoginFooterItem href="https://www.kiali.io">文档</LoginFooterItem>
         </ListItem>
         <ListItem>
-          <LoginFooterItem href="https://github.com/kiali/kiali">Contribute</LoginFooterItem>
+          <LoginFooterItem href="https://github.com/kiali/kiali">投稿</LoginFooterItem>
         </ListItem>
       </>
     );
@@ -214,8 +213,8 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
         backgroundImgSrc={backgroundLoginImg}
         backgroundImgAlt="Images"
         footerListItems={listItem}
-        textContent="Service Mesh Observability."
-        loginTitle="Log in Kiali"
+        textContent="服务网格可观测性。"
+        loginTitle="登录Kiali"
       >
         {authenticationConfig.strategy === AuthStrategy.login ? (
           loginForm

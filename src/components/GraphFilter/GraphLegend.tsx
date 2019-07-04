@@ -71,7 +71,7 @@ export default class GraphLegend extends React.Component<GraphLegendProps, Graph
             <Button className="close" bsClass="" onClick={this.props.closeLegend}>
               <Icon title="Close" type="pf" name="close" />
             </Button>
-            <span className="modal-title">Graph Legend</span>
+            <span className="modal-title">图例</span>
           </div>
           <div className={`modal-body ${legendImageStyle} ${bodyStyle}`} />
         </div>

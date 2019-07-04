@@ -17,22 +17,22 @@ export namespace Filters {
   };
 
   export const mtlsValues: FilterValue[] = [
-    { id: 'enabled', title: 'Enabled' },
-    { id: 'partiallyEnabled', title: 'Partially Enabled' },
-    { id: 'disabled', title: 'Disabled' }
+    { id: 'enabled', title: '启用' },
+    { id: 'partiallyEnabled', title: '部分启用' },
+    { id: 'disabled', title: '停用' }
   ];
 
   const statusMap = new Map<string, string>([
-    [MTLSStatuses.ENABLED, 'Enabled'],
-    [MTLSStatuses.PARTIALLY, 'Partially Enabled'],
-    [MTLSStatuses.NOT_ENABLED, 'Disabled'],
-    [MTLSStatuses.DISABLED, 'Disabled']
+    [MTLSStatuses.ENABLED, '启用'],
+    [MTLSStatuses.PARTIALLY, '部分启用'],
+    [MTLSStatuses.NOT_ENABLED, '停用'],
+    [MTLSStatuses.DISABLED, '停用']
   ]);
 
   export const mtlsFilter: FilterTypeWithFilter<NamespaceInfo> = {
     id: 'mtls',
-    title: 'mTLS status',
-    placeholder: 'Filter by mTLS status',
+    title: 'mTLS状态',
+    placeholder: '按mTLS状态筛选',
     filterType: 'select',
     action: FILTER_ACTION_APPEND,
     filterValues: mtlsValues,
@@ -85,8 +85,8 @@ export namespace Filters {
 
   export const healthFilter: FilterTypeWithFilter<NamespaceInfo> = {
     id: 'health',
-    title: 'Health',
-    placeholder: 'Filter by Application Health',
+    title: '健康',
+    placeholder: '按应用运行状态筛选',
     filterType: 'select',
     action: FILTER_ACTION_APPEND,
     filterValues: healthValues,

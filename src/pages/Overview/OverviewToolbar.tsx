@@ -42,9 +42,9 @@ export enum OverviewDisplayMode {
 }
 
 const overviewTypes = {
-  app: 'Apps',
-  workload: 'Workloads',
-  service: 'Services'
+  app: '应用',
+  workload: '工作负载',
+  service: '服务'
 };
 
 export type OverviewType = keyof typeof overviewTypes;
@@ -149,7 +149,7 @@ export class OverviewToolbar extends React.Component<Props, State> {
             id="overview-type"
             disabled={false}
             handleSelect={this.updateOverviewType}
-            nameDropdown="Show health for"
+            nameDropdown="显示健康状况"
             value={this.state.overviewType}
             label={overviewTypes[this.state.overviewType]}
             options={overviewTypes}
@@ -162,14 +162,14 @@ export class OverviewToolbar extends React.Component<Props, State> {
               title="Compact mode"
               active={this.props.displayMode === OverviewDisplayMode.COMPACT}
             >
-              Compact
+              紧凑
             </Button>
             <Button
               onClick={() => this.props.setDisplayMode(OverviewDisplayMode.EXPAND)}
               title="Expanded mode"
               active={this.props.displayMode === OverviewDisplayMode.EXPAND}
             >
-              Expand
+              扩大
             </Button>
           </ButtonGroup>
         </FormGroup>
@@ -181,7 +181,7 @@ export class OverviewToolbar extends React.Component<Props, State> {
             value={this.props.duration}
             label={serverConfig.durations[this.props.duration]}
             options={serverConfig.durations}
-            tooltip={'Time range for overview data'}
+            tooltip={'概览数据的时间范围'}
           />
           <RefreshContainer id="overview-refresh" handleRefresh={this.props.onRefresh} hideLabel={true} />
         </ToolbarRightContent>

@@ -111,7 +111,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
                 onChange={this.updateFind}
                 defaultValue={this.state.findInputValue}
                 onKeyPress={this.checkSubmitFind}
-                placeholder="Find..."
+                placeholder="查找..."
               />
               {this.props.findValue && (
                 <OverlayTrigger
@@ -119,7 +119,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
                   placement="top"
                   trigger={['hover', 'focus']}
                   delayShow={1000}
-                  overlay={<Tooltip id="tt_clear_find">Clear Find...</Tooltip>}
+                  overlay={<Tooltip id="tt_clear_find">清除查找记录...</Tooltip>}
                 >
                   <InputGroup.Button>
                     <Button onClick={this.clearFind}>
@@ -140,7 +140,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
                 onChange={this.updateHide}
                 defaultValue={this.state.hideInputValue}
                 onKeyPress={this.checkSubmitHide}
-                placeholder="Hide..."
+                placeholder="隐藏..."
               />
               {this.props.hideValue && (
                 <OverlayTrigger
@@ -148,7 +148,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
                   placement="top"
                   trigger={['hover', 'focus']}
                   delayShow={1000}
-                  overlay={<Tooltip id="tt_clear_hide">Clear Hide...</Tooltip>}
+                  overlay={<Tooltip id="tt_clear_hide">清除隐藏记录...</Tooltip>}
                 >
                   <InputGroup.Button>
                     <Button onClick={this.clearHide}>
@@ -161,7 +161,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
             <OverlayTrigger
               key={'ot_graph_find_help'}
               placement="top"
-              overlay={<Tooltip id={'tt_graph_find_help'}>Find/Hide Help...</Tooltip>}
+              overlay={<Tooltip id={'tt_graph_find_help'}>查找/隐藏 帮助...</Tooltip>}
             >
               <Button bsStyle="link" style={{ paddingLeft: '6px' }} onClick={this.toggleFindHelp}>
                 <Icon name="help" type="pf" />
@@ -309,7 +309,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
     const conjunctive = preparedVal.includes(' AND ');
     const disjunctive = preparedVal.includes(' OR ');
     if (conjunctive && disjunctive) {
-      return this.setErrorMsg(`Expression can not contain both 'AND' and 'OR'`);
+      return this.setErrorMsg(`表达式不能同时包含'AND'和'OR'`);
     }
     const separator = disjunctive ? ',' : '';
     const expressions = disjunctive ? preparedVal.split(' OR ') : preparedVal.split(' AND ');
@@ -387,17 +387,17 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
     }
     if (!op) {
       if (expression.split(' ').length > 1) {
-        return this.setErrorMsg(`No valid operator found in expression`);
+        return this.setErrorMsg(`表达式中未发现有效的操作对象`);
       }
 
       const unaryExpression = this.parseUnaryFindExpression(expression.trim(), false);
-      return unaryExpression ? unaryExpression : this.setErrorMsg(`Invalid Node or Edge operand`);
+      return unaryExpression ? unaryExpression : this.setErrorMsg(`无效的节点或边操作数`);
     }
 
     const tokens = expression.split(op);
     if (op === '!') {
       const unaryExpression = this.parseUnaryFindExpression(tokens[1].trim(), true);
-      return unaryExpression ? unaryExpression : this.setErrorMsg(`Invalid Node or Edge operand`);
+      return unaryExpression ? unaryExpression : this.setErrorMsg(`无效的节点或边操作数`);
     }
 
     const field = tokens[0].trim();

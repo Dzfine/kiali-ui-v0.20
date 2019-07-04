@@ -306,11 +306,11 @@ export class GraphPage extends React.Component<GraphPageProps, GraphPageState> {
           <div>
             <Breadcrumb title={true}>
               <Breadcrumb.Item active={true}>
-                Graph
+                图表
                 <OverlayTrigger
                   key={'graph-tour-help-ot'}
                   placement="right"
-                  overlay={<Tooltip id={'graph-tour-help-tt'}>Graph help tour...</Tooltip>}
+                  overlay={<Tooltip id={'graph-tour-help-tt'}>图表帮助浏览...</Tooltip>}
                 >
                   <Button bsStyle="link" style={{ paddingLeft: '6px' }} onClick={this.toggleHelp}>
                     <Icon type="pf" name="help" />

@@ -71,7 +71,7 @@ class Refresh extends React.Component<Props, State> {
             value={this.props.refreshInterval}
             label={POLL_INTERVALS[this.props.refreshInterval]}
             options={POLL_INTERVALS}
-            tooltip={'Refresh interval'}
+            tooltip={'刷新时间间隔'}
           />
           <span style={{ paddingLeft: '0.5em' }}>
             <Button id={this.props.id + '_btn'} onClick={this.props.handleRefresh}>

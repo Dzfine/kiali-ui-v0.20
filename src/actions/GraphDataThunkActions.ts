@@ -91,9 +91,9 @@ const GraphDataThunkActions = {
               return;
             }
             if (error.response && error.response.data && error.response.data.error) {
-              emsg = 'Cannot load the graph: ' + error.response.data.error;
+              emsg = '无法加载图表: ' + error.response.data.error;
             } else {
-              emsg = 'Cannot load the graph: ' + error.toString();
+              emsg = '无法加载图表: ' + error.toString();
             }
             dispatch(MessageCenterActions.addMessage(emsg));
             dispatch(GraphDataActions.getGraphDataFailure(emsg));
@@ -116,9 +116,9 @@ const GraphDataThunkActions = {
             return;
           }
           if (error.response && error.response.data && error.response.data.error) {
-            emsg = 'Cannot load the graph: ' + error.response.data.error;
+            emsg = '无法加载图表: ' + error.response.data.error;
           } else {
-            emsg = 'Cannot load the graph: ' + error.toString();
+            emsg = '无法加载图表: ' + error.toString();
           }
           dispatch(MessageCenterActions.addMessage(emsg));
           dispatch(GraphDataActions.getGraphDataFailure(emsg));

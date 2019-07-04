@@ -33,7 +33,7 @@ const InitializingScreen: React.FC<{ errorMsg?: string }> = (props: { errorMsg?:
               ) : (
                 <>
                   <Spinner loading={true} />
-                  <h1>Initializing...</h1>
+                  <h1>≥ı ºªØ÷–...</h1>
                 </>
               )}
             </LoginCardHeader>

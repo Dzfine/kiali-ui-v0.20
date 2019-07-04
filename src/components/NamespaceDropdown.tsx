@@ -96,11 +96,11 @@ export class NamespaceDropdown extends React.PureComponent<NamespaceListType, {}
 
   namespaceButtonText() {
     if (this.props.activeNamespaces.length === 0) {
-      return <span className={namespaceValueStyle}>Select a namespace</span>;
+      return <span className={namespaceValueStyle}>选择名字空间</span>;
     } else if (this.props.activeNamespaces.length === 1) {
       return (
         <>
-          <span className={namespaceLabelStyle}>Namespace:</span>
+          <span className={namespaceLabelStyle}>命名空间:</span>
           <span>&nbsp;</span>
           <span className={namespaceValueStyle}>{this.props.activeNamespaces[0].name}</span>
         </>
@@ -108,9 +108,9 @@ export class NamespaceDropdown extends React.PureComponent<NamespaceListType, {}
     } else {
       return (
         <>
-          <span className={namespaceLabelStyle}>Namespaces:</span>
+          <span className={namespaceLabelStyle}>命名空间:</span>
           <span>&nbsp;</span>
-          <span className={namespaceValueStyle}>{`${this.props.activeNamespaces.length} namespaces`}</span>
+          <span className={namespaceValueStyle}>{`${this.props.activeNamespaces.length} 个命名空间`}</span>
         </>
       );
     }
@@ -146,7 +146,7 @@ export class NamespaceDropdown extends React.PureComponent<NamespaceListType, {}
               <FormControl
                 type="text"
                 name="namespace-filter"
-                placeholder="Filter by keyword..."
+                placeholder="通过关键字查找..."
                 value={this.props.filter}
                 onChange={this.onFilterChange}
               />
@@ -161,7 +161,7 @@ export class NamespaceDropdown extends React.PureComponent<NamespaceListType, {}
           </div>
           <div className="text-right">
             <Button disabled={this.props.activeNamespaces.length === 0} bsStyle="link" onClick={this.props.clearAll}>
-              Clear all
+              清除全部
             </Button>
           </div>
           <div>{namespaces}</div>

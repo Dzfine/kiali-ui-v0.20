@@ -5,14 +5,14 @@ export namespace Sorts {
   export const sortFields: SortField<NamespaceInfo>[] = [
     {
       id: 'namespace',
-      title: 'Name',
+      title: '名称',
       isNumeric: false,
       param: 'ns',
       compare: (a: NamespaceInfo, b: NamespaceInfo) => a.name.localeCompare(b.name)
     },
     {
       id: 'health',
-      title: 'Status',
+      title: '状态',
       isNumeric: false,
       param: 'h',
       compare: (a: NamespaceInfo, b: NamespaceInfo) => {

@@ -24,12 +24,12 @@ const loginState = (state: LoginStateInterface = INITIAL_LOGIN_STATE, action: Ki
         session: action.payload.session
       };
     case getType(LoginActions.loginFailure):
-      let message = 'Error connecting to Kiali';
+      let message = '连接失败。该连接为错误连接。';
 
       authenticationConfig.secretMissing = false;
       if (action.payload.error.request.status === 401) {
         message =
-          'Unauthorized. The provided credentials are not valid to access Kiali. Please check your credentials and try again.';
+          '未经认证。您提供的用户名和密码无法访问Kiali。请检查用户名和密码后重试。';
       } else if (action.payload.error.request.status === 520) {
         authenticationConfig.secretMissing = true;
       }
@@ -44,7 +44,7 @@ const loginState = (state: LoginStateInterface = INITIAL_LOGIN_STATE, action: Ki
       return {
         ...INITIAL_LOGIN_STATE,
         status: LoginStatus.expired,
-        message: 'Your session has expired or was terminated in another window.'
+        message: '您的会话已过期或者在另一窗口终止。'
       };
     default:
       return state;

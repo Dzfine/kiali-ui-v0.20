@@ -274,7 +274,7 @@ export class OverviewPage extends React.Component<OverviewProps, State> {
     return (
       <>
         <Breadcrumb title={true}>
-          <Breadcrumb.Item active={true}>Namespaces</Breadcrumb.Item>
+          <Breadcrumb.Item active={true}>命名空间</Breadcrumb.Item>
         </Breadcrumb>
         <OverviewToolbarContainer
           onRefresh={this.load}

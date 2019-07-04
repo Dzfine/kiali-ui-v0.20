@@ -38,7 +38,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 'c',
           header: {
-            label: 'Expression',
+            label: '表达式',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -51,7 +51,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 'n',
           header: {
-            label: 'Notes',
+            label: '注释',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -71,7 +71,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 'e',
           header: {
-            label: 'Expression',
+            label: '表达式',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -84,7 +84,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 'd',
           header: {
-            label: 'Description',
+            label: '描述信息',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -104,7 +104,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 'c',
           header: {
-            label: 'Expression',
+            label: '表达式',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -117,7 +117,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 'n',
           header: {
-            label: 'Notes',
+            label: '注释',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -137,7 +137,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 't',
           header: {
-            label: 'Usage Note',
+            label: '使用说明',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -157,7 +157,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 'o',
           header: {
-            label: 'Operator',
+            label: '操作运算符',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -170,7 +170,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
         {
           property: 'd',
           header: {
-            label: 'Description',
+            label: '描述信息',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -216,10 +216,9 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
       backgroundColor: '#003145'
     });
     const preface =
-      'You can use the Find and Hide fields to highlight or hide edges and nodes from the graph. Each field ' +
-      'accepts text expressions using the language described below. Hide takes precedence when using Find and ' +
-      'Hide together. To get started click the "Examples" tab. Click "Usage Notes" for restrictions and tips. ' +
-      'The other tabs provide details about the full set of node and edge operands, as well as operators.';
+      '您可以使用“查找”和“隐藏”字段突出显示或隐藏图形中的边和节点。 每个字段 ' +
+      '使用下面描述的语言来接受文本表达式。 使用“查找”和“隐藏”时，“隐藏”优先级更高 ' +
+      '“隐藏”维护布局，不会重新定位剩余的图表元素。';
 
     return (
       <Draggable handle="#helpheader" bounds="#root">
@@ -228,7 +227,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
             <Button className="close" bsClass="" onClick={this.props.onClose}>
               <Icon title="Close" type="pf" name="close" />
             </Button>
-            <span className="modal-title">Help: Graph Find/Hide</span>
+            <span className="modal-title">帮助: 图表 查找/隐藏</span>
           </div>
           <div className={`modal-body ${bodyStyle}`}>
             <textarea className={`${prefaceStyle}`} readOnly={true} value={preface} />
@@ -236,19 +235,19 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
               <>
                 <Nav bsClass="nav nav-tabs nav-tabs-pf" style={{ paddingLeft: '10px' }}>
                   <NavItem eventKey="notes">
-                    <div>Usage Notes</div>
+                    <div>使用说明</div>
                   </NavItem>
                   <NavItem eventKey="operators">
-                    <div>Operators</div>
+                    <div>操作运算符</div>
                   </NavItem>
                   <NavItem eventKey="nodes">
-                    <div>Nodes</div>
+                    <div>节点</div>
                   </NavItem>
                   <NavItem eventKey="edges">
-                    <div>Edges</div>
+                    <div>边界值</div>
                   </NavItem>
                   <NavItem eventKey="examples">
-                    <div>Examples</div>
+                    <div>案例</div>
                   </NavItem>
                 </Nav>
                 <TabContent>
@@ -264,36 +263,35 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                       <Table.Body
                         rowKey="id"
                         rows={[
-                          { id: 't00', t: 'Expressions can not combine "AND" with "OR".' },
-                          { id: 't05', t: 'Parentheses are not supported (or needed).' },
+                          { id: 't00', t: '表达式中不能将"AND"和"OR"整合。' },
+                          { id: 't05', t: '不支持（或不需要）括号。' },
                           {
                             id: 't10',
-                            t: 'The "name" operand expands internally to an "OR" expression (an "AND" when negated).'
+                            t: '“name”操作数在内部扩展为“OR”表达式（否定时为“AND”）。'
                           },
-                          { id: 't30', t: 'Expressions can not combine node and edge criteria.' },
+                          { id: 't30', t: '表达式无法组合节点和边界值条件。' },
                           {
                             id: 't40',
-                            t: 'Numeric equality (=,!=) is exact match. Include leading 0 and digits of precision.'
+                            t: '数值相等(=,!=)为完全匹配。包括前导0和精度数字。'
                           },
                           {
                             id: 't45',
-                            t:
-                              'Use "<operand> = NaN" to test for no activity. Use "!= NaN" for any activity. (e.g. httpout = NaN)'
+                            t: '使用"<operand> = NaN"来测试无活动. 使用"!= NaN"，用于任何活动。(例如，httpout = NaN)'
                           },
-                          { id: 't50', t: 'Numerics use "." decimal notation.' },
-                          { id: 't60', t: 'Percentages use 1 digit of precision, Rates use 2 digits of precision.' },
+                          { id: 't50', t: '数字使用“.”十进制记数法。' },
+                          { id: 't60', t: '百分比精度精确到1位，比率使用2位精度。' },
                           {
                             id: 't70',
-                            t: `Unary operands may optionally be prefixed with "is" or "has". (i.e. "has mtls")`
+                            t: `使用一元操作数可以有选择地使用前缀"is"或者"has". (即"has mtls")`
                           },
                           {
                             id: 't80',
-                            t: 'Abbrevations: namespace|ns, service|svc, workload|wl (e.g. is wlnode)'
+                            t: '缩写：namespace|ns, service|svc, workload|wl (e.g. is wlnode)'
                           },
                           {
                             id: 't90',
                             t:
-                              'Abbrevations: circuitbreaker|cb, responsetime|rt, serviceentry->se, sidecar|sc, virtualservice|vs'
+                              '缩写: circuitbreaker|cb, responsetime|rt, serviceentry->se, sidecar|sc, virtualservice|vs'
                           }
                         ]}
                       />
@@ -311,19 +309,19 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                       <Table.Body
                         rowKey="id"
                         rows={[
-                          { id: 'o0', o: '! | not <unary expression>', d: `negation` },
-                          { id: 'o1', o: '=', d: `equals` },
-                          { id: 'o2', o: '!=', d: `not equals` },
-                          { id: 'o3', o: 'endswith | $=', d: `ends with, strings only` },
-                          { id: 'o4', o: '!endswith | !$=', d: `not ends with, strings only` },
-                          { id: 'o5', o: 'startswith | ^=', d: `starts with, strings only` },
-                          { id: 'o6', o: '!startswith | !^=', d: `not starts with, strings only` },
-                          { id: 'o7', o: 'contains | *=', d: 'contains, strings only' },
-                          { id: 'o8', o: '!contains | !*=', d: 'not contains, strings only' },
-                          { id: 'o9', o: '>', d: `greater than` },
-                          { id: 'o10', o: '>=', d: `greater than or equals` },
-                          { id: 'o11', o: '<', d: `less than` },
-                          { id: 'o12', o: '<=', d: `less than or equals` }
+                          { id: 'o0', o: '! | not <unary expression>', d: `取反` },
+                          { id: 'o1', o: '=', d: `等于` },
+                          { id: 'o2', o: '!=', d: `不等于` },
+                          { id: 'o3', o: 'endswith | $=', d: `仅以字符串结尾` },
+                          { id: 'o4', o: '!endswith | !$=', d: `不以字符串结尾` },
+                          { id: 'o5', o: 'startswith | ^=', d: `仅以字符串开头` },
+                          { id: 'o6', o: '!startswith | !^=', d: `不以字符串开头` },
+                          { id: 'o7', o: 'contains | *=', d: '仅包含字符串' },
+                          { id: 'o8', o: '!contains | !*=', d: '不包含字符串' },
+                          { id: 'o9', o: '>', d: `大于` },
+                          { id: 'o10', o: '>=', d: `大于等于` },
+                          { id: 'o11', o: '<', d: `小于` },
+                          { id: 'o12', o: '<=', d: `小于等于` }
                         ]}
                       />
                     </TablePfProvider>
@@ -340,28 +338,28 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                       <Table.Body
                         rowKey="id"
                         rows={[
-                          { id: 'nc00', c: 'grpcin <op> <number>', n: 'unit: requests per second' },
-                          { id: 'nc10', c: 'grpcout <op> <number>', n: 'unit: requests per second' },
-                          { id: 'nc12', c: 'httpin <op> <number>', n: 'unit: requests per second' },
-                          { id: 'nc13', c: 'httpout <op> <number>', n: 'unit: requests per second' },
+                          { id: 'nc00', c: 'grpcin <op> <number>', n: '单位：每秒请求数' },
+                          { id: 'nc10', c: 'grpcout <op> <number>', n: '单位：每秒请求数' },
+                          { id: 'nc12', c: 'httpin <op> <number>', n: '单位：每秒请求数' },
+                          { id: 'nc13', c: 'httpout <op> <number>', n: '单位：每秒请求数' },
                           {
                             id: 'nc15',
                             c: 'name <op> <string>',
-                            n: 'tests against app label, service name and workload name'
+                            n: '测试应用程序标签，服务名称和工作负载名称'
                           },
                           { id: 'nc20', c: 'namespace <op> <namespaceName>' },
-                          { id: 'nc25', c: 'node <op> <nodeType>', n: 'nodeType: app | service | workload | unknown' },
+                          { id: 'nc25', c: 'node <op> <nodeType>', n: '节点类型: app | service | workload | unknown' },
                           { id: 'nc30', c: 'service <op> <serviceName>' },
                           { id: 'nc40', c: 'version <op> <string>' },
-                          { id: 'nc50', c: 'tcpin <op> <number>', n: 'unit: bytes per second' },
-                          { id: 'nc60', c: 'tcpout <op> <number>', n: 'unit: bytes per second' },
+                          { id: 'nc50', c: 'tcpin <op> <number>', n: '单位：每秒字节数' },
+                          { id: 'nc60', c: 'tcpout <op> <number>', n: '单位：每秒字节数' },
                           { id: 'nc70', c: 'workload <op> <workloadName>' },
                           { id: 'nc90', c: 'circuitbreaker' },
-                          { id: 'nc100', c: 'outside', n: 'is outside of requested namespaces' },
+                          { id: 'nc100', c: 'outside', n: '在请求的命名空间范围之外' },
                           { id: 'nc110', c: 'sidecar' },
                           { id: 'nc130', c: 'serviceentry' },
-                          { id: 'nc135', c: 'trafficsource', n: `has only outgoing edges` },
-                          { id: 'nc150', c: 'unused', n: `'Show Unused' option must be enabled` },
+                          { id: 'nc135', c: 'trafficsource', n: `只有外向边界` },
+                          { id: 'nc150', c: 'unused', n: `必须启用“显示未使用”选项` },
                           { id: 'nc160', c: 'virtualservice' }
                         ]}
                       />
@@ -379,21 +377,21 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                       <Table.Body
                         rowKey="id"
                         rows={[
-                          { id: 'ec00', c: 'grpc <op> <number>', n: 'unit: requests per second' },
-                          { id: 'ec10', c: '%grpcerr <op> <number>', n: 'range: [0..100]' },
-                          { id: 'ec20', c: '%grpctraffic <op> <number>', n: 'range: [0..100]' },
-                          { id: 'ec23', c: 'http <op> <number>', n: 'unit: requests per second' },
-                          { id: 'ec24', c: '%httperr <op> <number>', n: 'range: [0..100]' },
-                          { id: 'ec25', c: '%httptraffic <op> <number>', n: 'range: [0..100]' },
+                          { id: 'ec00', c: 'grpc <op> <number>', n: '单位：每秒请求数' },
+                          { id: 'ec10', c: '%grpcerr <op> <number>', n: '区间: [0..100]' },
+                          { id: 'ec20', c: '%grpctraffic <op> <number>', n: '区间: [0..100]' },
+                          { id: 'ec23', c: 'http <op> <number>', n: '单位: 每秒请求数' },
+                          { id: 'ec24', c: '%httperr <op> <number>', n: '区间: [0..100]' },
+                          { id: 'ec25', c: '%httptraffic <op> <number>', n: '区间: [0..100]' },
                           { id: 'ec30', c: 'protocol <op> <protocol>', n: 'grpc, http, tcp, etc..' },
                           {
                             id: 'ec40',
                             c: 'responsetime <op> <number>',
-                            n: `unit: millis, 'Response Time' edge labels required`
+                            n: `单位：毫秒，需要“响应时间”边缘标签`
                           },
-                          { id: 'ec50', c: 'tcp <op> <number>', n: 'unit: requests per second' },
+                          { id: 'ec50', c: 'tcp <op> <number>', n: '单位：每秒请求数' },
                           { id: 'ec60', c: 'mtls' },
-                          { id: 'ec70', c: 'traffic', n: 'any traffic for any protocol' }
+                          { id: 'ec70', c: 'traffic', n: '任何协议的任何流量' }
                         ]}
                       />
                     </TablePfProvider>
@@ -413,26 +411,26 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                           {
                             id: 'e00',
                             e: 'name = reviews',
-                            d: `"by name": nodes with app label, service name or workload name equal to 'reviews'`
+                            d: `"按名称": app标签，服务名称或工作负载名称等于“reviews”的节点`
                           },
                           {
                             id: 'e10',
                             e: 'name not contains rev',
-                            d: `"by name": nodes with app label, service name and workload name not containing 'rev'`
+                            d: `"按名称": app标签，服务名称和工作负载名称不包含'rev'的节点`
                           },
                           {
                             id: 'e20',
                             e: 'app startswith product',
-                            d: `nodes with app label starting with 'product'`
+                            d: `app标签以'product'开头的节点`
                           },
                           {
                             id: 'e30',
                             e: 'app != details and version=v1',
-                            d: `nodes with app label not equal to 'details' and with version equal to 'v1'`
+                            d: `app不等于'details'且version等于'v1'的节点`
                           },
-                          { id: 'e40', e: '!sc', d: `nodes without a sidecar` },
-                          { id: 'e50', e: 'httpin > 0.5', d: `nodes with incoming http rate > 0.5 rps` },
-                          { id: 'e60', e: 'tcpout >= 1000', d: `nodes with outgoing tcp rates >= 1000 bps` },
+                          { id: 'e40', e: '!sc', d: `没有sidecar的节点` },
+                          { id: 'e50', e: 'httpin > 0.5', d: `传入http速率 > 0.5 rps的节点` },
+                          { id: 'e60', e: 'tcpout >= 1000', d: `输出tcp速率 >= 1000 bps的节点` },
                           { id: 'e65', e: '!traffic', d: 'edges with no traffic' },
                           { id: 'e70', e: 'http > 0.5', d: `edges with http rate > 0.5 rps` },
                           {
