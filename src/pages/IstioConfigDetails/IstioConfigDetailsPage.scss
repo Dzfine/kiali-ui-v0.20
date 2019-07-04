@@ -1,0 +1,36 @@
+.istio-ace-editor {
+  /*
+   * 50px is the height of the bottom toolbar (save, reload and cancel buttons)
+   * 20px is the top margin of the yaml editor.
+   * So, substracting 70px from the tab content height.
+   */
+  --kiali-yaml-editor-height: calc(var(--kiali-details-pages-tab-content-height) - 70px);
+  position: relative;
+  min-height: 200px;
+  border: 1px solid #8b8d8f;
+}
+
+.istio-validation-error {
+  position: absolute;
+  background: rgba(204, 0, 0, 0.5);
+}
+
+.istio-validation-warning {
+  position: absolute;
+  background: rgba(236, 122, 8, 0.5);
+}
+
+.istio-validation-info {
+  position: absolute;
+  background: #d1d1d1;
+}
+
+div.ace_gutter-cell.ace_info {
+  background-image: none;
+  &::before {
+    content: '\E935';
+    font-family: 'PatternFlyIcons-webfont';
+    left: 5px;
+    position: absolute;
+  }
+}

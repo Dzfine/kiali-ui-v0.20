@@ -1,0 +1,265 @@
+:toc: macro
+:toc-title:
+
+toc::[]
+= Kiali UI
+
+== Introduction
+
+A UI for the Kiali Istio Observability Project
+
+== Technologies
+* React.js
+* Redux
+
+== Quick Start
+[source,shell]
+----
+npm install -g yarn
+yarn
+yarn start
+----
+
+A new browser window should automatically open.
+But, if it doesn't then use:
+`http://localhost:3000`
+
+This launches a development environment that instantly
+reloads any changes to the browser for rapid development.
+
+== Directory Structure
+* `build`: Production build output
+* `public`: Home of index.html
+* `src`: Source and test code
+* `src/actions`:  Redux actions
+* `src/app`: React top level component
+* `src/assets`: Images and other assets
+* `src/config`: Configuration
+* `src/containers`: [.line-through]#Redux connected containers# _Deprecated_
+* `src/components`: React Components
+* `src/fonts`:  Fonts
+* `src/images`:  Patternfly Images
+* `src/pages`: Top level pages and nested components
+* `src/reducers`: Redux reducers
+* `src/services`: Api services
+* `src/store`:  Redux store definitions
+* `src/types`: Typescript definitions for all kinds of types
+* `src/utils`: Various Utilities
+
+== Developing
+
+We use `yarn` as the package manager, if adding dependencies to `package.json`
+make sure you install them with `yarn` and commit the `yarn.lock` file.
+
+=== Testing with Kiali
+
+When developing, it is usual to run this application outside of https://github.com/kiali/kiali[kiali].
+
+It is possible to proxy the API requests without having to push the changes to kiali.
+Add the https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development[proxy]
+property to `package.json` with the url of kiali.
+[source, json]
+----
+{
+  "name": "kiali-ui",
+  "version": "0.2.1",
+  "proxy": "http://kiali-istio-system.127.0.0.1.nip.io",
+  "bugs": {
+...
+----
+
+Run `yarn start` and try it!
+[source, bash]
+----
+$ curl -u admin:admin http://localhost:3000/api
+Namespaces: [default istio-system kube-public kube-system myproject openshift openshift-infra openshift-node]
+
+Namespace: default Services [docker-registry kubernetes router]
+
+Service Name: docker-registry
+Service Labels:
+docker-registry = default
+Type: ClusterIP
+...
+----
+
+WARNING: The proxy will only serve requests without the text/html accept header,
+using the browser directly won't work.
+
+=== Styling
+https://www.patternfly.org/[PatternFly] is the main UI components framework. It defines style based on SASS preprocessor.
+All Patternfly build assets are copied to `src`.
+Any React component may have its related SCSS file (such as `App.scss` - this one includes all PatternFly Sass along with
+PatternFly React Sass extensions).
+Once Sass compiles, the resulting CSS can be found next to its SCSS counterpart (ex: `src/app/App.css`).
+
+To compile CSS, run:
+[source,shell]
+----
+yarn build-css
+----
+
+Note:
+Only static assets which are `import` 'ed into your application will be included in your resulting build output.
+
+=== RCUE Styling
+To use the https://redhat-rcue.github.io/[RCUE] styled css instead of normal Patternfly
+
+For development run:
+[source,shell]
+----
+env REACT_APP_RCUE=true yarn start
+----
+
+For production build run:
+[source,shell]
+----
+env REACT_APP_RCUE=true yarn build
+----
+
+=== Style Code Guide
+
+See the link:./STYLE_GUIDE.adoc[STYLE CODE GUIDE file].
+
+=== Testing
+To run the tests, the standard command `yarn test` is valid,
+but since some tests are using link:https://facebook.github.io/jest/docs/en/snapshot-testing.html[snapshots] the preferred command is to update them in the same time:
+[source,shell]
+----
+yarn test -u
+----
+
+Then hit `a` to run all tests.
+
+After running the tests, if any snapshot has been modified (check git status),
+the diff should be reviewed to make sure it's an intentional or trivial change.
+Modified snapshots must be part of the commit so that they're reviewed collectively and won't make CI build fail.
+
+Note: for OS/X users testing requires watchman to be installed
+[source,shell]
+----
+brew install watchman
+----
+
+== Testing Libraries for Vulnerabilities
+We use https://snyk.io/[Snyk] for JS vulnerability testing. Snyke will run automatically on every commit pushed to `kiali-ui`.
+
+If you wish to run Snyk manually to test before you push, then the following command can be used:
+[source,shell]
+----
+yarn run snyk
+----
+
+
+== Production Builds
+Use `yarn build` which will bundle the build artifacts using webpack into the `build` directory.
+
+== Analyze Javascript Library Size
+To produce a graphical representation of the all the libraries in the project (showing what % of total each one is).
+[source,shell]
+----
+yarn build
+yarn run analyze
+----
+Which will then launch a browser with your graphical source map displayed.
+
+== Configure Kiali
+Use the link:https://github.com/kiali/kiali-ui/blob/master/src/Config.ts[config file] to configure Kiali-UI.
+
+[cols="1a,1a"]
+|===
+|Environment Variable Name|Description and YAML Setting
+
+|`sessionTimeOut`
+|Time in minutes when session will expire. (default is 30 minutes)
+[source,yaml]
+----
+sessionTimeOut: 30 * UNIT_TIME.MINUTE * MILLISECONDS
+----
+
+|`defaultDuration`
+|The default duration of charts in seconds. (default is 60 seconds)
+[source,yaml]
+----
+toolbar: {
+  defaultDuration: 1 * UNIT_TIME.MINUTE
+}
+----
+
+|`intervalDuration`
+|The options for the duration of charts.
+[source,yaml]
+----
+toolbar: {
+  intervalDuration: {
+    60: 'Last minute',
+    300: 'Last 5 minutes',
+    600: 'Last 10 minutes',
+    1800: 'Last 30 minutes',
+    3600: 'Last hour',
+    10800: 'Last 3 hours',
+    21600: 'Last 6 hours',
+    43200: 'Last 12 hours',
+    86400: 'Last day',
+    604800: 'Last 7 days',
+    2592000: 'Last 30 days'
+  }
+}
+----
+
+|`defaultPollInterval`
+|Time for the refresh of the information. (default is 15 seconds)
+[source,yaml]
+----
+toolbar: {
+  defaultPollInterval: 15 * MILLISECONDS
+}
+----
+
+|`pollInterval`
+|The options for the refresh of the information.
+[source,yaml]
+----
+toolbar: {
+  pollInterval: {
+    0: 'Pause',
+    5000: '5 seconds',
+    10000: '10 seconds',
+    15000: '15 seconds',
+    30000: '30 seconds',
+    60000: '1 minute',
+    300000: '5 minutes'
+  }
+}
+----
+
+|`graphLayouts`
+|The types of layouts for graph.
+[source,yaml]
+----
+toolbar: {
+  graphLayouts: {
+    cola: 'Cola',
+    'cose-bilkent': 'Cose',
+    dagre: 'Dagre'
+  }
+}
+----
+
+|`threshold`
+|The threshold limits to show in the charts.
+[source,yaml]
+----
+toolbar: {
+  threshold: {
+    percentErrorSevere: 2.0,
+    percentErrorWarn: 0.1
+  }
+}
+----
+|===
+
+
+
+== License and Copyright
+See the link:./LICENSE[LICENSE file].
