@@ -20,43 +20,43 @@ import DefaultSecondaryMasthead from './components/DefaultSecondaryMasthead/Defa
 const navItems: MenuItem[] = [
   {
     iconClass: icons.menu.overview,
-    title: '¸ÅÀÀ',
+    title: 'æ¦‚è§ˆ',
     to: '/overview',
     pathsActive: [/^\/overview\/(.*)/]
   },
   {
     iconClass: icons.menu.graph,
-    title: 'Í¼±í',
+    title: 'å›¾è¡¨',
     to: '/graph/namespaces/',
     pathsActive: [/^\/graph\/(.*)/]
   },
   {
     iconClass: icons.menu.applications,
-    title: 'Ó¦ÓÃ',
+    title: 'åº”ç”¨',
     to: '/' + Paths.APPLICATIONS,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.APPLICATIONS + '/(.*)')]
   },
   {
     iconClass: icons.menu.workloads,
-    title: '¹¤×÷¸ºÔØ',
+    title: 'å·¥ä½œè´Ÿè½½',
     to: '/' + Paths.WORKLOADS,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.WORKLOADS + '/(.*)')]
   },
   {
     iconClass: icons.menu.services,
-    title: '·şÎñ',
+    title: 'æœåŠ¡',
     to: '/' + Paths.SERVICES,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.SERVICES + '/(.*)')]
   },
   {
     iconClass: icons.menu.istioConfig,
-    title: 'IstioÅäÖÃ',
+    title: 'Istioé…ç½®',
     to: '/' + Paths.ISTIO,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.ISTIO + '/(.*)')]
   },
   {
     iconClass: icons.menu.distributedTracing,
-    title: '·Ö²¼Ê½×·×Ù',
+    title: 'åˆ†å¸ƒå¼è¿½è¸ª',
     to: '/jaeger'
   }
 ];

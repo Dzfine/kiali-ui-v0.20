@@ -80,7 +80,7 @@ const LoginThunkActions = {
           dispatch(LoginActions.logoutSuccess());
         }
       } catch (err) {
-        dispatch(MessageCenterActions.addMessage(API.getErrorMsg('Logout failed', err)));
+        dispatch(MessageCenterActions.addMessage(API.getErrorMsg('退出失败', err)));
       }
     };
   }
