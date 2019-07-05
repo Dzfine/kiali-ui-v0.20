@@ -24,17 +24,17 @@ export const WIZARD_THREESCALE_INTEGRATION = 'threescale';
 export const WIZARD_ACTIONS = [WIZARD_WEIGHTED_ROUTING, WIZARD_MATCHING_ROUTING, WIZARD_SUSPEND_TRAFFIC];
 
 export const WIZARD_TITLES = {
-  [WIZARD_WEIGHTED_ROUTING]: 'Create Weighted Routing',
-  [WIZARD_MATCHING_ROUTING]: 'Create Matching Routing',
-  [WIZARD_SUSPEND_TRAFFIC]: 'Suspend Traffic',
-  [WIZARD_THREESCALE_INTEGRATION]: 'Add 3scale API Management Rule'
+  [WIZARD_WEIGHTED_ROUTING]: '创建加权路由',
+  [WIZARD_MATCHING_ROUTING]: '创建匹配路由',
+  [WIZARD_SUSPEND_TRAFFIC]: 'Suspended Traffic',
+  [WIZARD_THREESCALE_INTEGRATION]: '添加3scale API管理规则'
 };
 
 export const WIZARD_UPDATE_TITLES = {
-  [WIZARD_WEIGHTED_ROUTING]: 'Update Weighted Routing',
-  [WIZARD_MATCHING_ROUTING]: 'Update Matching Routing',
-  [WIZARD_SUSPEND_TRAFFIC]: 'Update Suspended Traffic',
-  [WIZARD_THREESCALE_INTEGRATION]: 'Update 3scale API Management Rule'
+  [WIZARD_WEIGHTED_ROUTING]: '更新加权路由',
+  [WIZARD_MATCHING_ROUTING]: '更新匹配路由',
+  [WIZARD_SUSPEND_TRAFFIC]: '更新Suspended Traffic',
+  [WIZARD_THREESCALE_INTEGRATION]: '更新3scale API管理规则'
 };
 
 export type WizardProps = {

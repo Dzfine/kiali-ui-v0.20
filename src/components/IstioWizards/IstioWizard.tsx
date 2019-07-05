@@ -141,7 +141,7 @@ class IstioWizard extends React.Component<WizardProps, WizardState> {
       .then(results => {
         if (results.length > 0) {
           MessageCenter.add(
-            'Istio Config ' +
+            'Istio config' +
               (this.props.update ? 'updated' : 'created') +
               ' for ' +
               this.props.serviceName +
@@ -153,9 +153,7 @@ class IstioWizard extends React.Component<WizardProps, WizardState> {
         this.props.onClose(true);
       })
       .catch(error => {
-        MessageCenter.add(
-          API.getErrorMsg('Could not ' + (this.props.update ? 'update' : 'create') + ' Istio config objects.', error)
-        );
+        MessageCenter.add(API.getErrorMsg('无法' + (this.props.update ? '更新' : '创建') + ' Istio配置对象.', error));
         this.props.onClose(true);
       });
   };
@@ -269,10 +267,10 @@ class IstioWizard extends React.Component<WizardProps, WizardState> {
         </Wizard.Body>
         <Wizard.Footer>
           <Button bsStyle="default" className="btn-cancel" onClick={this.onClose}>
-            Cancel
+            取消
           </Button>
           <Button disabled={!this.state.valid} bsStyle="primary" onClick={this.onCreateUpdate}>
-            {this.props.update ? 'Update' : 'Create'}
+            {this.props.update ? '更新' : '创建'}
           </Button>
         </Wizard.Footer>
       </Wizard>

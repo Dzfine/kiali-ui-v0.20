@@ -124,17 +124,17 @@ export const getRequestErrorsStatus = (ratio: number): ThresholdStatus => {
 export const getRequestErrorsSubItem = (thresholdStatus: ThresholdStatus, prefix: string): HealthSubItem => {
   return {
     status: thresholdStatus.status,
-    text: prefix + ': ' + (thresholdStatus.status === NA ? 'No requests' : thresholdStatus.value.toFixed(2) + '%')
+    text: prefix + ': ' + (thresholdStatus.status === NA ? '无请求' : thresholdStatus.value.toFixed(2) + '%')
   };
 };
 
 export const getRequestErrorsViolations = (reqIn: ThresholdStatus, reqOut: ThresholdStatus): string => {
   const violations: string[] = [];
   if (reqIn.violation) {
-    violations.push(`Inbound errors: ${reqIn.violation}`);
+    violations.push(`入站错误: ${reqIn.violation}`);
   }
   if (reqOut.violation) {
-    violations.push(`Outbound errors: ${reqOut.violation}`);
+    violations.push(`出站错误: ${reqOut.violation}`);
   }
   return violations.join(', ');
 };
@@ -165,18 +165,18 @@ export class ServiceHealth extends Health {
       if (ctx.hasSidecar) {
         // Request errors
         const reqErrorsRatio = getRequestErrorsStatus(requests.errorRatio);
-        const reqErrorsText = reqErrorsRatio.status === NA ? 'No requests' : reqErrorsRatio.value.toFixed(2) + '%';
+        const reqErrorsText = reqErrorsRatio.status === NA ? '无请求' : reqErrorsRatio.value.toFixed(2) + '%';
         const item: HealthItem = {
-        title: getName(ctx.rateInterval) + '的错误比率',
+          title: getName(ctx.rateInterval) + '的错误比率',
           status: reqErrorsRatio.status,
           text: reqErrorsText
         };
         items.push(item);
       } else {
         items.push({
-          title: 'Error Rate',
+          title: '错误比率',
           status: NA,
-          text: 'No Istio sidecar'
+          text: '无Istio sidecar'
         });
       }
     }
@@ -212,7 +212,7 @@ export class AppHealth extends Health {
       });
       const podsStatus = children.map(i => i.status).reduce((prev, cur) => mergeStatus(prev, cur), NA);
       const item: HealthItem = {
-        title: 'Pods Status',
+        title: 'Pods状态',
         status: podsStatus,
         children: children
       };
@@ -229,9 +229,9 @@ export class AppHealth extends Health {
         const reqOut = getRequestErrorsStatus(requests.outboundErrorRatio);
         const both = mergeStatus(reqIn.status, reqOut.status);
         const item: HealthItem = {
-        title: getName(ctx.rateInterval) + '的错误比率',
+          title: getName(ctx.rateInterval) + '的错误比率',
           status: both,
-          children: [getRequestErrorsSubItem(reqIn, 'Inbound'), getRequestErrorsSubItem(reqOut, 'Outbound')]
+          children: [getRequestErrorsSubItem(reqIn, '入站'), getRequestErrorsSubItem(reqOut, '出站')]
         };
         items.push(item);
       }
@@ -271,9 +271,9 @@ export class WorkloadHealth extends Health {
         const reqOut = getRequestErrorsStatus(requests.outboundErrorRatio);
         const both = mergeStatus(reqIn.status, reqOut.status);
         const item: HealthItem = {
-        title: getName(ctx.rateInterval) + '的错误比率',
+          title: getName(ctx.rateInterval) + '的错误比率',
           status: both,
-          children: [getRequestErrorsSubItem(reqIn, 'Inbound'), getRequestErrorsSubItem(reqOut, 'Outbound')]
+          children: [getRequestErrorsSubItem(reqIn, '入站'), getRequestErrorsSubItem(reqOut, '出站')]
         };
         items.push(item);
       }

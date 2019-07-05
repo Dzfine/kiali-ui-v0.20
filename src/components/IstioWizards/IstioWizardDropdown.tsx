@@ -190,7 +190,7 @@ class IstioWizardDropdown extends React.Component<Props, State> {
         return !enabledItem ? (
           <OverlayTrigger
             placement={'left'}
-            overlay={<Tooltip id={'mtls-status-masthead'}>Traffic routing already exists for this service</Tooltip>}
+            overlay={<Tooltip id={'mtls-status-masthead'}>此服务的流量路由已经存在</Tooltip>}
             trigger={['hover', 'focus']}
             rootClose={false}
             key={eventKey}
@@ -203,13 +203,13 @@ class IstioWizardDropdown extends React.Component<Props, State> {
       case DELETE_TRAFFIC_ROUTING:
         const deleteMenuItem = (
           <MenuItem disabled={!this.hasTrafficRouting() || this.state.isDeleting} key={eventKey} eventKey={eventKey}>
-            Delete ALL Traffic Routing
+            删除所有流量路由
           </MenuItem>
         );
         return !this.hasTrafficRouting() ? (
           <OverlayTrigger
             placement={'left'}
-            overlay={<Tooltip id={'mtls-status-masthead'}>Traffic routing doesn't exist for this service</Tooltip>}
+            overlay={<Tooltip id={'mtls-status-masthead'}>此服务不存在流量路由</Tooltip>}
             trigger={['hover', 'focus']}
             rootClose={false}
             key={eventKey}
@@ -227,7 +227,7 @@ class IstioWizardDropdown extends React.Component<Props, State> {
             {updateLabel === eventKey ? WIZARD_UPDATE_TITLES[eventKey] : WIZARD_TITLES[eventKey]}
           </MenuItem>
         );
-        const toolTipMsgExists = '3scale API Integration Rule already exists for this service';
+        const toolTipMsgExists = '此服务已经存在3scale API集成规则';
         return !threeScaleEnabledItem ? (
           <OverlayTrigger
             placement={'left'}
@@ -251,7 +251,7 @@ class IstioWizardDropdown extends React.Component<Props, State> {
             Delete 3Scale API Management Rule
           </MenuItem>
         );
-        const toolTipMsgDelete = 'There is not a 3scale API Integration Rule for this service';
+        const toolTipMsgDelete = '此服务没有3scale API管理集成规则';
         return !this.props.threeScaleServiceRule ? (
           <OverlayTrigger
             placement={'left'}
@@ -271,12 +271,12 @@ class IstioWizardDropdown extends React.Component<Props, State> {
   };
 
   getDeleteMessage = () => {
-    let deleteMessage = 'Are you sure you want to delete ';
+    let deleteMessage = '你确定要删除 ';
     switch (this.state.deleteAction) {
       case DELETE_TRAFFIC_ROUTING:
         deleteMessage +=
           this.props.virtualServices.items.length > 0
-            ? `VirtualService${
+            ? `虚拟服务${
                 this.props.virtualServices.items.length > 1 ? 's' : ''
               }: '${this.props.virtualServices.items.map(vs => vs.metadata.name)}'`
             : '';
@@ -290,7 +290,7 @@ class IstioWizardDropdown extends React.Component<Props, State> {
             : '';
         break;
       case DELETE_THREESCALE_INTEGRATION:
-        deleteMessage += ' 3scale API Management Integration Rule ';
+        deleteMessage += ' 3scale API管理集成规则';
         break;
       default:
     }
@@ -302,7 +302,7 @@ class IstioWizardDropdown extends React.Component<Props, State> {
     const updateLabel = this.getVSWizardLabel();
     return (
       <>
-        <DropdownButton id="service_actions" title="Actions" onSelect={this.onAction} pullRight={true}>
+        <DropdownButton id="service_actions" title="操作" onSelect={this.onAction} pullRight={true}>
           {(this.canCreate() || this.canUpdate()) &&
             WIZARD_ACTIONS.map(action => this.renderMenuItem(action, updateLabel))}
           <MenuItem divider={true} />
@@ -338,12 +338,12 @@ class IstioWizardDropdown extends React.Component<Props, State> {
           primaryAction={this.onDelete}
           secondaryAction={this.hideConfirmDelete}
           onHide={this.hideConfirmDelete}
-          primaryActionButtonContent="Delete"
-          secondaryActionButtonContent="Cancel"
+          primaryActionButtonContent="删除"
+          secondaryActionButtonContent="取消"
           primaryActionButtonBsStyle="danger"
-          title="Confirm Delete"
+          title="确认删除"
           primaryContent={this.getDeleteMessage()}
-          secondaryContent="It cannot be undone. Make sure this is something you really want to do!"
+          secondaryContent="这是无法挽回的。确保这是你真正想做的事情!"
           accessibleName="deleteConfirmationDialog"
           accessibleDescription="deleteConfirmationDialogContent"
         />

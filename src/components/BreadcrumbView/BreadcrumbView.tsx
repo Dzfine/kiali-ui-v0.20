@@ -68,7 +68,7 @@ export class BreadcrumbView extends React.Component<BreadCumbViewProps, BreadCum
         return 'Traces';
         break;
       default:
-        return 'Info';
+        return '信息';
     }
   };
 
