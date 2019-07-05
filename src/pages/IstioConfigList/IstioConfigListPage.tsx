@@ -8,7 +8,7 @@ const IstioConfigListPage: React.SFC<{}> = () => {
   return (
     <>
       <Breadcrumb title={true}>
-        <Breadcrumb.Item active={true}>Istio Config</Breadcrumb.Item>
+        <Breadcrumb.Item active={true}>Istio配置</Breadcrumb.Item>
       </Breadcrumb>
       <IstioConfigListContainer
         pagination={ListPagesHelper.currentPagination()}

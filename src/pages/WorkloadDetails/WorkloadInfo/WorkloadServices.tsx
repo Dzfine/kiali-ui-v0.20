@@ -79,7 +79,7 @@ class WorkloadServices extends React.Component<WorkloadServicesProps, WorkloadSe
         {
           property: 'ip',
           header: {
-            label: 'Ip',
+            label: 'IP地址',
             formatters: [this.headerFormat]
           },
           cell: {

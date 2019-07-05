@@ -43,7 +43,7 @@ class VirtualServiceDetail extends React.Component<VirtualServiceProps> {
 
     if (!message.length) {
       if (validation && !validation.valid) {
-        message = 'Not all checks passed!';
+        message = '并非所有检查都通过！';
       }
     }
 
@@ -119,13 +119,13 @@ class VirtualServiceDetail extends React.Component<VirtualServiceProps> {
   rawConfig(virtualService: VirtualService) {
     return (
       <div className="card-pf-body" key={'virtualServiceConfig'}>
-        <h4>VirtualService: {virtualService.metadata.name}</h4>
+        <h4>虚拟服务: {virtualService.metadata.name}</h4>
         <div>{this.globalStatus(virtualService)}</div>
         <div>
-          <strong>Created at</strong>: <LocalTime time={virtualService.metadata.creationTimestamp || ''} />
+          <strong>创建时间</strong>: <LocalTime time={virtualService.metadata.creationTimestamp || ''} />
         </div>
         <div>
-          <strong>Resource Version</strong>: {virtualService.metadata.resourceVersion}
+          <strong>资源版本</strong>: {virtualService.metadata.resourceVersion}
         </div>
         {virtualService.spec.hosts && virtualService.spec.hosts.length > 0 ? (
           <DetailObject

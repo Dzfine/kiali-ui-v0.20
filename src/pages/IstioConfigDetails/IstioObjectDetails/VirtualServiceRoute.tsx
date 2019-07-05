@@ -53,7 +53,7 @@ class VirtualServiceRoute extends React.Component<VirtualServiceRouteProps> {
       columns: [
         {
           header: {
-            label: 'Status',
+            label: '状态',
             formatters: [this.headerFormat],
             props: {
               colSpan: 1
@@ -77,7 +77,7 @@ class VirtualServiceRoute extends React.Component<VirtualServiceRouteProps> {
         },
         {
           header: {
-            label: 'Destination',
+            label: '目标地址',
             formatters: [this.headerFormat],
             props: {
               colSpan: 3
@@ -90,7 +90,7 @@ class VirtualServiceRoute extends React.Component<VirtualServiceRouteProps> {
             {
               property: 'destination.host',
               header: {
-                label: 'Host',
+                label: '主机',
                 formatters: [this.headerFormat]
               },
               cell: {
@@ -100,7 +100,7 @@ class VirtualServiceRoute extends React.Component<VirtualServiceRouteProps> {
             {
               property: 'destination.subset',
               header: {
-                label: 'Subset',
+                label: '子集',
                 formatters: [this.headerFormat]
               },
               cell: {
@@ -110,7 +110,7 @@ class VirtualServiceRoute extends React.Component<VirtualServiceRouteProps> {
             {
               property: 'destination.port',
               header: {
-                label: 'Port',
+                label: '端口',
                 formatters: [this.headerFormat]
               },
               cell: {

@@ -49,7 +49,7 @@ class IstioActionDropdown extends React.Component<Props, State> {
       <>
         <DropdownButton id="actions" title="Actions" onSelect={this.onAction} pullRight={true}>
           <MenuItem key="delete" eventKey="delete" disabled={!this.props.canDelete}>
-            Delete
+            删除
           </MenuItem>
         </DropdownButton>
         <MessageDialog
@@ -61,8 +61,8 @@ class IstioActionDropdown extends React.Component<Props, State> {
           primaryActionButtonContent="Delete"
           secondaryActionButtonContent="Cancel"
           primaryActionButtonBsStyle="danger"
-          title="Confirm Delete"
-          primaryContent={`Are you sure you want to delete the ${objectName} '${this.props.objectName}'? `}
+          title="确定删除"
+          primaryContent={`确定删除${objectName} '${this.props.objectName}'? `}
           secondaryContent="It cannot be undone. Make sure this is something you really want to do!"
           accessibleName="deleteConfirmationDialog"
           accessibleDescription="deleteConfirmationDialogContent"

@@ -107,7 +107,7 @@ class UserDropdownConnected extends React.Component<UserProps, UserState> {
     const { isDropdownOpen } = this.state;
     const userDropdownItems = (
       <DropdownItem key={'user_logout_option'} onClick={this.handleLogout}>
-        Logout
+        退出登录
       </DropdownItem>
     );
     return (

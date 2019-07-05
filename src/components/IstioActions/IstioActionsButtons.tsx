@@ -34,7 +34,7 @@ class IstioActionButtons extends React.Component<Props, State> {
             <Button onClick={this.props.onRefresh}>Reload</Button>
           </span>
           <span style={{ paddingRight: '5px' }}>
-            <Button onClick={this.props.onCancel}>{this.props.readOnly ? 'Close' : 'Cancel'}</Button>
+            <Button onClick={this.props.onCancel}>{this.props.readOnly ? '关闭' : '取消'}</Button>
           </span>
         </span>
       </>

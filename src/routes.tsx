@@ -32,25 +32,25 @@ const navItems: MenuItem[] = [
   },
   {
     iconClass: icons.menu.applications,
-    title: '应用',
+    title: '应用列表',
     to: '/' + Paths.APPLICATIONS,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.APPLICATIONS + '/(.*)')]
   },
   {
     iconClass: icons.menu.workloads,
-    title: '工作负载',
+    title: '工作负载列表',
     to: '/' + Paths.WORKLOADS,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.WORKLOADS + '/(.*)')]
   },
   {
     iconClass: icons.menu.services,
-    title: '服务',
+    title: '服务列表',
     to: '/' + Paths.SERVICES,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.SERVICES + '/(.*)')]
   },
   {
     iconClass: icons.menu.istioConfig,
-    title: 'Istio配置',
+    title: 'Istio配置列表',
     to: '/' + Paths.ISTIO,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.ISTIO + '/(.*)')]
   },

@@ -99,7 +99,7 @@ class GraphSettings extends React.PureComponent<GraphSettingsProps> {
       },
       {
         id: 'filterTrafficAnimation',
-        labelText: 'Traffic Animation',
+        labelText: '流量展示效果',
         value: showTrafficAnimation,
         onChange: toggleTrafficAnimation
       },

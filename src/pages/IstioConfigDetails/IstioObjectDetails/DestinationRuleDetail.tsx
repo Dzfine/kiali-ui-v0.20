@@ -36,7 +36,7 @@ class DestinationRuleDetail extends React.Component<DestinationRuleProps> {
 
     if (!message.length) {
       if (!validation.valid) {
-        message = 'Not all checks passed!';
+        message = '并非所有检查都通过！';
       }
     }
 
@@ -66,7 +66,7 @@ class DestinationRuleDetail extends React.Component<DestinationRuleProps> {
         {
           property: 'name',
           header: {
-            label: 'Name',
+            label: '名称',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -76,7 +76,7 @@ class DestinationRuleDetail extends React.Component<DestinationRuleProps> {
         {
           property: 'labelSubset',
           header: {
-            label: 'Labels',
+            label: '标签',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -86,7 +86,7 @@ class DestinationRuleDetail extends React.Component<DestinationRuleProps> {
         {
           property: 'trafficPolicy',
           header: {
-            label: 'Traffic Policy',
+            label: '流量决策',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -144,23 +144,23 @@ class DestinationRuleDetail extends React.Component<DestinationRuleProps> {
     const isValid = globalStatus === '' ? true : false;
     return (
       <div className="card-pf-body" key={'virtualServiceConfig'}>
-        <h4>DestinationRule: {destinationRule.metadata.name}</h4>
+        <h4>目标地址规则: {destinationRule.metadata.name}</h4>
         <div>{globalStatus}</div>
         <div>
-          <strong>Created at</strong>: <LocalTime time={destinationRule.metadata.creationTimestamp || ''} />
+          <strong>创建时间</strong>: <LocalTime time={destinationRule.metadata.creationTimestamp || ''} />
         </div>
         <div>
-          <strong>Resource Version</strong>: {destinationRule.metadata.resourceVersion}
+          <strong>资源版本</strong>: {destinationRule.metadata.resourceVersion}
         </div>
         {destinationRule.spec.host && (
           <div>
-            <strong>Host</strong>:{' '}
+            <strong>主机</strong>:{' '}
             {this.serviceLink(destinationRule.metadata.namespace || '', destinationRule.spec.host, isValid)}
           </div>
         )}
         {destinationRule.spec.trafficPolicy && (
           <div>
-            <strong>Traffic Policy</strong>
+            <strong>流量决策</strong>
             <DetailObject name="" detail={destinationRule.spec.trafficPolicy} />
           </div>
         )}

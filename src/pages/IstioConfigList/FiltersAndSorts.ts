@@ -13,7 +13,7 @@ export namespace IstioConfigListFilters {
   export const sortFields: SortField<IstioConfigItem>[] = [
     {
       id: 'namespace',
-      title: 'Namespace',
+      title: '命名空间',
       isNumeric: false,
       param: 'ns',
       compare: (a: IstioConfigItem, b: IstioConfigItem) => {
@@ -22,7 +22,7 @@ export namespace IstioConfigListFilters {
     },
     {
       id: 'istiotype',
-      title: 'Istio Type',
+      title: 'Istio类型',
       isNumeric: false,
       param: 'it',
       compare: (a: IstioConfigItem, b: IstioConfigItem) => {
@@ -31,7 +31,7 @@ export namespace IstioConfigListFilters {
     },
     {
       id: 'istioname',
-      title: 'Istio Name',
+      title: 'Istio名称',
       isNumeric: false,
       param: 'in',
       compare: (a: IstioConfigItem, b: IstioConfigItem) => {
@@ -45,7 +45,7 @@ export namespace IstioConfigListFilters {
     },
     {
       id: 'configvalidation',
-      title: 'Config',
+      title: '配置',
       isNumeric: false,
       param: 'cv',
       compare: (a: IstioConfigItem, b: IstioConfigItem) => {
@@ -75,8 +75,8 @@ export namespace IstioConfigListFilters {
 
   export const istioNameFilter: FilterType = {
     id: 'istioname',
-    title: 'Istio Name',
-    placeholder: 'Filter by Istio Name',
+    title: 'Istio名称',
+    placeholder: '按照Istio名称筛选',
     filterType: 'text',
     action: FILTER_ACTION_UPDATE,
     filterValues: []
@@ -84,42 +84,42 @@ export namespace IstioConfigListFilters {
 
   export const istioTypeFilter: FilterType = {
     id: 'istiotype',
-    title: 'Istio Type',
-    placeholder: 'Filter by Istio Type',
+    title: 'Istio类型',
+    placeholder: '按照Istio类型筛选',
     filterType: 'select',
     action: FILTER_ACTION_APPEND,
     filterValues: [
       {
         id: 'Gateway',
-        title: 'Gateway'
+        title: '网关'
       },
       {
         id: 'VirtualService',
-        title: 'VirtualService'
+        title: '虚拟服务'
       },
       {
         id: 'DestinationRule',
-        title: 'DestinationRule'
+        title: '目标地址规则'
       },
       {
         id: 'ServiceEntry',
-        title: 'ServiceEntry'
+        title: '服务入口'
       },
       {
         id: 'Rule',
-        title: 'Rule'
+        title: '规则'
       },
       {
         id: 'Adapter',
-        title: 'Adapter'
+        title: '适配器'
       },
       {
         id: 'Template',
-        title: 'Template'
+        title: '模板'
       },
       {
         id: 'QuotaSpec',
-        title: 'QuotaSpec'
+        title: '限额说明'
       },
       {
         id: 'QuotaSpecBinding',
@@ -127,11 +127,11 @@ export namespace IstioConfigListFilters {
       },
       {
         id: 'Policy',
-        title: 'Policy'
+        title: '决策'
       },
       {
         id: 'MeshPolicy',
-        title: 'MeshPolicy'
+        title: '网格决策'
       },
       {
         id: 'ClusterRbacConfig',
@@ -143,7 +143,7 @@ export namespace IstioConfigListFilters {
       },
       {
         id: 'ServiceRole',
-        title: 'ServiceRole'
+        title: '服务角色'
       },
       {
         id: 'ServiceRoleBinding',
@@ -154,26 +154,26 @@ export namespace IstioConfigListFilters {
 
   export const configValidationFilter: FilterType = {
     id: 'configvalidation',
-    title: 'Config',
-    placeholder: 'Filter by Config Validation',
+    title: '配置',
+    placeholder: '根据配置验证筛选',
     filterType: 'select',
     action: FILTER_ACTION_APPEND,
     filterValues: [
       {
         id: 'valid',
-        title: 'Valid'
+        title: '有效'
       },
       {
         id: 'warning',
-        title: 'Warning'
+        title: '警告'
       },
       {
         id: 'notvalid',
-        title: 'Not Valid'
+        title: '无效'
       },
       {
         id: 'notvalidated',
-        title: 'Not Validated'
+        title: '未验证'
       }
     ]
   };

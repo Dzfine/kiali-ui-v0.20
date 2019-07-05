@@ -64,7 +64,7 @@ class IstioConfigDetailsPage extends React.Component<RouteComponentProps<IstioCo
         });
       })
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not fetch IstioConfig details', error));
+        MessageCenter.add(API.getErrorMsg('无法获取Istio配置相关信息。', error));
       });
   };
 
@@ -144,7 +144,7 @@ class IstioConfigDetailsPage extends React.Component<RouteComponentProps<IstioCo
     deletePromise
       .then(r => this.backToList())
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not delete IstioConfig details.', error));
+        MessageCenter.add(API.getErrorMsg('无法删除Istio配置相关信息。', error));
       });
   };
 
@@ -179,7 +179,7 @@ class IstioConfigDetailsPage extends React.Component<RouteComponentProps<IstioCo
           this.fetchIstioObjectDetails();
         })
         .catch(error => {
-          MessageCenter.add(API.getErrorMsg('Could not update IstioConfig details.', error));
+          MessageCenter.add(API.getErrorMsg('无法修改Istio配置相关信息。', error));
         });
     });
   };
@@ -196,7 +196,7 @@ class IstioConfigDetailsPage extends React.Component<RouteComponentProps<IstioCo
   onRefresh = () => {
     let refresh = true;
     if (this.state.isModified) {
-      refresh = window.confirm('You have unsaved changes, are you sure you want to refresh ?');
+      refresh = window.confirm('您有未保存的更改，确定要刷新吗？');
     }
     if (refresh) {
       this.fetchIstioObjectDetails();
@@ -367,7 +367,7 @@ class IstioConfigDetailsPage extends React.Component<RouteComponentProps<IstioCo
           <Nav bsClass="nav nav-tabs nav-tabs-pf">
             {this.hasOverview() ? (
               <NavItem eventKey="overview">
-                <div>Overview</div>
+                <div>概览</div>
               </NavItem>
             ) : null}
             <NavItem eventKey="yaml">
@@ -401,7 +401,7 @@ class IstioConfigDetailsPage extends React.Component<RouteComponentProps<IstioCo
                 return true;
               }
               this.promptTo = location.pathname;
-              return 'You have unsaved changes, are you sure you want to leave?';
+              return '您有未保存的更改，确定要刷新吗？';
             }
             return true;
           }}
