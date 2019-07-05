@@ -31,14 +31,14 @@ interface WorkloadPodLogsState {
 
 const TailLinesDefault = 500;
 const TailLinesOptions = {
-  '-1': 'All lines',
-  '10': '10 lines',
-  '50': '50 lines',
-  '100': '100 lines',
-  '300': '300 lines',
-  '500': '500 lines',
-  '1000': '1000 lines',
-  '5000': '5000 lines'
+  '-1': '所有',
+  '10': '10行',
+  '50': '50行',
+  '100': '100行',
+  '300': '300行',
+  '500': '500行',
+  '1000': '1000行',
+  '5000': '5000行'
 };
 
 const logsTextarea = style({
@@ -64,7 +64,7 @@ export default class WorkloadPodLogs extends React.Component<WorkloadPodLogsProp
       this.state = {
         duration: MetricsDuration.initialDuration(),
         loadingPodLogs: false,
-        loadingPodLogsError: 'There are no logs to display because no pods are available.',
+        loadingPodLogsError: '无日志展示，因为无pod可用。',
         tailLines: TailLinesDefault
       };
       return;
@@ -123,7 +123,7 @@ export default class WorkloadPodLogs extends React.Component<WorkloadPodLogsProp
               <ToolbarDropdown
                 id={'wpl_pods'}
                 nameDropdown="Pod"
-                tooltip="Display logs for the selected pod"
+                tooltip="展示已选pod的相关日志"
                 handleSelect={key => this.setPod(key)}
                 value={this.state.podValue}
                 label={this.props.pods[this.state.podValue!].name}
@@ -131,8 +131,8 @@ export default class WorkloadPodLogs extends React.Component<WorkloadPodLogsProp
               />
               <ToolbarDropdown
                 id={'wpl_containers'}
-                nameDropdown="&nbsp;&nbsp;&nbsp;Container"
-                tooltip="Display logs for the selected pod container"
+                nameDropdown="&nbsp;&nbsp;&nbsp;容器"
+                tooltip="展示已选pod容器的相关日志"
                 handleSelect={key => this.setContainer(key)}
                 value={this.state.containerInfo.container}
                 label={this.state.containerInfo.container}
@@ -141,15 +141,15 @@ export default class WorkloadPodLogs extends React.Component<WorkloadPodLogsProp
               <Toolbar.RightContent>
                 <ToolbarDropdown
                   id={'wpl_tailLines'}
-                  nameDropdown="Tail"
+                  nameDropdown="追踪"
                   handleSelect={key => this.setTailLines(Number(key))}
                   value={this.state.tailLines}
                   label={TailLinesOptions[this.state.tailLines]}
                   options={TailLinesOptions}
-                  tooltip={'Show up to last N log lines'}
+                  tooltip={'展示最近N行日志'}
                 />
                 {'   '}
-                <MetricsDurationContainer tooltip="Time range for log messages" onChanged={this.setDuration} />
+                <MetricsDurationContainer tooltip="日志信息的时间范围" onChanged={this.setDuration} />
                 {'  '}
                 <Button id={'wpl_refresh'} disabled={!this.state.podLogs} onClick={() => this.handleRefresh()}>
                   <Icon name="refresh" />
@@ -159,7 +159,7 @@ export default class WorkloadPodLogs extends React.Component<WorkloadPodLogsProp
             <textarea
               className={logsTextarea}
               readOnly={true}
-              value={this.state.podLogs ? this.state.podLogs.logs : 'Loading logs...'}
+              value={this.state.podLogs ? this.state.podLogs.logs : '正在加载日志...'}
             />
           </>
         )}
@@ -225,7 +225,7 @@ export default class WorkloadPodLogs extends React.Component<WorkloadPodLogsProp
         const podLogs = response[0].data;
         this.setState({
           loadingPodLogs: false,
-          podLogs: podLogs.logs ? podLogs : { logs: 'No logs found for the time period.' }
+          podLogs: podLogs.logs ? podLogs : { logs: '当前时间段未搜索到日志信息。' }
         });
         return;
       })
@@ -238,7 +238,7 @@ export default class WorkloadPodLogs extends React.Component<WorkloadPodLogsProp
         const errorMsg = error.response && error.response.data.error ? error.response.data.error : error.message;
         this.setState({
           loadingPodLogs: false,
-          podLogs: { logs: `Failed to fetch pod logs: ${errorMsg}` }
+          podLogs: { logs: `获取pod日志失败: ${errorMsg}` }
         });
       });
 

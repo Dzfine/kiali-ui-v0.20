@@ -23,7 +23,7 @@ const Label = (props: Props) => {
       </span>
     );
   } else {
-    return <span>This label has an unexpected format</span>;
+    return <span>此标签格式错误。</span>;
   }
 };
 

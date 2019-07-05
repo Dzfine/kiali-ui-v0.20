@@ -29,7 +29,7 @@ class WorkloadServices extends React.Component<WorkloadServicesProps, WorkloadSe
         {
           property: 'name',
           header: {
-            label: 'Name',
+            label: '名称',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -39,7 +39,7 @@ class WorkloadServices extends React.Component<WorkloadServicesProps, WorkloadSe
         {
           property: 'createdAt',
           header: {
-            label: 'Created at',
+            label: '创建时间',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -49,7 +49,7 @@ class WorkloadServices extends React.Component<WorkloadServicesProps, WorkloadSe
         {
           property: 'type',
           header: {
-            label: 'Type',
+            label: '类型',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -59,7 +59,7 @@ class WorkloadServices extends React.Component<WorkloadServicesProps, WorkloadSe
         {
           property: 'labels',
           header: {
-            label: 'Labels',
+            label: '标签',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -69,7 +69,7 @@ class WorkloadServices extends React.Component<WorkloadServicesProps, WorkloadSe
         {
           property: 'resourceVersion',
           header: {
-            label: 'Resource Version',
+            label: '资源版本',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -89,7 +89,7 @@ class WorkloadServices extends React.Component<WorkloadServicesProps, WorkloadSe
         {
           property: 'ports',
           header: {
-            label: 'Ports',
+            label: '端口',
             formatters: [this.headerFormat]
           },
           cell: {

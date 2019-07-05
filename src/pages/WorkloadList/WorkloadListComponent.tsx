@@ -104,7 +104,7 @@ class WorkloadListComponent extends ListComponent.Component<
         })
         .catch(namespacesError => {
           if (!namespacesError.isCanceled) {
-            this.handleAxiosError('Could not fetch namespace list', namespacesError);
+            this.handleAxiosError('无法获取命名空间列表', namespacesError);
           }
         });
     } else {
@@ -163,7 +163,7 @@ class WorkloadListComponent extends ListComponent.Component<
       })
       .catch(err => {
         if (!err.isCanceled) {
-          this.handleAxiosError('Could not fetch workloads list', err);
+          this.handleAxiosError('无法获取工作负载列表', err);
         }
       });
   }

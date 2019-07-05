@@ -39,7 +39,7 @@ export class Dashboard extends React.Component<DashboardProps, {}> {
         {expandedChart && (
           <h3 className={expandedChartBackLinkStyle}>
             <Link to={notExpandedLink}>
-              <Icon name="angle-double-left" /> View all metrics
+              <Icon name="angle-double-left" /> 展示所有指标
             </Link>
           </h3>
         )}

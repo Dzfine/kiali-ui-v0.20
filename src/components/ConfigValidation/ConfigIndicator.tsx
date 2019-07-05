@@ -18,19 +18,19 @@ interface Validation {
 }
 
 export const NOT_VALID: Validation = {
-  name: 'Not Valid',
+  name: '无效',
   color: PfColors.Red100,
   icon: 'error-circle-o'
 };
 
 export const WARNING: Validation = {
-  name: 'Warning',
+  name: '警告',
   color: PfColors.Gold100,
   icon: 'warning-triangle-o'
 };
 
 export const VALID: Validation = {
-  name: 'Valid',
+  name: '有效',
   color: PfColors.Green400,
   icon: 'ok'
 };
@@ -66,11 +66,7 @@ export class ConfigIndicator extends React.PureComponent<Props, {}> {
 
   getTypeMessage = (type: string) => {
     const numberType = this.numberOfChecks(type);
-    return numberType > 0
-      ? numberType > 1
-        ? `${numberType} ${type}s found`
-        : `${numberType} ${type} found`
-      : undefined;
+    return numberType > 0 ? (numberType > 1 ? `${numberType} ${type}` : `${numberType} ${type}`) : undefined;
   };
 
   getValid() {
@@ -97,7 +93,7 @@ export class ConfigIndicator extends React.PureComponent<Props, {}> {
     const issuesMessages: string[] = [];
     if (this.props.validations.length > 0) {
       if (numChecks === 0) {
-        issuesMessages.push('No issues found');
+        issuesMessages.push('没有发现问题');
       } else {
         const errMessage = this.getTypeMessage('error');
         if (errMessage) {
@@ -109,7 +105,7 @@ export class ConfigIndicator extends React.PureComponent<Props, {}> {
         }
       }
     } else {
-      issuesMessages.push('Expected validation results are missing');
+      issuesMessages.push('缺少预期的验证效果。');
     }
 
     const validationsInfo: JSX.Element[] = [];

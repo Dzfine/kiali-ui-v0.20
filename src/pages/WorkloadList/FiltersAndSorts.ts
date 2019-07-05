@@ -17,7 +17,7 @@ export namespace WorkloadListFilters {
   export const sortFields: SortField<WorkloadListItem>[] = [
     {
       id: 'namespace',
-      title: 'Namespace',
+      title: '命名空间',
       isNumeric: false,
       param: 'ns',
       compare: (a: WorkloadListItem, b: WorkloadListItem) => {
@@ -30,14 +30,14 @@ export namespace WorkloadListFilters {
     },
     {
       id: 'workloadname',
-      title: 'Workload Name',
+      title: '工作负载名称',
       isNumeric: false,
       param: 'wn',
       compare: (a: WorkloadListItem, b: WorkloadListItem) => a.workload.name.localeCompare(b.workload.name)
     },
     {
       id: 'workloadtype',
-      title: 'Workload Type',
+      title: '工作负载类型',
       isNumeric: false,
       param: 'wt',
       compare: (a: WorkloadListItem, b: WorkloadListItem) => a.workload.type.localeCompare(b.workload.type)
@@ -59,7 +59,7 @@ export namespace WorkloadListFilters {
     },
     {
       id: 'applabel',
-      title: 'App Label',
+      title: 'App标签',
       isNumeric: false,
       param: 'al',
       compare: (a: WorkloadListItem, b: WorkloadListItem) => {
@@ -74,7 +74,7 @@ export namespace WorkloadListFilters {
     },
     {
       id: 'versionlabel',
-      title: 'Version Label',
+      title: '版本标签',
       isNumeric: false,
       param: 'vl',
       compare: (a: WorkloadListItem, b: WorkloadListItem) => {
@@ -89,7 +89,7 @@ export namespace WorkloadListFilters {
     },
     {
       id: 'health',
-      title: 'Health',
+      title: '健康状况',
       isNumeric: false,
       param: 'he',
       compare: (a: WorkloadItemHealth, b: WorkloadItemHealth) => {
@@ -113,8 +113,8 @@ export namespace WorkloadListFilters {
 
   const workloadNameFilter: FilterType = {
     id: 'workloadname',
-    title: 'Workload Name',
-    placeholder: 'Filter by Workload Name',
+    title: '工作负载名称',
+    placeholder: '按照工作负载名称筛选',
     filterType: 'text',
     action: FILTER_ACTION_APPEND,
     filterValues: []
@@ -122,8 +122,8 @@ export namespace WorkloadListFilters {
 
   const appLabelFilter: FilterType = {
     id: 'applabel',
-    title: 'App Label',
-    placeholder: 'Filter by App Label Validation',
+    title: '应用标签',
+    placeholder: '按照App标签验证筛选',
     filterType: 'select',
     action: FILTER_ACTION_UPDATE,
     filterValues: presenceValues
@@ -131,8 +131,8 @@ export namespace WorkloadListFilters {
 
   const versionLabelFilter: FilterType = {
     id: 'versionlabel',
-    title: 'Version Label',
-    placeholder: 'Filter by Version Label Validation',
+    title: '版本标签',
+    placeholder: '按照版本标签验证筛选',
     filterType: 'select',
     action: FILTER_ACTION_UPDATE,
     filterValues: presenceValues
@@ -140,8 +140,8 @@ export namespace WorkloadListFilters {
 
   const workloadTypeFilter: FilterType = {
     id: 'workloadtype',
-    title: 'Workload Type',
-    placeholder: 'Filter by Workload Type',
+    title: '工作负载类型',
+    placeholder: '按照工作负载类型筛选',
     filterType: 'select',
     action: FILTER_ACTION_APPEND,
     filterValues: [
@@ -267,7 +267,7 @@ export namespace WorkloadListFilters {
     sortField: SortField<WorkloadListItem>,
     isAscending: boolean
   ): Promise<WorkloadListItem[]> => {
-    if (sortField.title === 'Health') {
+    if (sortField.title === '健康状况') {
       // In the case of health sorting, we may not have all health promises ready yet
       // So we need to get them all before actually sorting
       const allHealthPromises: Promise<WorkloadItemHealth>[] = unsorted.map(item => {

@@ -8,7 +8,7 @@ const WorkloadListPage: React.SFC<{}> = () => {
   return (
     <>
       <Breadcrumb title={true}>
-        <Breadcrumb.Item active={true}>Workloads</Breadcrumb.Item>
+        <Breadcrumb.Item active={true}>工作负载</Breadcrumb.Item>
       </Breadcrumb>
       <WorkloadListContainer
         pagination={ListPagesHelper.currentPagination()}

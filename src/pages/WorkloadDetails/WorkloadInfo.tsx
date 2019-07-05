@@ -113,7 +113,7 @@ class WorkloadInfo extends React.Component<WorkloadInfoProps, WorkloadInfoState>
                         ? getValidationIcon((this.props.workload.pods || []).map(a => a.name), 'pod')
                         : undefined}
                     </NavItem>
-                    <NavItem eventKey={'services'}>{'Services (' + services.length + ')'}</NavItem>
+                    <NavItem eventKey={'services'}>{'服务 (' + services.length + ')'}</NavItem>
                   </Nav>
                   <TabContent>
                     <TabPane eventKey={'pods'}>

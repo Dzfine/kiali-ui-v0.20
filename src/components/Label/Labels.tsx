@@ -51,7 +51,7 @@ class Labels extends React.Component<Props, State> {
       return (
         <a className={linkStyle} onClick={this.expandLabels}>
           {' '}
-          More labels...
+          更多标签...
         </a>
       );
     }
@@ -71,7 +71,7 @@ class Labels extends React.Component<Props, State> {
   }
 
   renderEmptyLabels() {
-    return <span> No labels </span>;
+    return <span> 没有标签 </span>;
   }
 
   render() {

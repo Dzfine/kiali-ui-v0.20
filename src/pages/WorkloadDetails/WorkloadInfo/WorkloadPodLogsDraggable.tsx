@@ -33,7 +33,7 @@ export default class WorkloadPodLogsDraggable extends React.Component<WorkloadPo
             <Button className="close" bsClass="" onClick={this.props.onClose}>
               <Icon title="Close" type="pf" name="close" />
             </Button>
-            <span className="modal-title">Pod Logs</span>
+            <span className="modal-title">Pod日志</span>
           </div>
           <WorkloadPodLogs namespace={this.props.namespace} pods={this.props.pods} />
         </div>

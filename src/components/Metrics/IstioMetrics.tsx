@@ -139,7 +139,7 @@ class IstioMetrics extends React.Component<IstioMetricsProps, MetricsState> {
         });
       })
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Cannot fetch metrics', error));
+        MessageCenter.add(API.getErrorMsg('无法获取指标', error));
         console.error(error);
         throw error;
       });

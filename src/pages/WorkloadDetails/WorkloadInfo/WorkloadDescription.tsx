@@ -58,19 +58,19 @@ class WorkloadDescription extends React.Component<WorkloadDescriptionProps, Work
           <Row>
             <Col xs={12} sm={8} md={6} lg={6}>
               <div className="progress-description">
-                <strong>{isTemplateLabels ? 'Template Labels' : 'Labels'}</strong>
+                <strong>{isTemplateLabels ? '模板标签' : '标签'}</strong>
               </div>
               <div className="label-collection">
                 <Labels labels={workload.labels} />
               </div>
               <div>
-                <strong>Type</strong> {workload.type ? workload.type : ''}
+                <strong>类型：</strong> {workload.type ? workload.type : ''}
               </div>
               <div>
-                <strong>Created at</strong> <LocalTime time={workload.createdAt} />
+                <strong>创建时间：</strong> <LocalTime time={workload.createdAt} />
               </div>
               <div>
-                <strong>Resource Version</strong> {workload.resourceVersion}
+                <strong>资源版本：</strong> {workload.resourceVersion}
               </div>
               {workload.runtimes.length > 0 && (
                 <div>
@@ -88,7 +88,7 @@ class WorkloadDescription extends React.Component<WorkloadDescriptionProps, Work
             <Col xs={12} sm={4} md={3} lg={3} />
             <Col xs={12} sm={4} md={3} lg={3}>
               <div className="progress-description">
-                <strong>Health</strong>
+                <strong>健康状况</strong>
               </div>
               <HealthIndicator
                 id={workload.name}

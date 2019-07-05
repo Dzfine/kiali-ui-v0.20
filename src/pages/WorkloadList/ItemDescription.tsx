@@ -72,7 +72,7 @@ class ItemDescription extends React.Component<ItemDescriptionProps, ItemDescript
         <Col xs={12} sm={12} md={4} lg={4}>
           {this.state.health && (
             <>
-              <strong>Health: </strong>
+              <strong>健康状况: </strong>
               <HealthIndicator id={object.name} health={this.state.health} mode={DisplayMode.SMALL} />
             </>
           )}
@@ -83,9 +83,9 @@ class ItemDescription extends React.Component<ItemDescriptionProps, ItemDescript
         <Col xs={12} sm={12} md={4} lg={4}>
           {object.appLabel || object.versionLabel ? (
             <span>
-              <strong>Label Validation :</strong>
-              {object.appLabel && <Badge>app</Badge>}
-              {object.versionLabel && <Badge>version</Badge>}
+              <strong>标签验证 :</strong>
+              {object.appLabel && <Badge>应用</Badge>}
+              {object.versionLabel && <Badge>版本</Badge>}
             </span>
           ) : (
             <span />

@@ -69,11 +69,11 @@ export default class SummaryPanel extends React.Component<MainSummaryPanelPropTy
         <div className={toggleSidePanelStyle} onClick={this.togglePanel}>
           {this.state.isVisible ? (
             <>
-              <Icon name="angle-double-down" /> Hide
+              <Icon name="angle-double-down" /> 隐藏
             </>
           ) : (
             <>
-              <Icon name="angle-double-up" /> Show
+              <Icon name="angle-double-up" /> 显示
             </>
           )}
         </div>

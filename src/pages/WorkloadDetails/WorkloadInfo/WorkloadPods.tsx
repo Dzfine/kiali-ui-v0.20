@@ -135,7 +135,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
       <OverlayTrigger
         // Prettier makes irrelevant line-breaking clashing with tslint
         // prettier-ignore
-        overlay={<Tooltip id={'pod_names_' + u} title="Pod Names">{group.names.join(', ')}</Tooltip>}
+        overlay={<Tooltip id={'pod_names_' + u} title="Pod名称">{group.names.join(', ')}</Tooltip>}
         placement="top"
         trigger={['hover', 'focus']}
       >
@@ -159,7 +159,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
         {
           property: 'status',
           header: {
-            label: 'Status',
+            label: '状态',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -172,7 +172,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
         {
           property: 'name',
           header: {
-            label: 'Name',
+            label: '名称',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -182,7 +182,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
         {
           property: 'createdAt',
           header: {
-            label: 'Created at',
+            label: '创建时间',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -192,7 +192,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
         {
           property: 'createdBy',
           header: {
-            label: 'Created by',
+            label: '创建者',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -202,7 +202,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
         {
           property: 'labels',
           header: {
-            label: 'Labels',
+            label: '标签',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -212,7 +212,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
         {
           property: 'istioInitContainers',
           header: {
-            label: 'Istio Init Containers',
+            label: 'Istio初始化容器',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -222,7 +222,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
         {
           property: 'istioContainers',
           header: {
-            label: 'Istio Containers',
+            label: 'Istio容器',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -232,7 +232,7 @@ class WorkloadPods extends React.Component<WorkloadPodsProps, WorkloadPodsState>
         {
           property: 'podStatus',
           header: {
-            label: 'Phase',
+            label: '所处阶段',
             formatters: [this.headerFormat]
           },
           cell: {

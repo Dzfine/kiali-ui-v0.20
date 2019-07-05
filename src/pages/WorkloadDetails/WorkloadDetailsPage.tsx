@@ -60,9 +60,9 @@ class WorkloadDetails extends React.Component<RouteComponentProps<WorkloadId>, W
 
   // All information for validations is fetched in the workload, no need to add another call
   workloadValidations(workload: Workload): Validations {
-    const noIstiosidecar: ObjectCheck = { message: 'Pod has no Istio sidecar', severity: 'warning', path: '' };
-    const noAppLabel: ObjectCheck = { message: 'Pod has no app label', severity: 'warning', path: '' };
-    const noVersionLabel: ObjectCheck = { message: 'Pod has no version label', severity: 'warning', path: '' };
+    const noIstiosidecar: ObjectCheck = { message: 'Pod没有Istio sidecar', severity: 'warning', path: '' };
+    const noAppLabel: ObjectCheck = { message: 'Pod没有应用标签', severity: 'warning', path: '' };
+    const noVersionLabel: ObjectCheck = { message: 'Pod没有版本标签', severity: 'warning', path: '' };
 
     const validations: Validations = {};
     if (workload.pods.length > 0) {
@@ -149,7 +149,7 @@ class WorkloadDetails extends React.Component<RouteComponentProps<WorkloadId>, W
       })
       .then(health => this.setState({ health: health }))
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not fetch Workload', error));
+        MessageCenter.add(API.getErrorMsg('无法获取工作负载', error));
       });
   };
 
@@ -159,7 +159,7 @@ class WorkloadDetails extends React.Component<RouteComponentProps<WorkloadId>, W
       .map(key => validations[key])
       .forEach(obj => {
         Object.keys(obj).forEach(key => {
-          istioEnabled = obj[key].checks.filter(check => check.message === 'Pod has no Istio sidecar').length < 1;
+          istioEnabled = obj[key].checks.filter(check => check.message === 'Pod没有Istio sidecar').length < 1;
         });
       });
     return istioEnabled;
@@ -235,7 +235,7 @@ class WorkloadDetails extends React.Component<RouteComponentProps<WorkloadId>, W
                 {hasPods ? (
                   <WorkloadPodLogs namespace={this.props.match.params.namespace} pods={this.state.workload.pods} />
                 ) : (
-                  <div>There are no logs to display because the workload has no pods.</div>
+                  <div>当前没有日志展示，因为工作负载没有no pods.</div>
                 )}
               </TabPane>
               <TabPane eventKey="in_metrics" mountOnEnter={true} unmountOnExit={true}>

@@ -126,7 +126,7 @@ abstract class MetricsChartBase<Props extends MetricsChartBaseProps> extends Rea
     return (
       <div className={expandBlockStyle}>
         <a href="#" onClick={this.onExpandHandler}>
-          Expand <Icon name="expand" type="fa" size="lg" title="Expand" />
+          扩大 <Icon name="expand" type="fa" size="lg" title="Expand" />
         </a>
       </div>
     );
