@@ -82,7 +82,6 @@ export class CytoscapeToolbar extends React.PureComponent<CytoscapeToolbarProps>
             onClick={() => {
               this.props.setLayout(DagreGraph.getLayout());
             }}
-            title={DagreGraph.getLayout().name}
             active={this.props.layout.name === DagreGraph.getLayout().name}
           >
             <div className="fa pficon-infrastructure fa-rotate-270" />
@@ -92,7 +91,6 @@ export class CytoscapeToolbar extends React.PureComponent<CytoscapeToolbarProps>
             onClick={() => {
               this.props.setLayout(CoseGraph.getLayout());
             }}
-            title={CoseGraph.getLayout().name}
             active={this.props.layout.name === CoseGraph.getLayout().name}
           >
             <div className="fa pficon-topology" /> 1
@@ -102,7 +100,6 @@ export class CytoscapeToolbar extends React.PureComponent<CytoscapeToolbarProps>
             onClick={() => {
               this.props.setLayout(ColaGraph.getLayout());
             }}
-            title={ColaGraph.getLayout().name}
             active={this.props.layout.name === ColaGraph.getLayout().name}
           >
             <div className="fa pficon-topology" /> 2
@@ -115,7 +112,7 @@ export class CytoscapeToolbar extends React.PureComponent<CytoscapeToolbarProps>
           active={this.props.showLegend}
           className={cytoscapeToolbarPadStyle}
         >
-          Legend
+          图例
         </Button>
       </div>
     );

@@ -122,7 +122,7 @@ export const getNodeMetrics = (
     case NodeMetricType.WORKLOAD:
       return API.getWorkloadMetrics(data.namespace, data.workload, options);
     default:
-      return Promise.reject(new Error(`Unknown NodeMetricType: ${nodeMetricType}`));
+      return Promise.reject(new Error(`未知的节点指标类型: ${nodeMetricType}`));
   }
 };
 

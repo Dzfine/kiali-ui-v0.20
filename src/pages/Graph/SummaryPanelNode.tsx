@@ -307,13 +307,13 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
         <div className="panel-body">
           {shouldRenderSvcList && (
             <div>
-              <strong>Services: </strong>
+              <strong>服务: </strong>
               {servicesList}
             </div>
           )}
           {shouldRenderWorkload && (
             <div>
-              <strong>Workload: </strong>
+              <strong>工作负载: </strong>
               <RenderLink data={data} nodeType={NodeType.WORKLOAD} />
             </div>
           )}
@@ -343,7 +343,7 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
     return (
       <>
         <InOutRateTableGrpc
-          title="GRPC Traffic (requests per second):"
+          title="GRPC流量(每秒请求):"
           inRate={incoming.rate}
           inRateErr={incoming.rateErr}
           outRate={outgoing.rate}
@@ -361,7 +361,7 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
     return (
       <>
         <InOutRateTableHttp
-          title="HTTP Traffic (requests per second):"
+          title="HTTP流量(每秒请求):"
           inRate={incoming.rate}
           inRate3xx={incoming.rate3xx}
           inRate4xx={incoming.rate4xx}
@@ -399,12 +399,12 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
       );
     }
     if (this.state.loading && !this.state.grpcRequestCountIn) {
-      return <strong>Loading charts...</strong>;
+      return <strong>正在加载图表...</strong>;
     }
     if (this.state.metricsLoadError) {
       return (
         <div>
-          <Icon type="pf" name="warning-triangle-o" /> <strong>Error loading metrics: </strong>
+          <Icon type="pf" name="warning-triangle-o" /> <strong>加载指标时出错: </strong>
           {this.state.metricsLoadError}
         </div>
       );
@@ -427,19 +427,19 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
       grpcCharts = (
         <>
           <RpsChart
-            label={isServiceNode ? 'GRPC - Request Traffic' : 'GRPC - Inbound Request Traffic'}
+            label={isServiceNode ? 'GRPC - 请求流量' : 'GRPC - 入站请求流量'}
             dataRps={this.state.grpcRequestCountIn!}
             dataErrors={this.state.grpcErrorCountIn}
           />
           {serviceWithUnknownSource && (
             <>
               <div>
-                <Icon type="pf" name="info" /> Traffic from unknown not included. Use edge for details.
+                <Icon type="pf" name="info" /> 未知的流量不包含在内。使用网络连接获取详细信息。
               </div>
             </>
           )}
           <RpsChart
-            label="GRPC - Outbound Request Traffic"
+            label="GRPC - 出站请求流量"
             dataRps={this.state.grpcRequestCountOut}
             dataErrors={this.state.grpcErrorCountOut}
             hide={isServiceNode}
@@ -447,7 +447,7 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
           {this.isIstioOutgoingCornerCase(node) && (
             <>
               <div>
-                <Icon type="pf" name="info" /> Traffic to istio-system not included. Use edge for details.
+                <Icon type="pf" name="info" /> 导向istio-system的流量不包含在内。使用网络连接获取详细信息。
               </div>
             </>
           )}
@@ -460,19 +460,19 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
       httpCharts = (
         <>
           <RpsChart
-            label={isServiceNode ? 'HTTP - Request Traffic' : 'HTTP - Inbound Request Traffic'}
+            label={isServiceNode ? 'HTTP - 请求流量' : 'HTTP - 入站请求流量'}
             dataRps={this.state.httpRequestCountIn!}
             dataErrors={this.state.httpErrorCountIn}
           />
           {serviceWithUnknownSource && (
             <>
               <div>
-                <Icon type="pf" name="info" /> Traffic from unknown not included. Use edge for details.
+                <Icon type="pf" name="info" /> 未知的流量不包含在内。使用网络连接获取详细信息。
               </div>
             </>
           )}
           <RpsChart
-            label="HTTP - Outbound Request Traffic"
+            label="HTTP - 出站请求流量"
             dataRps={this.state.httpRequestCountOut}
             dataErrors={this.state.httpErrorCountOut}
             hide={isServiceNode}
@@ -480,7 +480,7 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
           {this.isIstioOutgoingCornerCase(node) && (
             <>
               <div>
-                <Icon type="pf" name="info" /> Traffic to istio-system not included. Use edge for details.
+                <Icon type="pf" name="info" /> 导向istio-system的流量不包含在内。使用网络连接获取详细信息。
               </div>
             </>
           )}
@@ -493,12 +493,12 @@ export default class SummaryPanelNode extends React.Component<SummaryPanelPropTy
       tcpCharts = (
         <>
           <TcpChart
-            label={isServiceNode ? 'TCP - Traffic' : 'TCP - Inbound Traffic'}
+            label={isServiceNode ? 'TCP - 流量' : 'TCP - 入站流量'}
             receivedRates={this.state.tcpReceivedIn}
             sentRates={this.state.tcpSentIn}
           />
           <TcpChart
-            label="TCP - Outbound Traffic"
+            label="TCP - 出站流量"
             receivedRates={this.state.tcpReceivedOut}
             sentRates={this.state.tcpSentOut}
             hide={isServiceNode}

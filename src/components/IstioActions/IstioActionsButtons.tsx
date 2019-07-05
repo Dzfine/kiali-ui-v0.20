@@ -26,12 +26,12 @@ class IstioActionButtons extends React.Component<Props, State> {
           {!this.props.readOnly && (
             <span style={{ paddingRight: '5px' }}>
               <Button bsStyle="primary" disabled={!this.props.canUpdate} onClick={this.props.onUpdate}>
-                Save
+                保存
               </Button>
             </span>
           )}
           <span style={{ paddingRight: '5px' }}>
-            <Button onClick={this.props.onRefresh}>Reload</Button>
+            <Button onClick={this.props.onRefresh}>重载</Button>
           </span>
           <span style={{ paddingRight: '5px' }}>
             <Button onClick={this.props.onCancel}>{this.props.readOnly ? '关闭' : '取消'}</Button>

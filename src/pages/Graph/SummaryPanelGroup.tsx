@@ -275,7 +275,7 @@ export default class SummaryPanelGroup extends React.Component<SummaryPanelPropT
     return (
       <>
         <InOutRateTableGrpc
-          title="GRPC Traffic (requests per second):"
+          title="GRPC流量(每秒请求):"
           inRate={incoming.rate}
           inRateErr={incoming.rateErr}
           outRate={outgoing.rate}
@@ -294,7 +294,7 @@ export default class SummaryPanelGroup extends React.Component<SummaryPanelPropT
     return (
       <>
         <InOutRateTableHttp
-          title="HTTP Traffic (requests per second):"
+          title="HTTP流量(每秒请求):"
           inRate={incoming.rate}
           inRate3xx={incoming.rate3xx}
           inRate4xx={incoming.rate4xx}
@@ -327,13 +327,13 @@ export default class SummaryPanelGroup extends React.Component<SummaryPanelPropT
         <>
           <RpsChart
             key="http-inbound-request"
-            label="HTTP - Inbound Request Traffic"
+            label="HTTP - 入站请求流量"
             dataRps={this.state.requestCountIn!}
             dataErrors={this.state.errorCountIn}
           />
           <RpsChart
             key="http-outbound-request"
-            label="HTTP - Outbound Request Traffic"
+            label="HTTP - 出站请求流量"
             dataRps={this.state.requestCountOut}
             dataErrors={this.state.errorCountOut}
           />
@@ -347,13 +347,13 @@ export default class SummaryPanelGroup extends React.Component<SummaryPanelPropT
         <>
           <TcpChart
             key="tcp-inbound-request"
-            label="TCP - Inbound Traffic"
+            label="TCP - 入站流量"
             receivedRates={this.state.tcpReceivedIn}
             sentRates={this.state.tcpSentIn}
           />
           <TcpChart
             key="tcp-outbound-request"
-            label="TCP - Outbound Traffic"
+            label="TCP - 出站流量"
             receivedRates={this.state.tcpReceivedOut}
             sentRates={this.state.tcpSentOut}
           />

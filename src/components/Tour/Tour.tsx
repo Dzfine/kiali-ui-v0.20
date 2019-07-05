@@ -66,7 +66,7 @@ const BackButton = (props: TourProps) => {
   }
   return (
     <Button className={buttonTextStyle} onClick={props.onBack}>
-      <Icon type="fa" name="angle-left" /> Back
+      <Icon type="fa" name="angle-left" /> 返回
     </Button>
   );
 };
@@ -75,10 +75,10 @@ const NextButton = (props: TourProps) => {
   return (
     <Button className={buttonTextStyle} bsStyle="primary" onClick={props.onNext}>
       {props.isLast ? (
-        'Done'
+        '完成'
       ) : (
         <>
-          Next <Icon type="fa" name="angle-right" />
+          下一步 <Icon type="fa" name="angle-right" />
         </>
       )}
     </Button>

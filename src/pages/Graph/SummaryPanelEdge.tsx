@@ -129,10 +129,10 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
               <div>
                 <Nav bsClass="nav nav-tabs nav-tabs-pf" style={{ paddingLeft: '20px' }}>
                   <NavItem eventKey="traffic">
-                    <div>Traffic</div>
+                    <div>流量</div>
                   </NavItem>
                   <NavItem eventKey="responses">
-                    <div>Response Codes</div>
+                    <div>响应码</div>
                   </NavItem>
                 </Nav>
                 <TabContent style={{ paddingTop: '10px' }}>
@@ -160,7 +160,7 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
                   </TabPane>
                   <TabPane eventKey="responses" mountOnEnter={true} unmountOnExit={true}>
                     <ResponseTable
-                      title={isGrpc ? 'GRPC codes:' : 'HTTP codes:'}
+                      title={isGrpc ? 'GRPC码:' : 'HTTP码:'}
                       responses={edge.data(CyEdge.responses)}
                     />
                   </TabPane>
@@ -173,7 +173,7 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
         )}
         {isTcp && (
           <div className="panel-body">
-            <ResponseTable title="TCP Responses:" responses={edge.data(CyEdge.responses)} />
+            <ResponseTable title="TCP响应:" responses={edge.data(CyEdge.responses)} />
             <hr />
             {this.renderCharts(edge, isGrpc, isHttp, isTcp)}
           </div>
@@ -422,13 +422,13 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
     }
 
     if (this.state.loading && !this.state.reqRates) {
-      return <strong>Loading charts...</strong>;
+      return <strong>正在加载图表...</strong>;
     }
 
     if (this.state.metricsLoadError) {
       return (
         <div>
-          <Icon type="pf" name="warning-triangle-o" /> <strong>Error loading metrics: </strong>
+          <Icon type="pf" name="warning-triangle-o" /> <strong>加载指标时出错: </strong>
           {this.state.metricsLoadError}
         </div>
       );
@@ -436,8 +436,8 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
 
     let rpsChart, tcpChart;
     if (isGrpc || isHttp) {
-      const labelRps = isGrpc ? 'GRPC Request Traffic' : 'HTTP Request Traffic';
-      const labelRt = isGrpc ? 'GRPC Request Response Time (ms)' : 'HTTP Request Response Time (ms)';
+      const labelRps = isGrpc ? 'GRPC请求流量' : 'HTTP请求流量';
+      const labelRt = isGrpc ? 'GRPC请求响应时间(毫秒)' : 'HTTP请求响应时间(毫秒)';
       rpsChart = (
         <>
           <RpsChart label={labelRps} dataRps={this.state.reqRates!} dataErrors={this.state.errRates} />
@@ -453,7 +453,7 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
         </>
       );
     } else if (isTcp) {
-      tcpChart = <TcpChart label="TCP Traffic" sentRates={this.state.tcpSent} receivedRates={this.state.tcpReceived} />;
+      tcpChart = <TcpChart label="TCP流量" sentRates={this.state.tcpSent} receivedRates={this.state.tcpReceived} />;
     }
 
     return (
@@ -486,10 +486,10 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
   }
 
   private renderBadgeSummary = (mTLSPercentage: string) => {
-    let mtls = 'mTLS Enabled';
+    let mtls = 'mTLS启用';
     const isMtls = Number(mTLSPercentage) > 0;
     if (isMtls && Number(mTLSPercentage) < 100.0) {
-      mtls = `${mtls} [${mTLSPercentage}% of request traffic]`;
+      mtls = `${mtls} [${mTLSPercentage}% 请求流量]`;
     }
     return (
       <>

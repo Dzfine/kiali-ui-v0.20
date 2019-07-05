@@ -121,7 +121,7 @@ class VirtualServiceRoute extends React.Component<VirtualServiceRouteProps> {
         },
         {
           header: {
-            label: 'Weights',
+            label: '流量所占百分比',
             formatters: [this.headerFormat],
             props: {
               colSpan: 1
@@ -297,7 +297,7 @@ class VirtualServiceRoute extends React.Component<VirtualServiceRouteProps> {
           <div>
             <BulletChart
               key={'bullet-chart-' + i}
-              label="Weight sum"
+              label="总和"
               stacked={true}
               thresholdWarning={-1}
               thresholdError={-1}

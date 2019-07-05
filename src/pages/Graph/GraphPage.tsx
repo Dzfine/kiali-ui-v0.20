@@ -439,7 +439,7 @@ export class GraphPage extends React.Component<GraphPageProps, GraphPageState> {
 
   private notifyError = (error: Error, _componentStack: string) => {
     MessageCenterUtils.add(
-      `There was an error when rendering the graph: ${error.message}, please try a different layout`
+      `渲染图表时出错: ${error.message}, 请尝试另一不同的布局`
     );
   };
 }

@@ -284,7 +284,7 @@ class IstioConfigListComponent extends ListComponent.Component<
             <td>{type}</td>
             {istioItem.validation ? (
               <td>
-                <strong>Config: </strong>{' '}
+                <strong>配置: </strong>{' '}
                 <ConfigIndicator id={index + '-config-validation'} validations={[istioItem.validation]} size="medium" />
               </td>
             ) : (

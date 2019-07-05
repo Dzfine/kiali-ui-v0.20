@@ -47,7 +47,7 @@ class IstioActionDropdown extends React.Component<Props, State> {
 
     return (
       <>
-        <DropdownButton id="actions" title="Actions" onSelect={this.onAction} pullRight={true}>
+        <DropdownButton id="actions" title="操作" onSelect={this.onAction} pullRight={true}>
           <MenuItem key="delete" eventKey="delete" disabled={!this.props.canDelete}>
             删除
           </MenuItem>

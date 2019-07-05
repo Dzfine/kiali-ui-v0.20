@@ -99,14 +99,14 @@ export default class SummaryPanelGraph extends React.Component<SummaryPanelPropT
           <div>
             {trafficRateGrpc.rate > 0 && (
               <RateTableGrpc
-                title="GRPC Traffic (requests per second):"
+                title="GRPC流量(每秒请求):"
                 rate={trafficRateGrpc.rate}
                 rateErr={trafficRateGrpc.rateErr}
               />
             )}
             {trafficRateHttp.rate > 0 && (
               <RateTableHttp
-                title="HTTP Traffic (requests per second):"
+                title="HTTP流量(每秒请求):"
                 rate={trafficRateHttp.rate}
                 rate3xx={trafficRateHttp.rate3xx}
                 rate4xx={trafficRateHttp.rate4xx}
