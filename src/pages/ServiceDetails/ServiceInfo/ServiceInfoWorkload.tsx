@@ -25,7 +25,7 @@ class ServiceInfoWorkload extends React.Component<ServiceInfoWorkloadProps> {
         {
           property: 'name',
           header: {
-            label: 'Name',
+            label: '名称',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -35,7 +35,7 @@ class ServiceInfoWorkload extends React.Component<ServiceInfoWorkloadProps> {
         {
           property: 'type',
           header: {
-            label: 'Type',
+            label: '类型',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -48,7 +48,7 @@ class ServiceInfoWorkload extends React.Component<ServiceInfoWorkloadProps> {
         {
           property: 'labels',
           header: {
-            label: 'Labels',
+            label: '标签',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -58,7 +58,7 @@ class ServiceInfoWorkload extends React.Component<ServiceInfoWorkloadProps> {
         {
           property: 'createdAt',
           header: {
-            label: 'Created at',
+            label: '创建于',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -68,7 +68,7 @@ class ServiceInfoWorkload extends React.Component<ServiceInfoWorkloadProps> {
         {
           property: 'resourceVersion',
           header: {
-            label: 'Resource version',
+            label: '资源版本',
             formatters: [this.headerFormat]
           },
           cell: {

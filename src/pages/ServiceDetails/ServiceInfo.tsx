@@ -83,7 +83,7 @@ class ServiceInfo extends React.Component<ServiceDetails, ServiceInfoState> {
   }
 
   errorBoundaryMessage(resourceName: string) {
-    return `One of the ${resourceName} associated to this service has an invalid format`;
+    return `与此服务关联的${resourceName}中有一个格式无效`;
   }
 
   getServiceValidation(): ObjectValidation {
@@ -123,7 +123,7 @@ class ServiceInfo extends React.Component<ServiceDetails, ServiceInfoState> {
           <ToastNotificationList>
             <ToastNotification type="danger">
               <span>
-                <strong>Error </strong>
+                <strong>错误 </strong>
                 {this.state.errorMessage}
               </span>
             </ToastNotification>
@@ -181,9 +181,9 @@ class ServiceInfo extends React.Component<ServiceDetails, ServiceInfoState> {
               >
                 <div>
                   <Nav bsClass="nav nav-tabs nav-tabs-pf">
-                    <NavItem eventKey={'workloads'}>{'Workloads (' + Object.keys(workloads).length + ')'}</NavItem>
+                    <NavItem eventKey={'workloads'}>{'工作负载 (' + Object.keys(workloads).length + ')'}</NavItem>
                     <NavItem eventKey={'virtualservices'}>
-                      {'Virtual Services (' + virtualServices.items.length + ')'}
+                      {'虚拟服务 (' + virtualServices.items.length + ')'}
                       {validationChecks.hasVirtualServiceChecks
                         ? getValidationIcon(
                             (this.props.serviceDetails.virtualServices.items || []).map(a => a.metadata.name),
@@ -192,7 +192,7 @@ class ServiceInfo extends React.Component<ServiceDetails, ServiceInfoState> {
                         : undefined}
                     </NavItem>
                     <NavItem eventKey={'destinationrules'}>
-                      {'Destination Rules (' + destinationRules.items.length + ')'}
+                      {'目的地规则 (' + destinationRules.items.length + ')'}
                       {validationChecks.hasDestinationRuleChecks
                         ? getValidationIcon(
                             (this.props.serviceDetails.destinationRules.items || []).map(a => a.metadata.name),
@@ -202,14 +202,14 @@ class ServiceInfo extends React.Component<ServiceDetails, ServiceInfoState> {
                     </NavItem>
                   </Nav>
                   <TabContent>
-                    <TabPaneWithErrorBoundary eventKey={'workloads'} message={this.errorBoundaryMessage('Workloads')}>
+                    <TabPaneWithErrorBoundary eventKey={'workloads'} message={this.errorBoundaryMessage('工作负载')}>
                       {(Object.keys(workloads).length > 0 || this.props.serviceDetails.istioSidecar) && (
                         <ServiceInfoWorkload workloads={workloads} namespace={this.props.namespace} />
                       )}
                     </TabPaneWithErrorBoundary>
                     <TabPaneWithErrorBoundary
                       eventKey={'virtualservices'}
-                      message={this.errorBoundaryMessage('Virtual Services')}
+                      message={this.errorBoundaryMessage('虚拟服务')}
                     >
                       {(virtualServices.items.length > 0 || this.props.serviceDetails.istioSidecar) && (
                         <ServiceInfoVirtualServices
@@ -220,7 +220,7 @@ class ServiceInfo extends React.Component<ServiceDetails, ServiceInfoState> {
                     </TabPaneWithErrorBoundary>
                     <TabPaneWithErrorBoundary
                       eventKey={'destinationrules'}
-                      message={this.errorBoundaryMessage('Destination Rules')}
+                      message={this.errorBoundaryMessage('目的地规则')}
                     >
                       {(destinationRules.items.length > 0 || this.props.serviceDetails.istioSidecar) && (
                         <ServiceInfoDestinationRules

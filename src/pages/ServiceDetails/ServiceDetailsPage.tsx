@@ -260,20 +260,20 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
           <div>
             <Nav bsClass="nav nav-tabs nav-tabs-pf">
               <NavItem eventKey="info">
-                <div>Info</div>
+                <div>概览</div>
               </NavItem>
               <NavItem eventKey="traffic">
-                <div>Traffic</div>
+                <div>流量</div>
               </NavItem>
               <NavItem eventKey="metrics">
-                <div>Inbound Metrics</div>
+                <div>入站指标</div>
               </NavItem>
               {errorTraces !== undefined &&
                 (this.props.jaegerIntegration ? (
                   <NavItem eventKey="traces">
                     {errorTraces > 0 ? (
                       <>
-                        Error Traces{' '}
+                        错误痕迹{' '}
                         <span>
                           ({errorTraces}
                           {errorTraces > 0 && (
@@ -283,13 +283,13 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
                         </span>
                       </>
                     ) : (
-                      'Traces'
+                      '痕迹'
                     )}
                   </NavItem>
                 ) : (
                   <NavItem onClick={this.navigateToJaeger}>
                     <>
-                      Traces <Icon type={'fa'} name={'external-link'} />
+                      痕迹 <Icon type={'fa'} name={'external-link'} />
                     </>
                   </NavItem>
                 ))}

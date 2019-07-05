@@ -8,7 +8,7 @@ const ServiceListPage: React.SFC<{}> = () => {
   return (
     <>
       <Breadcrumb title={true}>
-        <Breadcrumb.Item active={true}>Services</Breadcrumb.Item>
+        <Breadcrumb.Item active={true}>服务</Breadcrumb.Item>
       </Breadcrumb>
       <ServiceListContainer
         pagination={ListPagesHelper.currentPagination()}

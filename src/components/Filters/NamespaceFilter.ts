@@ -3,13 +3,13 @@ import { FILTER_ACTION_APPEND, FilterType } from '../../types/Filters';
 
 export class NamespaceFilter {
   static id = 'namespaces';
-  static category = 'Namespace';
+  static category = '命名空间';
 
   static create = (): FilterType => {
     return {
       id: NamespaceFilter.id,
       title: NamespaceFilter.category,
-      placeholder: 'Filter by Namespace',
+      placeholder: '按命名空间筛选',
       filterType: 'select',
       action: FILTER_ACTION_APPEND,
       filterValues: [],

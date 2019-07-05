@@ -11,8 +11,8 @@ interface Props {
 
 export default class MetricsReporter extends React.Component<Props> {
   static ReporterOptions: { [key: string]: string } = {
-    destination: 'Destination',
-    source: 'Source'
+    destination: '目的地',
+    source: '资源'
   };
 
   private reporter: Reporter;
@@ -42,7 +42,7 @@ export default class MetricsReporter extends React.Component<Props> {
         id={'metrics_filter_reporter'}
         disabled={false}
         handleSelect={this.onReporterChanged}
-        nameDropdown={'Reported from'}
+        nameDropdown={'报告来自'}
         value={this.reporter}
         initialLabel={MetricsReporter.ReporterOptions[this.reporter]}
         options={MetricsReporter.ReporterOptions}

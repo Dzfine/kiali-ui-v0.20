@@ -72,7 +72,7 @@ class AppDescription extends React.Component<AppDescriptionProps, AppDescription
       <div className="ServiceList-Heading">
         <div className="ServiceList-Title">
           <div className="component-label">
-            Workload{' '}
+            工作负载{' '}
             {!workload.istioSidecar && <MissingSidecar style={{ marginLeft: '10px' }} tooltip={true} text={''} />}
           </div>
           <Link to={this.workloadLink(namespace, workload.workloadName)}>{workload.workloadName}</Link>
@@ -95,7 +95,7 @@ class AppDescription extends React.Component<AppDescriptionProps, AppDescription
     const heading = (
       <div className="ServiceList-Heading">
         <div className="ServiceList-Title">
-          <div className="component-label">Service</div>
+          <div className="component-label">服务</div>
           <Link to={this.serviceLink(namespace, serviceName)}>{serviceName}</Link>
         </div>
       </div>
@@ -111,7 +111,7 @@ class AppDescription extends React.Component<AppDescriptionProps, AppDescription
   }
 
   renderEmptyItem(type: string) {
-    const message = 'No ' + type + ' found for this app.';
+    const message = '找不到此应用的' + type + '。';
     return <ListViewItem description={message} />;
   }
 
@@ -120,7 +120,7 @@ class AppDescription extends React.Component<AppDescriptionProps, AppDescription
     const workloads = this.props.app.workloads;
     return workloads.length > 0
       ? workloads.map(wkd => this.renderWorkloadItem(ns, wkd))
-      : this.renderEmptyItem('workloads');
+      : this.renderEmptyItem('工作负载');
   }
 
   serviceList() {
@@ -128,7 +128,7 @@ class AppDescription extends React.Component<AppDescriptionProps, AppDescription
     const services = this.props.app.serviceNames;
     return services.length > 0
       ? services.map(sn => this.renderServiceItem(ns, this.props.app.name, sn))
-      : this.renderEmptyItem('services');
+      : this.renderEmptyItem('服务');
   }
 
   render() {

@@ -31,20 +31,17 @@ class ServiceInfoVirtualServices extends React.Component<ServiceInfoVirtualServi
         {
           property: 'status',
           header: {
-            label: 'Status',
+            label: '状态',
             formatters: [this.headerFormat]
           },
           cell: {
-            formatters: [this.cellFormat],
-            props: {
-              align: 'text-center'
-            }
+            formatters: [this.cellFormat]
           }
         },
         {
           property: 'name',
           header: {
-            label: 'Name',
+            label: '名称',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -54,7 +51,7 @@ class ServiceInfoVirtualServices extends React.Component<ServiceInfoVirtualServi
         {
           property: 'createdAt',
           header: {
-            label: 'Created at',
+            label: '创建于',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -64,7 +61,7 @@ class ServiceInfoVirtualServices extends React.Component<ServiceInfoVirtualServi
         {
           property: 'resourceVersion',
           header: {
-            label: 'Resource version',
+            label: '资源版本',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -74,7 +71,7 @@ class ServiceInfoVirtualServices extends React.Component<ServiceInfoVirtualServi
         {
           property: 'actions',
           header: {
-            label: 'Actions',
+            label: '操作',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -121,7 +118,7 @@ class ServiceInfoVirtualServices extends React.Component<ServiceInfoVirtualServi
           '?list=yaml'
         }
       >
-        View YAML
+        查看YAML
       </Link>
     );
   }

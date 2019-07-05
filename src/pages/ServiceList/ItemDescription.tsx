@@ -52,14 +52,14 @@ export default class ItemDescription extends React.PureComponent<Props, State> {
     return this.state.health ? (
       <Row>
         <Col xs={12} sm={12} md={4} lg={4}>
-          <strong>Health: </strong>
+          <strong>健康: </strong>
           <HealthIndicator id={this.props.item.name} health={this.state.health} mode={DisplayMode.SMALL} />
         </Col>
         <Col xs={12} sm={12} md={4} lg={4}>
           {!this.props.item.istioSidecar && <MissingSidecar />}
         </Col>
         <Col xs={12} sm={12} md={4} lg={4}>
-          <strong>Config: </strong>{' '}
+          <strong>配置: </strong>{' '}
           <ConfigIndicator
             id={this.props.item.name + '-config-validation'}
             validations={[this.props.item.validation]}

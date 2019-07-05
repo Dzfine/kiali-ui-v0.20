@@ -74,18 +74,19 @@ class DetailedTrafficList extends React.Component<DetailedTrafficProps> {
     return (
       <TableGrid id="table-grid" bordered={true} selectType="none" style={{ clear: 'both' }}>
         <TableGrid.Head>
-          <TableGrid.ColumnHeader {...statusColumnSizes}>Status</TableGrid.ColumnHeader>
+          <TableGrid.ColumnHeader {...statusColumnSizes}>状态</TableGrid.ColumnHeader>
           <TableGrid.ColumnHeader {...workloadColumnSizes}>
-            {this.props.direction === 'inbound' ? 'Source' : 'Destination'}
+            {this.props.direction === 'inbound' ? '资源' : '目的地'}
           </TableGrid.ColumnHeader>
-          <TableGrid.ColumnHeader {...typeColumnSizes}>Type</TableGrid.ColumnHeader>
-          <TableGrid.ColumnHeader {...trafficColumnSizes}>Traffic</TableGrid.ColumnHeader>
+          <TableGrid.ColumnHeader {...typeColumnSizes}>类型</TableGrid.ColumnHeader>
+          <TableGrid.ColumnHeader {...trafficColumnSizes}>流量</TableGrid.ColumnHeader>
         </TableGrid.Head>
         <TableGrid.Body>
           {sortedTraffic.length === 0 && (
             <TableGrid.Row>
               <TableGrid.Col md={10} sm={10} xs={10}>
-                <Icon type="pf" name="info" /> Not enough {this.props.direction} traffic to generate info
+                <Icon type="pf" name="info" /> 没有足够的{this.props.direction === 'inbound' ? '入站' : '出站'}
+                流量去生成信息
               </TableGrid.Col>
             </TableGrid.Row>
           )}
@@ -136,7 +137,7 @@ class DetailedTrafficList extends React.Component<DetailedTrafficProps> {
 
     return (
       <TableGrid.Col {...metricsLinksColumnsSizes}>
-        <Link to={metricsLink}>View metrics</Link>
+        <Link to={metricsLink}>查看指标</Link>
       </TableGrid.Col>
     );
   };

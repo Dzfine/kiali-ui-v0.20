@@ -16,7 +16,7 @@ export namespace ServiceListFilters {
   export const sortFields: SortField<ServiceListItem>[] = [
     {
       id: 'namespace',
-      title: 'Namespace',
+      title: '命名空间',
       isNumeric: false,
       param: 'ns',
       compare: (a: ServiceListItem, b: ServiceListItem) => {
@@ -29,7 +29,7 @@ export namespace ServiceListFilters {
     },
     {
       id: 'servicename',
-      title: 'Service Name',
+      title: '服务名称',
       isNumeric: false,
       param: 'sn',
       compare: (a: ServiceListItem, b: ServiceListItem) => a.name.localeCompare(b.name)
@@ -51,7 +51,7 @@ export namespace ServiceListFilters {
     },
     {
       id: 'health',
-      title: 'Health',
+      title: '健康',
       isNumeric: false,
       param: 'he',
       compare: (a: ServiceItemHealth, b: ServiceItemHealth) => {
@@ -72,8 +72,8 @@ export namespace ServiceListFilters {
 
   const serviceNameFilter: FilterType = {
     id: 'servicename',
-    title: 'Service Name',
-    placeholder: 'Filter by Service Name',
+    title: '服务名称',
+    placeholder: '按服务名称筛选',
     filterType: 'text',
     action: FILTER_ACTION_APPEND,
     filterValues: []
@@ -131,7 +131,7 @@ export namespace ServiceListFilters {
     sortField: SortField<ServiceListItem>,
     isAscending: boolean
   ): Promise<ServiceListItem[]> => {
-    if (sortField.title === 'Health') {
+    if (sortField.title === '健康') {
       // In the case of health sorting, we may not have all health promises ready yet
       // So we need to get them all before actually sorting
       const allHealthPromises: Promise<ServiceItemHealth>[] = services.map(item => {

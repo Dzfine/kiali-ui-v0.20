@@ -116,7 +116,7 @@ export class MetricsSettingsDropdown extends React.Component<Props> {
     return (
       <OverlayTrigger overlay={metricsSettingsPopover} placement="bottom" trigger={['click']} rootClose={true}>
         <Button>
-          Metrics Settings <Icon name="angle-down" />
+          指标设置 <Icon name="angle-down" />
         </Button>
       </OverlayTrigger>
     );
@@ -156,7 +156,7 @@ export class MetricsSettingsDropdown extends React.Component<Props> {
     });
     return (
       <>
-        <label>Show metrics by:</label>
+        <label>显示指标:</label>
         {displayGroupingLabels}
         <div className={spacerStyle} />
       </>
@@ -174,7 +174,7 @@ export class MetricsSettingsDropdown extends React.Component<Props> {
             checked={this.settings.showAverage}
             onChange={event => this.onHistogramAverageChanged(event.target.checked)}
           />
-          <span className={checkboxStyle}>Average</span>
+          <span className={checkboxStyle}>平均</span>
         </label>
       </div>
     )].concat(
@@ -196,7 +196,7 @@ export class MetricsSettingsDropdown extends React.Component<Props> {
     );
     return (
       <>
-        <label>Histograms:</label>
+        <label>柱状图:</label>
         {displayHistogramOptions}
         <div className={spacerStyle} />
       </>

@@ -96,13 +96,13 @@ class ServiceInfoDescription extends React.Component<ServiceInfoDescriptionProps
           <Row>
             <Col xs={12} sm={6} md={5} lg={5}>
               <div className="progress-description">
-                <strong>Labels</strong>
+                <strong>标签</strong>
               </div>
               <div className="label-collection">
                 <Labels labels={this.props.labels || {}} />
               </div>
               <div>
-                <strong>Type</strong> {this.props.type ? this.props.type : ''}
+                <strong>类型</strong> {this.props.type ? this.props.type : ''}
               </div>
               {this.props.type !== ExternalNameType ? (
                 <div>
@@ -110,14 +110,14 @@ class ServiceInfoDescription extends React.Component<ServiceInfoDescriptionProps
                 </div>
               ) : (
                 <div>
-                  <strong>ExternalName</strong> {this.props.externalName ? this.props.externalName : ''}
+                  <strong>外部名</strong> {this.props.externalName ? this.props.externalName : ''}
                 </div>
               )}
               <div>
-                <strong>Created at</strong> <LocalTime time={this.props.createdAt} />
+                <strong>创建于</strong> <LocalTime time={this.props.createdAt} />
               </div>
               <div>
-                <strong>Resource Version</strong> {this.props.resourceVersion}
+                <strong>资源版本</strong> {this.props.resourceVersion}
               </div>
               {this.props.threeScaleServiceRule && this.props.threeScaleServiceRule.threeScaleHandlerName !== '' && (
                 <span>
@@ -132,7 +132,7 @@ class ServiceInfoDescription extends React.Component<ServiceInfoDescriptionProps
                   validations={[this.getValidations()]}
                   size={MEDIUM_SIZE}
                 />
-                <strong>Ports</strong>
+                <strong>端口号</strong>
               </div>
               <ul className={listStyle}>
                 {(this.props.ports || []).map((port, i) => (
@@ -164,7 +164,7 @@ class ServiceInfoDescription extends React.Component<ServiceInfoDescriptionProps
             </Col>
             <Col xs={12} sm={6} md={2} lg={2}>
               <div className="progress-description">
-                <strong>Endpoints</strong>
+                <strong>终端</strong>
               </div>
               {(this.props.endpoints || []).map((endpoint, i) => (
                 <Row key={'endpoint_' + i}>
@@ -182,7 +182,7 @@ class ServiceInfoDescription extends React.Component<ServiceInfoDescriptionProps
             </Col>
             <Col xs={12} sm={6} md={3} lg={3}>
               <div className="progress-description">
-                <strong>Health</strong>
+                <strong>运行状态</strong>
               </div>
               <HealthIndicator
                 id={this.props.name}

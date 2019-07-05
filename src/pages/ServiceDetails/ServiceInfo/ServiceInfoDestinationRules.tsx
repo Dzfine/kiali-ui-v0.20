@@ -33,20 +33,17 @@ class ServiceInfoDestinationRules extends React.Component<ServiceInfoDestination
         {
           property: 'status',
           header: {
-            label: 'Status',
+            label: '状态',
             formatters: [this.headerFormat]
           },
           cell: {
-            formatters: [this.cellFormat],
-            props: {
-              align: 'text-center'
-            }
+            formatters: [this.cellFormat]
           }
         },
         {
           property: 'name',
           header: {
-            label: 'Name',
+            label: '名称',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -56,7 +53,7 @@ class ServiceInfoDestinationRules extends React.Component<ServiceInfoDestination
         {
           property: 'trafficPolicy',
           header: {
-            label: 'Traffic Policy',
+            label: '流量策略',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -66,7 +63,7 @@ class ServiceInfoDestinationRules extends React.Component<ServiceInfoDestination
         {
           property: 'subsets',
           header: {
-            label: 'Subsets',
+            label: '子集',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -76,7 +73,7 @@ class ServiceInfoDestinationRules extends React.Component<ServiceInfoDestination
         {
           property: 'host',
           header: {
-            label: 'Host',
+            label: '主机',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -86,7 +83,7 @@ class ServiceInfoDestinationRules extends React.Component<ServiceInfoDestination
         {
           property: 'createdAt',
           header: {
-            label: 'Created at',
+            label: '创建于',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -96,7 +93,7 @@ class ServiceInfoDestinationRules extends React.Component<ServiceInfoDestination
         {
           property: 'resourceVersion',
           header: {
-            label: 'Resource version',
+            label: '资源版本',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -106,7 +103,7 @@ class ServiceInfoDestinationRules extends React.Component<ServiceInfoDestination
         {
           property: 'actions',
           header: {
-            label: 'Actions',
+            label: '操作',
             formatters: [this.headerFormat]
           },
           cell: {
@@ -128,7 +125,7 @@ class ServiceInfoDestinationRules extends React.Component<ServiceInfoDestination
           '?list=yaml'
         }
       >
-        View YAML
+        查看YAML
       </Link>
     );
   }
