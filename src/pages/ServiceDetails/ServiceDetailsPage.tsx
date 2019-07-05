@@ -186,13 +186,13 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
               });
               // Only log 500 errors. 404 response is a valid response on this composition case
               if (error.response && error.response.status >= 500) {
-                MessageCenter.add(API.getErrorMsg('Could not fetch ThreeScaleServiceRule', error));
+                MessageCenter.add(API.getErrorMsg('无法获取第三标度服务规则', error));
               }
             });
         }
       })
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not fetch Service Details', error));
+        MessageCenter.add(API.getErrorMsg('无法获取服务详细信息', error));
       });
   };
 
@@ -273,7 +273,7 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
                   <NavItem eventKey="traces">
                     {errorTraces > 0 ? (
                       <>
-                        错误痕迹{' '}
+                        错误链接{' '}
                         <span>
                           ({errorTraces}
                           {errorTraces > 0 && (
@@ -283,13 +283,13 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
                         </span>
                       </>
                     ) : (
-                      '痕迹'
+                      '链接'
                     )}
                   </NavItem>
                 ) : (
                   <NavItem onClick={this.navigateToJaeger}>
                     <>
-                      痕迹 <Icon type={'fa'} name={'external-link'} />
+                      链接 <Icon type={'fa'} name={'external-link'} />
                     </>
                   </NavItem>
                 ))}

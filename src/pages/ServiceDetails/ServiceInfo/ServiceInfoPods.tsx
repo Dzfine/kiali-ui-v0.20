@@ -60,14 +60,14 @@ class ServiceInfoPods extends React.Component<Props, ServiceInfoPodsState> {
                   <span>
                     {group.createdAtStart === group.createdAtEnd ? (
                       <>
-                        <strong>Created at: </strong>
+                        <strong>创建时间: </strong>
                         {new Date(group.createdAtStart).toLocaleString()}
                       </>
                     ) : (
                       <>
-                        <strong>Created between: </strong>
+                        <strong>创建时间: </strong>
                         {new Date(group.createdAtStart).toLocaleString() +
-                          ' and ' +
+                          ' 到 ' +
                           new Date(group.createdAtEnd).toLocaleString()}
                       </>
                     )}
@@ -76,7 +76,7 @@ class ServiceInfoPods extends React.Component<Props, ServiceInfoPodsState> {
                 {group.createdBy.length > 0 && (
                   <div>
                     <span>
-                      <strong>Created by: </strong>
+                      <strong>创建者: </strong>
                       {group.createdBy.map(ref => ref.name + ' (' + ref.kind + ')').join(', ')}
                     </span>
                   </div>
@@ -84,7 +84,7 @@ class ServiceInfoPods extends React.Component<Props, ServiceInfoPodsState> {
                 {group.istioInitContainers && (
                   <div>
                     <span>
-                      <strong>Istio init containers: </strong>
+                      <strong>Istio初始化容器: </strong>
                       {group.istioInitContainers.map(c => `${c.name} [${c.image}]`).join(', ')}
                     </span>
                   </div>
@@ -92,7 +92,7 @@ class ServiceInfoPods extends React.Component<Props, ServiceInfoPodsState> {
                 {group.istioContainers && (
                   <div>
                     <span>
-                      <strong>Istio containers: </strong>
+                      <strong>Istio容器: </strong>
                       {group.istioContainers.map(c => `${c.name} [${c.image}]`).join(', ')}
                     </span>
                   </div>
