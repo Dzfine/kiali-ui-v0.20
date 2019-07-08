@@ -86,12 +86,12 @@ class Rules extends React.Component<Props> {
       });
       const ruleActions = (
         <>
-          <Button onClick={() => this.props.onRemoveRule(index)}>Remove</Button>
+          <Button onClick={() => this.props.onRemoveRule(index)}>移除</Button>
           {this.props.rules.length > 1 && (
             <DropdownKebab key={'move-rule-actions-' + index} id={'move-rule-actions-' + index} pullRight={true}>
-              {index > 0 && <MenuItem onClick={() => this.props.onMoveRule(index, MOVE_TYPE.UP)}>Move Up</MenuItem>}
+              {index > 0 && <MenuItem onClick={() => this.props.onMoveRule(index, MOVE_TYPE.UP)}>上移</MenuItem>}
               {index + 1 < this.props.rules.length && (
-                <MenuItem onClick={() => this.props.onMoveRule(index, MOVE_TYPE.DOWN)}>Move Down</MenuItem>
+                <MenuItem onClick={() => this.props.onMoveRule(index, MOVE_TYPE.DOWN)}>下移</MenuItem>
               )}
             </DropdownKebab>
           )}
@@ -104,14 +104,14 @@ class Rules extends React.Component<Props> {
           leftContent={<ListViewIcon type={vsIconType} name={vsIconName} />}
           heading={
             <>
-              Matches:
-              {rule.matches.length === 0 && <div className={matchValueStyle}>Any request</div>}
+              匹配:
+              {rule.matches.length === 0 && <div className={matchValueStyle}>任务请求</div>}
               {rule.matches.length !== 0 && matches}
             </>
           }
           description={
             <>
-              <b>Route to:</b>
+              <b>路由到:</b>
               {rule.routes.map(route => (
                 <div key={'route-to-' + route}>
                   <span>
@@ -122,9 +122,9 @@ class Rules extends React.Component<Props> {
               ))}
               {!isValid && (
                 <div className={validationStyle}>
-                  Match 'Any request' is defined in a previous rule.
+                  匹配“任何请求”在前面的规则中定义。
                   <br />
-                  This rule is not accessible.
+                  此规则不可访问。
                 </div>
               )}
             </>

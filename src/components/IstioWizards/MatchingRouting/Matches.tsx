@@ -26,11 +26,7 @@ class Matches extends React.Component<Props> {
         </Label>{' '}
       </span>
     ));
-    return (
-      <div className={labelContainerStyle}>
-        Matching selected: {matches.length > 0 ? matches : <b>Match any request</b>}
-      </div>
-    );
+    return <div className={labelContainerStyle}>匹配选择: {matches.length > 0 ? matches : <b>匹配任何请求</b>}</div>;
   }
 }
 

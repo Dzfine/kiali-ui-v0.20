@@ -77,8 +77,8 @@ class TrafficPolicy extends React.Component<Props> {
     return (
       <ExpandCollapse
         className={expandStyle}
-        textCollapsed="Show Advanced Options"
-        textExpanded="Hide Advanced Options"
+        textCollapsed="显示高级选项"
+        textExpanded="隐藏高级选项"
         expanded={this.props.expanded}
       >
         <Row>
@@ -94,7 +94,7 @@ class TrafficPolicy extends React.Component<Props> {
             >
               {tlsMenuItems}
             </DropdownButton>
-            <ControlLabel className={lbStyle}>LoadBalancer</ControlLabel>
+            <ControlLabel className={lbStyle}>负载均衡</ControlLabel>
             <DropdownButton
               bsStyle="default"
               title={this.props.loadBalancer}
