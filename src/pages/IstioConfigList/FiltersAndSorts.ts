@@ -91,35 +91,35 @@ export namespace IstioConfigListFilters {
     filterValues: [
       {
         id: 'Gateway',
-        title: '网关'
+        title: 'Gateway'
       },
       {
         id: 'VirtualService',
-        title: '虚拟服务'
+        title: 'VirtualService'
       },
       {
         id: 'DestinationRule',
-        title: '目标地址规则'
+        title: 'DestinationRule'
       },
       {
         id: 'ServiceEntry',
-        title: '服务入口'
+        title: 'ServiceEntry'
       },
       {
         id: 'Rule',
-        title: '规则'
+        title: 'Rule'
       },
       {
         id: 'Adapter',
-        title: '适配器'
+        title: 'Adapter'
       },
       {
         id: 'Template',
-        title: '模板'
+        title: 'Template'
       },
       {
         id: 'QuotaSpec',
-        title: '限额说明'
+        title: 'QuotaSpec'
       },
       {
         id: 'QuotaSpecBinding',
@@ -127,11 +127,11 @@ export namespace IstioConfigListFilters {
       },
       {
         id: 'Policy',
-        title: '决策'
+        title: 'Policy'
       },
       {
         id: 'MeshPolicy',
-        title: '网格决策'
+        title: 'MeshPolicy'
       },
       {
         id: 'ClusterRbacConfig',
@@ -143,7 +143,7 @@ export namespace IstioConfigListFilters {
       },
       {
         id: 'ServiceRole',
-        title: '服务角色'
+        title: 'ServiceRole'
       },
       {
         id: 'ServiceRoleBinding',
