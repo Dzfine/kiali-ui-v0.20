@@ -58,7 +58,7 @@ export const getFilterSelectedValues = (filter: FilterType, activeFilters: Activ
 export const getPresenceFilterValue = (filter: FilterType, activeFilters: ActiveFilter[]): boolean | undefined => {
   const presenceFilters = activeFilters.filter(activeFilter => activeFilter.category === filter.title);
   if (presenceFilters.length > 0) {
-    return presenceFilters[0].value === 'Present';
+    return presenceFilters[0].value === '存在';
   }
   return undefined;
 };

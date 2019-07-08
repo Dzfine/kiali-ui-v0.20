@@ -544,8 +544,8 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
         {this.renderHandlers()}
         <ExpandCollapse
           className={expandStyle}
-          textCollapsed="Show Advanced Options"
-          textExpanded="Hide Advanced Options"
+          textCollapsed="显示高级选项"
+          textExpanded="隐藏高级选项"
           expanded={this.state.threeScaleHandlers.length === 0 || this.state.newThreeScaleHandler.name !== ''}
         >
           {this.renderCreateHandler()}

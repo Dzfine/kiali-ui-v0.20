@@ -132,7 +132,7 @@ class SuspendTraffic extends React.Component<Props, State> {
     return (
       <>
         <ListView className={listStyle}>
-          <ListViewItem className={listHeaderStyle} heading={'Workload'} description={'Suspended Status'} />
+          <ListViewItem className={listHeaderStyle} heading={'工作负载'} description={'暂停状态'} />
           {this.state.suspendedRoutes.map((route, id) => {
             return (
               <ListViewItem
@@ -143,7 +143,7 @@ class SuspendTraffic extends React.Component<Props, State> {
                   <Row>
                     <Col xs={12} sm={12} md={4} lg={4} />
                     <Col xs={12} sm={12} md={2} lg={2}>
-                      {route.suspended ? 'Suspended' : 'Connected'}
+                      {route.suspended ? '暂停' : '连接'}
                     </Col>
                     <Col xs={12} sm={12} md={2} lg={2}>
                       <Button bsSize="xsmall" onClick={() => this.updateRoute(route.workload, !route.suspended)}>
@@ -160,10 +160,10 @@ class SuspendTraffic extends React.Component<Props, State> {
         {this.props.workloads.length > 1 && (
           <div className={evenlyButtonStyle}>
             <Button className={allButtonStyle} onClick={() => this.resetState()}>
-              Connect All
+              连接所有
             </Button>
             <Button className={allButtonStyle} onClick={() => this.suspendAll()}>
-              Suspend All
+              暂停所有
             </Button>
           </div>
         )}

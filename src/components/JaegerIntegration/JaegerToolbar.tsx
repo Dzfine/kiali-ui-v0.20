@@ -196,7 +196,7 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
             </>
           )}
         </Grid>
-        <ExpandCollapse textCollapsed="Show Advanced Options" textExpanded="Hide Advanced Options">
+        <ExpandCollapse textCollapsed="显示高级选项" textExpanded="隐藏高级选项">
           <Grid>
             <GridItem span={7}>
               <TagsControl tags={this.state.tags} onChange={value => this.setState({ tags: value })} />

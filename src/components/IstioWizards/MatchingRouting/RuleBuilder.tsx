@@ -65,19 +65,19 @@ class RuleBuilder extends React.Component<Props> {
           description={
             <>
               <>
-                Matches:
+                匹配:
                 <MatchBuilder {...this.props} />
                 <Matches {...this.props} />
               </>
               <div className={routeStyle}>
-                Routes:
+                路由:
                 <Form>
                   <FormGroup validationState={this.props.isValid ? 'success' : 'error'}>
                     <TypeAheadSelect
                       id="workloads-selector"
                       multiple={true}
                       clearButton={true}
-                      placeholder="Select workloads"
+                      placeholder="选择工作负载"
                       labelKey="workloadName"
                       defaultSelected={this.props.routes}
                       options={this.props.workloads.map(wk => wk.name)}
@@ -97,7 +97,7 @@ class RuleBuilder extends React.Component<Props> {
               disabled={!this.props.isValid}
               onClick={this.props.onAddRule}
             >
-              Add Rule
+              添加路由
             </Button>
           }
         />

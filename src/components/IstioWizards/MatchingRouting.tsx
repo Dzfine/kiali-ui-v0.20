@@ -22,10 +22,10 @@ type State = {
   validationMsg: string;
 };
 
-const MSG_SAME_MATCHING = 'A Rule with same matching criteria is already added.';
-const MSG_HEADER_NAME_NON_EMPTY = 'Header name must be non empty';
-const MSG_HEADER_VALUE_NON_EMPTY = 'Header value must be non empty';
-const MSG_ROUTES_NON_EMPTY = 'Routes must be non empty';
+const MSG_SAME_MATCHING = '已经添加了具有相同匹配条件的规则。';
+const MSG_HEADER_NAME_NON_EMPTY = 'Header名称必须非空';
+const MSG_HEADER_VALUE_NON_EMPTY = 'Header值必须非空';
+const MSG_ROUTES_NON_EMPTY = '路由必须非空';
 
 class MatchingRouting extends React.Component<Props, State> {
   constructor(props: Props) {

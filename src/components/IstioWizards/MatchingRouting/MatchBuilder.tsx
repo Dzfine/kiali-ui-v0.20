@@ -30,11 +30,11 @@ export const REGEX = 'regex';
 const opOptions: string[] = [EXACT, PREFIX, REGEX];
 
 const placeholderText = {
-  [HEADERS]: 'Header value...',
-  [URI]: 'Uri value...',
-  [SCHEME]: 'Scheme value...',
-  [METHOD]: 'Method value...',
-  [AUTHORITY]: 'Authority value...'
+  [HEADERS]: 'Header值...',
+  [URI]: 'Uri值...',
+  [SCHEME]: 'Scheme值...',
+  [METHOD]: 'Method值...',
+  [AUTHORITY]: 'Authority值...'
 };
 
 const matchStyle = style({
@@ -72,7 +72,7 @@ class MatchBuilder extends React.Component<Props> {
             <FormControl
               type="text"
               id="header-name-text"
-              placeholder={'Header name...'}
+              placeholder={'Header名称...'}
               value={this.props.headerName}
               onChange={this.props.onHeaderNameChange}
             />
@@ -98,7 +98,7 @@ class MatchBuilder extends React.Component<Props> {
             disabled={!this.props.isValid}
             onClick={this.props.onAddMatch}
           >
-            Add Match
+            添加匹配规则
           </Button>
         </FormGroup>
       </Form>

@@ -191,7 +191,7 @@ class WeightedRouting extends React.Component<Props, State> {
     return (
       <>
         <ListView className={listStyle}>
-          <ListViewItem className={listHeaderStyle} heading={'Workload'} description={'Traffic Weight'} />
+          <ListViewItem className={listHeaderStyle} heading={'工作负载'} description={'流量权重'} />
           {this.state.workloads.map((workload, id) => {
             return (
               <ListViewItem
@@ -224,11 +224,11 @@ class WeightedRouting extends React.Component<Props, State> {
         {this.props.workloads.length > 1 && (
           <div className={evenlyButtonStyle}>
             <Button className={resetStyle} onClick={() => this.resetState()}>
-              Evenly distribute traffic
+              均匀分布流量
             </Button>
           </div>
         )}
-        {!isValid && <div className={validationStyle}>The sum of all weights must be 100 %</div>}
+        {!isValid && <div className={validationStyle}>所有权重的和必须是100%</div>}
       </>
     );
   }
