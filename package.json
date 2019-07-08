@@ -90,6 +90,7 @@
     "react-flexview": "4.0.3",
     "react-floater": "0.6.4",
     "react-iframe": "1.5.0",
+    "react-intl-universal": "^2.1.1",
     "react-redux": "5.1.1",
     "react-resize-detector": "3.4.0",
     "react-router-dom": "4.3.1",

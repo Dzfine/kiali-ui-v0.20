@@ -155,10 +155,10 @@ export const filterByConfigValidation = (unfiltered: IstioConfigItem[], configFi
   }
   const filtered: IstioConfigItem[] = [];
 
-  const filterByValid = configFilters.indexOf('Valid') > -1;
-  const filterByNotValid = configFilters.indexOf('Not Valid') > -1;
-  const filterByNotValidated = configFilters.indexOf('Not Validated') > -1;
-  const filterByWarning = configFilters.indexOf('Warning') > -1;
+  const filterByValid = configFilters.indexOf('有效') > -1;
+  const filterByNotValid = configFilters.indexOf('无效') > -1;
+  const filterByNotValidated = configFilters.indexOf('未验证') > -1;
+  const filterByWarning = configFilters.indexOf('警告') > -1;
   if (filterByValid && filterByNotValid && filterByNotValidated && filterByWarning) {
     return unfiltered;
   }
