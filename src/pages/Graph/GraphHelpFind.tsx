@@ -431,12 +431,12 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                           { id: 'e40', e: '!sc', d: `没有sidecar的节点` },
                           { id: 'e50', e: 'httpin > 0.5', d: `传入http速率 > 0.5 rps的节点` },
                           { id: 'e60', e: 'tcpout >= 1000', d: `输出tcp速率 >= 1000 bps的节点` },
-                          { id: 'e65', e: '!traffic', d: 'edges with no traffic' },
-                          { id: 'e70', e: 'http > 0.5', d: `edges with http rate > 0.5 rps` },
+                          { id: 'e65', e: '!traffic', d: '无流量' },
+                          { id: 'e70', e: 'http > 0.5', d: `http速率大于0.5rps` },
                           {
                             id: 'e80',
                             e: 'rt > 500',
-                            d: `edges with response time > 500ms. (requires response time edge labels)`
+                            d: `响应时间大于500毫秒（需要响应时间边缘标签）`
                           },
                           {
                             id: 'e90',

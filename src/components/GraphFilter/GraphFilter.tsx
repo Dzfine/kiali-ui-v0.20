@@ -147,7 +147,7 @@ export class GraphFilter extends React.PureComponent<GraphFilterProps> {
         <Toolbar>
           <FormGroup className={alignLeftStyle} style={{ ...ThinStyle }}>
             {this.props.node ? (
-              <Button onClick={this.handleNamespaceReturn}>Back to full {GraphFilter.GRAPH_TYPES[graphTypeKey]}</Button>
+              <Button onClick={this.handleNamespaceReturn}>回到完整的 {GraphFilter.GRAPH_TYPES[graphTypeKey]}</Button>
             ) : (
               <ToolbarDropdown
                 id={'graph_filter_view_type'}

@@ -33,8 +33,7 @@ interface AuthenticationControllerState {
 
 class AuthenticationController extends React.Component<AuthenticationControllerProps, AuthenticationControllerState> {
   static readonly PostLoginErrorMsg =
-    'You are logged in, but there was a problem when fetching some required server ' +
-    'configurations. Please, try refreshing the page.';
+    '您已登录，但在获取某些必需的服务器配置时出现问题。请尝试刷新页面。';
 
   constructor(props: AuthenticationControllerProps) {
     super(props);
@@ -85,12 +84,12 @@ class AuthenticationController extends React.Component<AuthenticationControllerP
       const getStatusPromise = API.getStatus()
         .then(response => this.props.setServerStatus(response.data))
         .catch(error => {
-          MessageCenter.add(API.getErrorMsg('Error fetching status.', error), 'default', MessageType.WARNING);
+          MessageCenter.add(API.getErrorMsg('无法获取状态。', error), 'default', MessageType.WARNING);
         });
       const getGrafanaInfoPromise = API.getGrafanaInfo()
         .then(response => this.props.setGrafanaInfo(response.data))
         .catch(error => {
-          MessageCenter.add(API.getErrorMsg('Error fetching Grafana Info.', error), 'default', MessageType.WARNING);
+          MessageCenter.add(API.getErrorMsg('无法获取Grafana信息。', error), 'default', MessageType.WARNING);
         });
 
       const configs = await Promise.all([API.getServerConfig(), getStatusPromise, getGrafanaInfoPromise]);
@@ -98,7 +97,7 @@ class AuthenticationController extends React.Component<AuthenticationControllerP
 
       this.setState({ stage: 'logged-in' });
     } catch (err) {
-      console.error('Error on post-login actions.', err);
+      console.error('登录后操作出错。', err);
       this.setState({ isPostLoginError: true });
     }
   };
