@@ -33,10 +33,10 @@ export interface SummaryPanelPropType {
 }
 
 export enum GraphType {
-  APP = '应用图表',
-  SERVICE = '服务图表',
-  VERSIONED_APP = '版本化应用',
-  WORKLOAD = '工作负载图表'
+  APP = 'app',
+  SERVICE = 'service',
+  VERSIONED_APP = 'versionedApp',
+  WORKLOAD = 'workload'
 }
 
 export enum GroupByType {
