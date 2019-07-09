@@ -91,9 +91,9 @@ const GraphDataThunkActions = {
               return;
             }
             if (error.response && error.response.data && error.response.data.error) {
-              emsg = 'ÎÞ·¨¼ÓÔØÍ¼±í: ' + error.response.data.error;
+              emsg = 'æ— æ³•åŠ è½½å›¾è¡¨ï¼š' + error.response.data.error;
             } else {
-              emsg = 'ÎÞ·¨¼ÓÔØÍ¼±í: ' + error.toString();
+              emsg = 'æ— æ³•åŠ è½½å›¾è¡¨ï¼š' + error.toString();
             }
             dispatch(MessageCenterActions.addMessage(emsg));
             dispatch(GraphDataActions.getGraphDataFailure(emsg));
@@ -116,9 +116,9 @@ const GraphDataThunkActions = {
             return;
           }
           if (error.response && error.response.data && error.response.data.error) {
-            emsg = 'ÎÞ·¨¼ÓÔØÍ¼±í: ' + error.response.data.error;
+            emsg = 'æ— æ³•åŠ è½½å›¾è¡¨ï¼š' + error.response.data.error;
           } else {
-            emsg = 'ÎÞ·¨¼ÓÔØÍ¼±í: ' + error.toString();
+            emsg = 'æ— æ³•åŠ è½½å›¾è¡¨ï¼š' + error.toString();
           }
           dispatch(MessageCenterActions.addMessage(emsg));
           dispatch(GraphDataActions.getGraphDataFailure(emsg));
