@@ -59,7 +59,7 @@ export class GraphFilter extends React.PureComponent<GraphFilterProps> {
    *
    *  Example:  GraphType => {'APP': 'App', 'VERSIONED_APP': 'VersionedApp'}
    */
-  static readonly GRAPH_TYPES = _.mapValues(GraphType, val => `${_.capitalize(_.startCase(val))} graph`);
+  static readonly GRAPH_TYPES = _.mapValues(GraphType, val => `${_.capitalize(_.startCase(val))} 图表`);
 
   /**
    *  Key-value pair object representation of EdgeLabelMode
@@ -67,7 +67,7 @@ export class GraphFilter extends React.PureComponent<GraphFilterProps> {
    *  Example:  EdgeLabelMode =>{'TRAFFIC_RATE_PER_SECOND': 'TrafficRatePerSecond'}
    */
   static readonly EDGE_LABEL_MODES = _.mapValues(_.omitBy(EdgeLabelMode, _.isFunction), val =>
-    _.capitalize(_.startCase(val as EdgeLabelMode))
+    _.capitalize(val as EdgeLabelMode)
   );
 
   static contextTypes = {

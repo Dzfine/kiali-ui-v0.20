@@ -82,7 +82,7 @@ export class EmptyGraphLayout extends React.Component<EmptyGraphLayoutProps, Emp
             .slice(0, -1)
             .map(namespace => namespace.name)
             .join(',') +
-          ' and ' +
+          ' 和 ' +
           this.props.namespaces[this.props.namespaces.length - 1].name;
         return (
           <>
