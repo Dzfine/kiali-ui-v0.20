@@ -12,7 +12,7 @@ import GraphPageContainer from './pages/Graph/GraphPage';
 import { icons, Paths } from './config';
 import ServiceDetailsPageContainer from './pages/ServiceDetails/ServiceDetailsPage';
 import DefaultSecondaryMasthead from './components/DefaultSecondaryMasthead/DefaultSecondaryMasthead';
-
+import intl from './locales/KiwiInit';
 /**
  * Return array of objects that describe vertical menu
  * @return {array}
@@ -20,43 +20,43 @@ import DefaultSecondaryMasthead from './components/DefaultSecondaryMasthead/Defa
 const navItems: MenuItem[] = [
   {
     iconClass: icons.menu.overview,
-    title: '概览',
+    title: intl.get('menu.overview'),
     to: '/overview',
     pathsActive: [/^\/overview\/(.*)/]
   },
   {
     iconClass: icons.menu.graph,
-    title: '图表',
+    title: intl.get('menu.graph'),
     to: '/graph/namespaces/',
     pathsActive: [/^\/graph\/(.*)/]
   },
   {
     iconClass: icons.menu.applications,
-    title: '应用列表',
+    title: intl.get('menu.applications'),
     to: '/' + Paths.APPLICATIONS,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.APPLICATIONS + '/(.*)')]
   },
   {
     iconClass: icons.menu.workloads,
-    title: '工作负载列表',
+    title: intl.get('menu.workloads'),
     to: '/' + Paths.WORKLOADS,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.WORKLOADS + '/(.*)')]
   },
   {
     iconClass: icons.menu.services,
-    title: '服务列表',
+    title: intl.get('menu.services'),
     to: '/' + Paths.SERVICES,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.SERVICES + '/(.*)')]
   },
   {
     iconClass: icons.menu.istioConfig,
-    title: 'Istio配置列表',
+    title: intl.get('menu.istioConfig'),
     to: '/' + Paths.ISTIO,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.ISTIO + '/(.*)')]
   },
   {
     iconClass: icons.menu.distributedTracing,
-    title: '分布式追踪',
+    title: intl.get('menu.distributedTracing'),
     to: '/jaeger'
   }
 ];
