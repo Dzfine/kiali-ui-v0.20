@@ -41,15 +41,15 @@ export class SessionTimeout extends React.Component<SessionTimeoutProps, {}> {
         <Modal.Footer>
           <React.Fragment>
             <Button bsStyle={'default'} onClick={this.props.onLogout}>
-              Log Out
+              退出登录
             </Button>
             {authenticationConfig.strategy === AuthStrategy.login ? (
               <Button autoFocus={true} bsStyle={'primary'} onClick={this.extendSessionHandler}>
-                Continue Session
+                继续当前会话
               </Button>
             ) : (
               <Button autoFocus={true} bsStyle={'primary'} onClick={this.props.onDismiss}>
-                OK
+                确定
               </Button>
             )}
           </React.Fragment>
@@ -70,13 +70,11 @@ export class SessionTimeout extends React.Component<SessionTimeoutProps, {}> {
   private textForAuthStrategy = (strategy: AuthStrategy) => {
     const line1 =
       this.props.timeOutCountDown <= 0
-        ? 'Your session has expired.'
-        : `Your session will expire in ${this.props.timeOutCountDown.toFixed()} seconds.`;
+        ? '当前会话已过期。'
+        : `您的会话将于 ${this.props.timeOutCountDown.toFixed()} 秒后过期。`;
 
     const line2 =
-      strategy === AuthStrategy.openshift
-        ? 'You will need to re-login with your cluster credentials. Please save your changes, if any.'
-        : 'Would you like to extend your session?';
+      strategy === AuthStrategy.openshift ? '您需要提供集群凭证进行重新登录。请保存修改。' : '是否想要延长您的会话？';
 
     return (
       <p className={'lead'}>
