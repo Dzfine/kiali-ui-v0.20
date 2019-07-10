@@ -17,31 +17,18 @@ const conf = {
     /** Options in refresh */
     pollInterval: {
       0: '暂停',
-      10000: '每隔10s',
-      15000: '每隔15s',
-      30000: '每隔30s',
-      60000: '每隔1min',
-      300000: '每隔5min',
-      900000: '每隔15min'
+      10000: '每隔10秒',
+      15000: '每隔15秒',
+      30000: '每隔30秒',
+      60000: '每隔1分钟',
+      300000: '每隔5分钟',
+      900000: '每隔15分钟'
     },
     /** Graphs layouts types */
     graphLayouts: {
       cola: 'Cola',
       'cose-bilkent': 'Cose',
       dagre: 'Dagre'
-    }
-  },
-  /** About dialog configuration */
-  about: {
-    project: {
-      url: 'https://github.com/kiali',
-      icon: 'RepositoryIcon',
-      linkText: 'Find us on GitHub'
-    },
-    website: {
-      url: 'http://kiali.io',
-      icon: 'HomeIcon',
-      linkText: 'Visit our web page'
     }
   },
   /**  Login configuration */

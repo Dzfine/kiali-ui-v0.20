@@ -79,7 +79,7 @@ class AppDetails extends React.Component<RouteComponentProps<AppId>, AppDetailsS
       })
       .then(health => this.setState({ health: health }))
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not fetch App Details', error));
+        MessageCenter.add(API.getErrorMsg('无法获取应用信息', error));
       });
   };
 

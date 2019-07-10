@@ -44,7 +44,7 @@ type DebugInformationData = {
 };
 
 const copyToClipboardOptions = {
-  message: 'We failed to automatically copy the text, please use: #{key}, Enter\t'
+  message: '我们无法自动复制文本，请使用：＃{key}，回车\t'
 };
 
 export class DebugInformation extends React.PureComponent<DebugInformationProps, DebugInformationState> {
@@ -108,24 +108,24 @@ export class DebugInformation extends React.PureComponent<DebugInformationProps,
     return (
       <Modal show={this.state.show} onHide={this.close}>
         <Modal.Header>
-          <button className="close" onClick={this.close} aria-hidden="true" aria-label="Close">
+          <button className="close" onClick={this.close} aria-hidden="true" aria-label="关闭">
             <Icon type="pf" name="close" />
           </button>
-          <Modal.Title>Debug information</Modal.Title>
+          <Modal.Title>调试信息</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {this.state.copyStatus === CopyStatus.COPIED && (
             <Alert type="success" onDismiss={this.hideAlert}>
-              Debug information has been copied to your clipboard.
+              调试信息已复制到剪贴板。
             </Alert>
           )}
           {this.state.copyStatus === CopyStatus.OLD_COPY && (
             <Alert type="warning" onDismiss={this.hideAlert}>
-              Debug information was copied to your clipboard, but is outdated now. It could be caused by new data
-              received by auto refresh timers.
+              调试信息已复制到剪贴板，但现在已过时。
+              这可能是由自动刷新计时器收到的新数据引起的。
             </Alert>
           )}
-          <span>Please include this information when opening a bug.</span>
+          <span>打开错误时请包含此信息。</span>
           <CopyToClipboard onCopy={this.copyCallback} text={renderDebugInformation()} options={copyToClipboardOptions}>
             <textarea
               ref={this.textareaRef}
@@ -138,7 +138,7 @@ export class DebugInformation extends React.PureComponent<DebugInformationProps,
         <Modal.Footer>
           <Button onClick={this.close}>Close</Button>
           <CopyToClipboard onCopy={this.copyCallback} text={renderDebugInformation()} options={copyToClipboardOptions}>
-            <Button bsStyle="primary">Copy</Button>
+            <Button bsStyle="primary">复制</Button>
           </CopyToClipboard>
         </Modal.Footer>
       </Modal>

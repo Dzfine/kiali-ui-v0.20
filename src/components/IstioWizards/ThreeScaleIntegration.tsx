@@ -110,7 +110,7 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
         );
       })
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not fetch ThreeScaleHandlers', error));
+        MessageCenter.add(API.getErrorMsg('无法获取监控套件适配器', error));
       });
   };
 
@@ -143,7 +143,7 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
         );
       })
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not update ThreeScaleHandlers', error));
+        MessageCenter.add(API.getErrorMsg('无法修改监控套件适配器', error));
       });
   };
 
@@ -176,7 +176,7 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
         );
       })
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not delete ThreeScaleHandlers', error));
+        MessageCenter.add(API.getErrorMsg('无法删除监控套件适配器', error));
       });
   };
 
@@ -270,7 +270,7 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
         );
       })
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Could not create ThreeScaleHandlers', error));
+        MessageCenter.add(API.getErrorMsg('无法创建监控套件适配器', error));
       });
   };
 
@@ -301,7 +301,7 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
             <>
               {!isLinked && <Button onClick={() => this.onSelectHandler(handler.name)}>Select</Button>}
               <DropdownKebab key={'delete-handler-actions-' + id} id={'delete-handler-actions-' + id} pullRight={true}>
-                <MenuItem onClick={() => this.onDeleteHandler(handler.name)}>Delete Handler</MenuItem>
+                <MenuItem onClick={() => this.onDeleteHandler(handler.name)}>删除适配器</MenuItem>
               </DropdownKebab>
             </>
           );
@@ -316,20 +316,20 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
                   <div>
                     {handler.name} {handler.modified && '*'}
                   </div>
-                  <div className={headingStyle}>3scale Handler</div>
+                  <div className={headingStyle}>3scale适配器</div>
                 </>
               }
               description={
                 <>
                   {isLinked && (
                     <>
-                      Service <b>{this.props.serviceName}</b> will be linked with 3scale API
+                      服务<b>{this.props.serviceName}</b>将与3scale API关联
                     </>
                   )}
                   <br />
-                  Service Id: <i>{handler.serviceId}</i>
+                  服务Id: <i>{handler.serviceId}</i>
                   <br />
-                  System Url: <i>{handler.systemUrl}</i>
+                  系统Url: <i>{handler.systemUrl}</i>
                 </>
               }
               actions={handlerActions}
@@ -341,12 +341,12 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
                   validationState={handler.serviceId !== '' ? 'success' : 'error'}
                 >
                   <Col componentClass={ControlLabel} sm={2}>
-                    Service Id:
+                    服务Id:
                   </Col>
                   <Col sm={8}>
                     <OverlayTrigger
                       placement={'right'}
-                      overlay={<Tooltip id={'mtls-status-masthead'}>3scale ID for API calls</Tooltip>}
+                      overlay={<Tooltip id={'mtls-status-masthead'}>3scale ID提供给API调用</Tooltip>}
                       trigger={['hover', 'focus']}
                       rootClose={false}
                     >
@@ -365,12 +365,12 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
                   validationState={handler.systemUrl !== '' ? 'success' : 'error'}
                 >
                   <Col componentClass={ControlLabel} sm={2}>
-                    System Url:
+                    系统Url:
                   </Col>
                   <Col sm={8}>
                     <OverlayTrigger
                       placement={'right'}
-                      overlay={<Tooltip id={'mtls-status-masthead'}>3scale System Url for API</Tooltip>}
+                      overlay={<Tooltip id={'mtls-status-masthead'}>用于API的3scale系统Url</Tooltip>}
                       trigger={['hover', 'focus']}
                       rootClose={false}
                     >
@@ -389,12 +389,12 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
                   validationState={handler.accessToken !== '' ? 'success' : 'error'}
                 >
                   <Col componentClass={ControlLabel} sm={2}>
-                    Access Token:
+                    访问令牌:
                   </Col>
                   <Col sm={8}>
                     <OverlayTrigger
                       placement={'right'}
-                      overlay={<Tooltip id={'mtls-status-masthead'}>3scale access token</Tooltip>}
+                      overlay={<Tooltip id={'mtls-status-masthead'}>3scale访问令牌</Tooltip>}
                       trigger={['hover', 'focus']}
                       rootClose={false}
                     >
@@ -415,7 +415,7 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
                       onClick={() => this.onUpdateHandler(id)}
                       disabled={handler.serviceId === '' || handler.systemUrl === '' || handler.accessToken === ''}
                     >
-                      Update Handler
+                      修改适配器
                     </Button>
                   </Col>
                 </Row>
@@ -452,14 +452,13 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
           validationState={isValidName ? 'success' : 'error'}
         >
           <Col componentClass={ControlLabel} sm={2}>
-            Handler Name:
+            适配器名称:
           </Col>
           <Col sm={8}>
             <FormControl type="text" disabled={false} />
             {!isValidName && (
               <HelpBlock>
-                Name must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an
-                alphanumeric character.
+                名称必须由小写字母数字字符“ - ”或“。”组成，并且必须以字母数字字符开头和结尾。
               </HelpBlock>
             )}
           </Col>
@@ -472,12 +471,12 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
           validationState={this.state.newThreeScaleHandler.serviceId !== '' ? 'success' : 'error'}
         >
           <Col componentClass={ControlLabel} sm={2}>
-            Service Id:
+            服务Id:
           </Col>
           <Col sm={8}>
             <OverlayTrigger
               placement={'right'}
-              overlay={<Tooltip id={'mtls-status-masthead'}>3scale ID for API calls</Tooltip>}
+              overlay={<Tooltip id={'mtls-status-masthead'}>3scale ID提供给API调用</Tooltip>}
               trigger={['hover', 'focus']}
               rootClose={false}
             >
@@ -493,12 +492,12 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
           validationState={this.state.newThreeScaleHandler.systemUrl !== '' ? 'success' : 'error'}
         >
           <Col componentClass={ControlLabel} sm={2}>
-            System Url:
+            系统Url:
           </Col>
           <Col sm={8}>
             <OverlayTrigger
               placement={'right'}
-              overlay={<Tooltip id={'mtls-status-masthead'}>3scale System Url for API</Tooltip>}
+              overlay={<Tooltip id={'mtls-status-masthead'}>用于API的3scale系统Url</Tooltip>}
               trigger={['hover', 'focus']}
               rootClose={false}
             >
@@ -514,12 +513,12 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
           validationState={this.state.newThreeScaleHandler.accessToken !== '' ? 'success' : 'error'}
         >
           <Col componentClass={ControlLabel} sm={2}>
-            Access Token:
+            访问令牌:
           </Col>
           <Col sm={8}>
             <OverlayTrigger
               placement={'right'}
-              overlay={<Tooltip id={'mtls-status-masthead'}>3scale access token</Tooltip>}
+              overlay={<Tooltip id={'mtls-status-masthead'}>3scale访问令牌</Tooltip>}
               trigger={['hover', 'focus']}
               rootClose={false}
             >
@@ -530,7 +529,7 @@ class ThreeScaleIntegration extends React.Component<Props, State> {
         <Row style={{ paddingTop: '10px', paddingBottom: '10px' }}>
           <Col smOffset={10} sm={2}>
             <Button bsStyle="primary" onClick={this.onCreateHandler} disabled={!this.isValidCreateHandler()}>
-              Create Handler
+              创建适配器
             </Button>
           </Col>
         </Row>

@@ -27,7 +27,7 @@ class RenderPage extends React.Component<{ needScroll: boolean }> {
     const component = (
       <div className="container-fluid">
         <SwitchErrorBoundary
-          fallBackComponent={() => <h2>Sorry, there was a problem. Try a refresh or navigate to a different page.</h2>}
+          fallBackComponent={() => <h2>对不起，有问题。尝试刷新或导航到其他页面。</h2>}
         >
           {this.renderPathRoutes()}
           <Redirect from="/" to={defaultRoute} />

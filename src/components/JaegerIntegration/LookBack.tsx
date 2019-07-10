@@ -9,7 +9,7 @@ interface LookBackProps {
 }
 
 export class LookBack extends React.PureComponent<LookBackProps> {
-  lookBackOptions = { ...serverConfig.durations, ...{ 0: 'Custom Time Range' } };
+  lookBackOptions = { ...serverConfig.durations, ...{ 0: '自定义时间范围' } };
   lookbackDefault = config.toolbar.defaultDuration;
 
   constructor(props: LookBackProps) {

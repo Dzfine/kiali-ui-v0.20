@@ -37,7 +37,7 @@ const getUnreadCount = (messages: NotificationMessage[]) => {
 
 const getUnreadMessageLabel = (messages: NotificationMessage[]) => {
   const unreadCount = getUnreadCount(messages);
-  return unreadCount === 1 ? '1 Unread Message' : `${getUnreadCount(messages)} Unread Messages`;
+  return unreadCount === 1 ? '1条未读消息' : `${getUnreadCount(messages)}条未读消息`;
 };
 
 type StatelessType = {};
@@ -45,7 +45,7 @@ type StatelessType = {};
 const noNotificationsMessage = (
   <EmptyState>
     <EmptyStateIcon name="info" />
-    <EmptyStateTitle> No Messages Available </EmptyStateTitle>
+    <EmptyStateTitle> 无可读消息 </EmptyStateTitle>
   </EmptyState>
 );
 
@@ -123,13 +123,13 @@ class NotificationGroupWrapper extends React.PureComponent<NotificationGroupWrap
               <PfNotificationDrawer.PanelAction>
                 <PfNotificationDrawer.PanelActionLink className="drawer-pf-action-link">
                   <Button bsStyle="link" onClick={() => this.props.onMarkGroupAsRead(group)}>
-                    Mark All Read
+                    标记所有为已读
                   </Button>
                 </PfNotificationDrawer.PanelActionLink>
                 <PfNotificationDrawer.PanelActionLink data-toggle="clear-all">
                   <Button bsStyle="link" onClick={() => this.props.onClearGroup(group)}>
                     <Icon type="pf" name="close" />
-                    Clear All
+                    清除所有消息
                   </Button>
                 </PfNotificationDrawer.PanelActionLink>
               </PfNotificationDrawer.PanelAction>

@@ -175,7 +175,7 @@ class IstioConfigDetailsPage extends React.Component<RouteComponentProps<IstioCo
               : this.props.match.params.objectType) +
             ' / ' +
             this.props.match.params.object;
-          MessageCenter.add('Changes applied on ' + targetMessage, 'default', MessageType.SUCCESS);
+          MessageCenter.add(targetMessage + '已更改', 'default', MessageType.SUCCESS);
           this.fetchIstioObjectDetails();
         })
         .catch(error => {

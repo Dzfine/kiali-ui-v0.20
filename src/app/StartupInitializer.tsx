@@ -44,7 +44,7 @@ class InitializerComponent extends React.Component<InitializerComponentProps, { 
 
       this.props.onInitializationFinished();
     } catch (err) {
-      this.setState({ errorMsg: API.getErrorMsg('Initialization failed', err) });
+      this.setState({ errorMsg: API.getErrorMsg('初始化失败', err) });
     }
   };
 }

@@ -71,10 +71,10 @@ class HelpDropdownContainer extends React.Component<HelpDropdownProps, HelpDropd
           toggle={Toggle}
           dropdownItems={[
             <DropdownItem component={'span'} key={'view_debug_info'} onClick={this.openDebugInformation}>
-              View Debug Info
+              查看调试信息
             </DropdownItem>,
             <DropdownItem component={'span'} key={'view_about_info'} onClick={this.openAbout}>
-              About
+              关于
             </DropdownItem>
           ]}
         />

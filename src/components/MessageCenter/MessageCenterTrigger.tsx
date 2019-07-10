@@ -34,7 +34,7 @@ export class MessageCenterTrigger extends React.PureComponent<PropsType, {}> {
     return (
       <Button
         id={'icon_warning'}
-        aria-label={'SystemError'}
+        aria-label={'系统错误'}
         onClick={this.props.toggleSystemErrorsCenter}
         variant={ButtonVariant.plain}
       >
@@ -49,7 +49,7 @@ export class MessageCenterTrigger extends React.PureComponent<PropsType, {}> {
     return (
       <Button
         id={'bell_icon_warning'}
-        aria-label={'Notifications'}
+        aria-label={'通知'}
         onClick={this.props.toggleMessageCenter}
         variant={ButtonVariant.plain}
       >

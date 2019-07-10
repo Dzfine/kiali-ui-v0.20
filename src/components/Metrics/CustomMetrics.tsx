@@ -69,7 +69,7 @@ class CustomMetrics extends React.Component<CustomMetricsProps, MetricsState> {
         });
       })
       .catch(error => {
-        MessageCenter.add(API.getErrorMsg('Cannot fetch custom dashboard', error));
+        MessageCenter.add(API.getErrorMsg('无法获取自定义信息中心', error));
         console.error(error);
       });
   };
