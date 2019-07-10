@@ -9,7 +9,7 @@ interface RightToolbarProps {
 
 const RightToolbar = (props: RightToolbarProps) => (
   <Button variant="primary" aria-label="SearchTraces" onClick={() => props.onSubmit()} isDisabled={props.disabled}>
-    <SearchIcon /> Search Traces
+    <SearchIcon /> 搜索痕迹
   </Button>
 );
 export default RightToolbar;

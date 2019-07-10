@@ -73,11 +73,11 @@ export class ServiceDropdown extends React.PureComponent<ServiceDropdownProps, S
   labelServiceDropdown = (items: number) => {
     if (this.props.activeNamespaces.length > 0) {
       if (items === 0) {
-        return 'Select another namespace with services';
+        return '选择另一个包含服务的命名空间';
       }
-      return 'Select a service';
+      return '选择服务';
     }
-    return 'Select a namespace';
+    return '选择命名空间';
   };
 
   render() {

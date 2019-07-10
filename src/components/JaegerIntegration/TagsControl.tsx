@@ -20,14 +20,14 @@ export class TagsControl extends React.PureComponent<TagsControlProps, {}> {
           position="right"
           bodyContent={
             <>
-              Values should be in the{' '}
+              值应为{' '}
               <a rel="noopener noreferrer" href="https://brandur.org/logfmt" target="_blank">
                 logfmt
               </a>{' '}
-              format.
+              格式。
               <ul>
-                <li>Use space for conjunctions</li>
-                <li>Values containing whitespace should be enclosed in quotes</li>
+                <li>用空格连接</li>
+                <li>包含空白的值应该用引号括起来</li>
               </ul>
               <code>error=true db.statement="select * from User"</code>
             </>
@@ -37,7 +37,7 @@ export class TagsControl extends React.PureComponent<TagsControlProps, {}> {
             <Button variant="plain">
               <InfoAltIcon />
             </Button>
-            e.g. http.status_code=200 error=true
+            例如http.status_code=200 error=true
           </>
         </Popover>
       </>
@@ -48,7 +48,7 @@ export class TagsControl extends React.PureComponent<TagsControlProps, {}> {
     const { tags } = this.props;
     return (
       <Form isHorizontal={true}>
-        <FormGroup label="Tags" isRequired={true} fieldId="horizontal-form-name" helperText={this.tagsHelp()}>
+        <FormGroup label="标签" isRequired={true} fieldId="horizontal-form-name" helperText={this.tagsHelp()}>
           <TextInput value={tags} type="text" onChange={this.props.onChange} aria-label="tagsJaegerTraces" />
         </FormGroup>
       </Form>
