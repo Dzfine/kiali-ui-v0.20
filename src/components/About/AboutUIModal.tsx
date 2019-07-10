@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { AboutModal, TextContent, TextList, TextListItem, Title, Button } from '@patternfly/react-core';
-import * as icons from '@patternfly/react-icons';
+import { AboutModal, TextContent, TextList, TextListItem, Title } from '@patternfly/react-core';
 import { Component } from '../../store/Store';
-import { config, kialiLogo } from '../../config';
+import { kialiLogo } from '../../config';
 
 const KIALI_CORE_COMMIT_HASH = 'Kiali core commit hash';
 const KIALI_CORE_VERSION = 'Kiali core version';

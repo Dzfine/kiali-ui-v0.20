@@ -5,8 +5,6 @@ import {
   Button,
   LoginPage as LoginNext,
   LoginForm,
-  ListItem,
-  LoginFooterItem,
   BackgroundImageSrc
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
