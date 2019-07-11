@@ -1,7 +1,7 @@
 // All logo images go in here
 
 // Kiali logo
-export const kialiLogo = require('../assets/img/logo-alt.svg');
+export const kialiLogo = require('../assets/img/MSP-alt.svg');
 
 // Runtimes
 export const runtimesLogoProviders = {

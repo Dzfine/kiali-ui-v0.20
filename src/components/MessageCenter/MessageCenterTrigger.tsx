@@ -39,8 +39,7 @@ export class MessageCenterTrigger extends React.PureComponent<PropsType, {}> {
         variant={ButtonVariant.plain}
       >
         <WarningTriangleIcon />
-        {this.props.systemErrorsCount}
-        {this.props.systemErrorsCount === 1 ? ' Open Issue' : ' Open Issues'}
+        {this.props.systemErrorsCount}已有问题
       </Button>
     );
   };

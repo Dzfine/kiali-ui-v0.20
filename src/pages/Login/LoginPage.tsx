@@ -196,13 +196,9 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
 
     return (
       <LoginNext
-        footerListVariants="inline"
-        brandImgSrc={kialiLogo}
-        brandImgAlt="pf-logo"
         backgroundImgSrc={backgroundLoginImg}
         backgroundImgAlt="Images"
-        textContent="服务网格可观测性。"
-        loginTitle="登录Kiali"
+        loginTitle="登录"
       >
         {authenticationConfig.strategy === AuthStrategy.login ? (
           loginForm

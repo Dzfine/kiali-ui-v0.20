@@ -36,7 +36,7 @@ const performLogin = (dispatch: KialiDispatch, state: KialiAppState, data?: any)
         error => bail(error)
       );
     } else {
-      bail({ status: AuthResult.FAILURE, error: 'Preparation for login failed, try again.' });
+      bail({ status: AuthResult.FAILURE, error: '准备登录失败，请重试。' });
     }
   });
 };

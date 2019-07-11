@@ -108,7 +108,7 @@ export class DebugInformation extends React.PureComponent<DebugInformationProps,
     return (
       <Modal show={this.state.show} onHide={this.close}>
         <Modal.Header>
-          <button className="close" onClick={this.close} aria-hidden="true" aria-label="关闭">
+          <button className="close" onClick={this.close} aria-hidden="true" aria-label="Close">
             <Icon type="pf" name="close" />
           </button>
           <Modal.Title>调试信息</Modal.Title>
@@ -125,7 +125,7 @@ export class DebugInformation extends React.PureComponent<DebugInformationProps,
               这可能是由自动刷新计时器收到的新数据引起的。
             </Alert>
           )}
-          <span>打开错误时请包含此信息。</span>
+          <span>打包错误时请包含此信息。</span>
           <CopyToClipboard onCopy={this.copyCallback} text={renderDebugInformation()} options={copyToClipboardOptions}>
             <textarea
               ref={this.textareaRef}
@@ -136,7 +136,7 @@ export class DebugInformation extends React.PureComponent<DebugInformationProps,
           </CopyToClipboard>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={this.close}>Close</Button>
+          <Button onClick={this.close}>关闭</Button>
           <CopyToClipboard onCopy={this.copyCallback} text={renderDebugInformation()} options={copyToClipboardOptions}>
             <Button bsStyle="primary">复制</Button>
           </CopyToClipboard>

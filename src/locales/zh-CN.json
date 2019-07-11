@@ -2,9 +2,9 @@
   "lang": "语言",
   "menu.overview": "概览",
   "menu.graph": "图表",
-  "menu.applications": "应用列表",
-  "menu.workloads": "工作负载列表",
-  "menu.services": "服务列表",
-  "menu.istioConfig": "Istio配置列表",
+  "menu.applications": "应用",
+  "menu.workloads": "工作负载",
+  "menu.services": "服务",
+  "menu.istioConfig": "配置",
   "menu.distributedTracing": "分布式追踪"
 }

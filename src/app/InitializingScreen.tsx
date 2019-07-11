@@ -12,7 +12,7 @@ import {
 } from 'patternfly-react';
 import { isKioskMode } from '../utils/SearchParamUtils';
 
-const kialiTitle = require('../assets/img/logo-login.svg');
+const kialiTitle = require('../assets/img/MSP-login.svg');
 
 const InitializingScreen: React.FC<{ errorMsg?: string }> = (props: { errorMsg?: string }) => {
   if (document.documentElement) {
