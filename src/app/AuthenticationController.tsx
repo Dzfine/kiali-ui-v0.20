@@ -84,12 +84,12 @@ class AuthenticationController extends React.Component<AuthenticationControllerP
       const getStatusPromise = API.getStatus()
         .then(response => this.props.setServerStatus(response.data))
         .catch(error => {
-          MessageCenter.add(API.getErrorMsg('无法获取状态。', error), 'default', MessageType.WARNING);
+          MessageCenter.add(API.getErrorMsg('无法获取状态', error), 'default', MessageType.WARNING);
         });
       const getGrafanaInfoPromise = API.getGrafanaInfo()
         .then(response => this.props.setGrafanaInfo(response.data))
         .catch(error => {
-          MessageCenter.add(API.getErrorMsg('无法获取Grafana信息。', error), 'default', MessageType.WARNING);
+          MessageCenter.add(API.getErrorMsg('无法获取Grafana信息', error), 'default', MessageType.WARNING);
         });
 
       const configs = await Promise.all([API.getServerConfig(), getStatusPromise, getGrafanaInfoPromise]);

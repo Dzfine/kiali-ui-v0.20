@@ -5,8 +5,6 @@ import {
   Button,
   LoginPage as LoginNext,
   LoginForm,
-  ListItem,
-  LoginFooterItem,
   BackgroundImageSrc
 } from '@patternfly/react-core';
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
@@ -196,16 +194,6 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
       />
     );
 
-    const listItem = (
-      <>
-        <ListItem>
-          <LoginFooterItem href="https://www.kiali.io">文档</LoginFooterItem>
-        </ListItem>
-        <ListItem>
-          <LoginFooterItem href="https://github.com/kiali/kiali">投稿</LoginFooterItem>
-        </ListItem>
-      </>
-    );
     return (
       <LoginNext
         footerListVariants="inline"
@@ -213,7 +201,6 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
         brandImgAlt="pf-logo"
         backgroundImgSrc={backgroundLoginImg}
         backgroundImgAlt="Images"
-        footerListItems={listItem}
         textContent="服务网格可观测性。"
         loginTitle="登录Kiali"
       >

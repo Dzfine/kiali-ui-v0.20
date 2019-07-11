@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { AboutModal, TextContent, TextList, TextListItem, Title, Button } from '@patternfly/react-core';
-import * as icons from '@patternfly/react-icons';
+import { AboutModal, TextContent, TextList, TextListItem, Title } from '@patternfly/react-core';
 import { Component } from '../../store/Store';
-import { config, kialiLogo } from '../../config';
+import { kialiLogo } from '../../config';
 
 const KIALI_CORE_COMMIT_HASH = 'Kiali core commit hash';
 const KIALI_CORE_VERSION = 'Kiali core version';
@@ -66,7 +65,7 @@ class AboutUIModal extends React.Component<AboutUIModalProps, AboutUIModalState>
             </TextListItem>
           </TextList>
           <Title size="xl" style={{ padding: '20px 0px 20px' }}>
-            Components
+            组件
           </Title>
           <TextList component="dl">
             {this.props.components &&
@@ -81,42 +80,10 @@ class AboutUIModal extends React.Component<AboutUIModalProps, AboutUIModalState>
                 </React.Fragment>
               ))}
           </TextList>
-          {this.renderWebsiteLink()}
-          {this.renderProjectLink()}
         </TextContent>
       </AboutModal>
     );
   }
-
-  private renderWebsiteLink = () => {
-    if (config.about && config.about.website) {
-      const Icon = icons[config.about.website.icon];
-      return (
-        // @ts-ignore
-        <Button component="a" href={config.about.website.url} variant="link" target="_blank">
-          <Icon style={{ marginRight: '10px' }} />
-          {config.about.website.linkText}
-        </Button>
-      );
-    }
-
-    return null;
-  };
-
-  private renderProjectLink = () => {
-    if (config.about && config.about.project) {
-      const Icon = icons[config.about.project.icon];
-      return (
-        // @ts-ignore
-        <Button component="a" href={config.about.project.url} variant="link" target="_blank">
-          <Icon style={{ marginRight: '10px' }} />
-          {config.about.project.linkText}
-        </Button>
-      );
-    }
-
-    return null;
-  };
 }
 
 export default AboutUIModal;

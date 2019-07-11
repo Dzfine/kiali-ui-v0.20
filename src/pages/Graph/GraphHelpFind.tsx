@@ -429,10 +429,10 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                             d: `app不等于'details'且version等于'v1'的节点`
                           },
                           { id: 'e40', e: '!sc', d: `没有sidecar的节点` },
-                          { id: 'e50', e: 'httpin > 0.5', d: `传入http速率 > 0.5 rps的节点` },
-                          { id: 'e60', e: 'tcpout >= 1000', d: `输出tcp速率 >= 1000 bps的节点` },
+                          { id: 'e50', e: 'httpin > 0.5', d: `HTTP入站速率 > 0.5 rps的节点` },
+                          { id: 'e60', e: 'tcpout >= 1000', d: `TCP发送速率 >= 1000 bps的节点` },
                           { id: 'e65', e: '!traffic', d: '无流量' },
-                          { id: 'e70', e: 'http > 0.5', d: `http速率大于0.5rps` },
+                          { id: 'e70', e: 'http > 0.5', d: `HTTP速率大于0.5rps` },
                           {
                             id: 'e80',
                             e: 'rt > 500',
@@ -441,7 +441,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                           {
                             id: 'e90',
                             e: '%httptraffic >= 50.0',
-                            d: `edges with >= 50% of the outgoing http request traffic of the parent`
+                            d: `父节点HTTP出站请求流量大于50%的连接`
                           }
                         ]}
                       />

@@ -400,14 +400,11 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
     if (!this.hasSupportedCharts(edge)) {
       return isGrpc || isHttp ? (
         <>
-          <Icon type="pf" name="info" /> Service graphs do not support service-to-service aggregate sparklines. See the
-          chart above for aggregate traffic or use the workload graph type to observe individual workload-to-service
-          edge sparklines.
+          <Icon type="pf" name="info" /> 服务图表不支持服务到服务的聚合迷你图。见上面的汇总流量图表或者使用工作负载图表来观察单个工作负载到服务的过程。
         </>
       ) : (
         <>
-          <Icon type="pf" name="info" /> Service graphs do not support service-to-service aggregate sparklines. Use the
-          workload graph type to observe individual workload-to-service edge sparklines.
+          <Icon type="pf" name="info" /> 服务图表不支持服务到服务的聚合迷你图。使用工作负载图表来观察单个工作负载到服务的过程。
         </>
       );
     }
@@ -416,7 +413,7 @@ export default class SummaryPanelEdge extends React.Component<SummaryPanelPropTy
     if (data.isInaccessible) {
       return (
         <>
-          <Icon type="pf" name="info" /> Sparkline charts cannot be shown because the destination is inaccessible.
+          <Icon type="pf" name="info" /> 无法显示图表，因为目标地址无法访问。
         </>
       );
     }

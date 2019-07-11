@@ -108,7 +108,7 @@ class Navigation extends React.Component<PropsType, NavigationState> {
 
     return (
       <Page header={Header} sidebar={Sidebar} onPageResize={this.onPageResize}>
-        <MessageCenterContainer drawerTitle="Message Center" />
+        <MessageCenterContainer drawerTitle="消息中心" />
         <PageSection variant={'light'}>
           <RenderPage needScroll={this.isContentScrollable()} />
         </PageSection>
