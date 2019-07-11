@@ -5,7 +5,6 @@ import { style } from 'typestyle';
 import { MTLSStatuses, nsWideMTLSStatus, TLSStatus } from '../../types/TLSStatus';
 import { KialiAppState } from '../../store/Store';
 import { meshWideMTLSStatusSelector } from '../../store/Selectors';
-import intl from '../..//locales/KiwiInit';
 
 export const DISABLE = 'DISABLE';
 export const ISTIO_MUTUAL = 'ISTIO_MUTUAL';
@@ -78,8 +77,8 @@ class TrafficPolicy extends React.Component<Props> {
     return (
       <ExpandCollapse
         className={expandStyle}
-        textCollapsed={intl.get('trafficPolicy.showOptions')}
-        textExpanded={intl.get('trafficPolicy.hideOptions')}
+        textCollapsed="显示高级选项"
+        textExpanded="隐藏高级选项"
         expanded={this.props.expanded}
       >
         <Row>
@@ -95,7 +94,7 @@ class TrafficPolicy extends React.Component<Props> {
             >
               {tlsMenuItems}
             </DropdownButton>
-            <ControlLabel className={lbStyle}>{intl.get('trafficPolicy.loadBalancer')}</ControlLabel>
+            <ControlLabel className={lbStyle}>负载均衡</ControlLabel>
             <DropdownButton
               bsStyle="default"
               title={this.props.loadBalancer}
