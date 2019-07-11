@@ -1,12 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
-import {
-  Button,
-  LoginPage as LoginNext,
-  LoginForm,
-  BackgroundImageSrc
-} from '@patternfly/react-core';
+import { Button, LoginPage as LoginNext, LoginForm, BackgroundImageSrc } from '@patternfly/react-core';
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
 import { KialiAppState, LoginSession, LoginStatus } from '../../store/Store';
 import { AuthStrategy } from '../../types/Auth';
@@ -199,6 +194,7 @@ export class LoginPage extends React.Component<LoginProps, LoginState> {
         backgroundImgSrc={backgroundLoginImg}
         backgroundImgAlt="Images"
         loginTitle="登录"
+        style={{ position: 'absolute', left: '50%', width: '544px', marginLeft: '-362px' }}
       >
         {authenticationConfig.strategy === AuthStrategy.login ? (
           loginForm
