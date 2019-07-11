@@ -235,7 +235,7 @@ class WorkloadDetails extends React.Component<RouteComponentProps<WorkloadId>, W
                 {hasPods ? (
                   <WorkloadPodLogs namespace={this.props.match.params.namespace} pods={this.state.workload.pods} />
                 ) : (
-                  <div>当前没有日志展示，因为工作负载没有no pods.</div>
+                  <div>当前没有日志展示，因为工作负载没有pods.</div>
                 )}
               </TabPane>
               <TabPane eventKey="in_metrics" mountOnEnter={true} unmountOnExit={true}>
