@@ -12,14 +12,14 @@ export const INITIAL_MESSAGE_CENTER_STATE: MessageCenterState = {
   groups: [
     {
       id: 'systemErrors',
-      title: 'Open issues',
+      title: '已有问题',
       messages: [],
       showActions: false,
       hideIfEmpty: true
     },
     {
       id: 'default',
-      title: 'Notifications',
+      title: '提示',
       messages: [],
       showActions: true,
       hideIfEmpty: false
