@@ -428,9 +428,9 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
       case 'name': {
         const isNegation = op.startsWith('!');
         if (disjunctive && isNegation) {
-          return this.setErrorMsg(`Can not use 'OR' with negated 'name' operand`);
+          return this.setErrorMsg(`排除某一名称时不能包含'OR'`);
         } else if (conjunctive) {
-          return this.setErrorMsg(`Can not use 'AND' with 'name' operand`);
+          return this.setErrorMsg(`名称中不能包含‘AND’`);
         }
         const wl = `[${CyNode.workload} ${op} "${val}"]`;
         const app = `[${CyNode.app} ${op} "${val}"]`;
@@ -456,7 +456,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
           case 'unknown':
             return { target: 'node', selector: `[${CyNode.nodeType} ${op} "${nodeType}"]` };
           default:
-            this.setErrorMsg(`Invalid node type [${nodeType}]. Expected app | service | unknown | workload`);
+            this.setErrorMsg(`无效的节点类型 [${nodeType}]. 有效值： app | service | unknown | workload`);
         }
         return undefined;
       case 'ns':
@@ -520,7 +520,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
         return s ? { target: 'edge', selector: s } : undefined;
       }
       default:
-        return this.setErrorMsg(`Invalid operand [${field}]`);
+        return this.setErrorMsg(`无效的操作对象 [${field}]`);
     }
   };
 
@@ -531,17 +531,17 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
       case '>=':
       case '<=':
         if (isNaN(val)) {
-          return this.setErrorMsg(`Invalid value [${val}]. Expected a numeric value (use . for decimals)`);
+          return this.setErrorMsg(`无效的值 [${val}]. 有效值为一个数字 (小数用.来表示)`);
         }
         return `[${field} ${op} ${val}]`;
       case '=':
       case '!=':
         if (val !== 'NaN' && isNaN(val)) {
-          return this.setErrorMsg(`Invalid value [${val}]. Expected NaN or a numeric value (use . for decimals)`);
+          return this.setErrorMsg(`无效的值 [${val}]. NaN或者数字为有效值 (小数用.来表示)`);
         }
         return Number(val) !== 0 ? `[${field} ${op} "${val}"]` : `[${field} ${op} "0"]`;
       default:
-        return this.setErrorMsg(`Invalid operator [${op}] for numeric condition`);
+        return this.setErrorMsg(`数值条件的运算符[${op}]无效`);
     }
   }
 
@@ -596,7 +596,7 @@ export class GraphFind extends React.PureComponent<GraphFindProps, GraphFindStat
       return parsedExpression.target + parsedExpression.selector;
     }
     if (!selector.startsWith(parsedExpression.target)) {
-      return this.setErrorMsg('Invalid expression. Can not mix node and edge criteria.');
+      return this.setErrorMsg('表达式无效。无法同时使用节点和边缘条件。');
     }
     return selector + separator + parsedExpression.selector;
   };

@@ -53,19 +53,19 @@ export class BreadcrumbView extends React.Component<BreadCumbViewProps, BreadCum
     const urlParams = new URLSearchParams(location);
     switch (urlParams.get('tab')) {
       case 'info':
-        return 'Info';
+        return '信息';
         break;
       case 'metrics':
-        return 'Metrics';
+        return '指标';
         break;
       case 'in_metrics':
-        return 'Inbound Metrics';
+        return '入站指标';
         break;
       case 'out_metrics':
-        return 'Outbound Metrics';
+        return '出站指标';
         break;
       case 'traces':
-        return 'Traces';
+        return '链接';
         break;
       default:
         return '信息';
