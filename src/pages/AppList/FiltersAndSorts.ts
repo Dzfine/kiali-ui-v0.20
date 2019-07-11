@@ -51,7 +51,7 @@ export namespace AppListFilters {
     },
     {
       id: 'health',
-      title: '健康',
+      title: '健康状态',
       isNumeric: false,
       param: 'he',
       compare: (a: AppListItemHealth, b: AppListItemHealth) => {
@@ -137,7 +137,7 @@ export namespace AppListFilters {
     sortField: SortField<AppListItem>,
     isAscending: boolean
   ): Promise<AppListItem[]> => {
-    if (sortField.title === '健康') {
+    if (sortField.title === '健康状态') {
       // In the case of health sorting, we may not have all health promises ready yet
       // So we need to get them all before actually sorting
       const allHealthPromises: Promise<AppListItemHealth>[] = unsorted.map(item => {

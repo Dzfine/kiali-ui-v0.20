@@ -85,7 +85,7 @@ export namespace Filters {
 
   export const healthFilter: FilterTypeWithFilter<NamespaceInfo> = {
     id: 'health',
-    title: '健康',
+    title: '健康状态',
     placeholder: '按应用运行状态筛选',
     filterType: 'select',
     action: FILTER_ACTION_APPEND,

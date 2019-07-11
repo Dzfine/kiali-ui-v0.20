@@ -24,7 +24,7 @@ export const istioSidecarFilter: FilterType = {
 
 export const healthFilter: FilterType = {
   id: 'health',
-  title: '健康',
+  title: '健康状态',
   placeholder: '按健康状态筛选',
   filterType: 'select',
   action: FILTER_ACTION_APPEND,
