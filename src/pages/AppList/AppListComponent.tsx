@@ -104,7 +104,7 @@ class AppListComponent extends ListComponent.Component<AppListComponentProps, Ap
         })
         .catch(namespacesError => {
           if (!namespacesError.isCanceled) {
-            this.handleAxiosError('Could not fetch namespace list', namespacesError);
+            this.handleAxiosError('无法获取命名空间列表', namespacesError);
           }
         });
     } else {
@@ -147,7 +147,7 @@ class AppListComponent extends ListComponent.Component<AppListComponentProps, Ap
       })
       .catch(err => {
         if (!err.isCanceled) {
-          this.handleAxiosError('Could not fetch apps list', err);
+          this.handleAxiosError('无法获取应用列表', err);
         }
       });
   }

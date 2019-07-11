@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { AboutModal, TextContent, TextList, TextListItem, Title } from '@patternfly/react-core';
 import { Component } from '../../store/Store';
-import { kialiLogo } from '../../config';
+import { mspLogo } from '../../config';
 
 const KIALI_CORE_COMMIT_HASH = 'Kiali core commit hash';
 const KIALI_CORE_VERSION = 'Kiali core version';
@@ -44,21 +44,21 @@ class AboutUIModal extends React.Component<AboutUIModalProps, AboutUIModalState>
         isOpen={this.state.showModal}
         onClose={this.close}
         productName=""
-        brandImageSrc={kialiLogo}
-        brandImageAlt="Kiali Logo"
-        logoImageSrc={kialiLogo}
-        logoImageAlt="Kiali Logo"
+        brandImageSrc={mspLogo}
+        brandImageAlt="MSP Logo"
+        logoImageSrc={mspLogo}
+        logoImageAlt="MSP Logo"
       >
         <TextContent>
           <TextList component="dl">
             <TextListItem key={'kiali-ui-name'} component="dt">
-              Kiali-ui
+              MSP-ui
             </TextListItem>
             <TextListItem key={'kiali-ui-version'} component="dd">
               {uiVersion!}
             </TextListItem>
             <TextListItem key={'kiali-name'} component="dt">
-              Kiali
+              MSP
             </TextListItem>
             <TextListItem key={'kiali-version'} component="dd">
               {coreVersion!}

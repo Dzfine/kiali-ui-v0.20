@@ -8,7 +8,7 @@ import Menu from './Menu';
 import { Page, PageHeader, PageSection, Brand } from '@patternfly/react-core';
 
 import MessageCenterContainer from '../../components/MessageCenter/MessageCenter';
-import { kialiLogo, serverConfig } from '../../config';
+import { mspLogo, serverConfig } from '../../config';
 import { KialiAppState } from '../../store/Store';
 import { KialiAppAction } from '../../actions/KialiAppAction';
 import UserSettingsThunkActions from '../../actions/UserSettingsThunkActions';
@@ -54,7 +54,7 @@ class Navigation extends React.Component<PropsType, NavigationState> {
   }
 
   componentDidMount() {
-    document.title = serverConfig.installationTag ? serverConfig.installationTag : 'Kiali Console';
+    document.title = serverConfig.installationTag ? serverConfig.installationTag : 'MSP Console';
   }
 
   isContentScrollable = () => {
@@ -89,7 +89,7 @@ class Navigation extends React.Component<PropsType, NavigationState> {
 
     const Header = (
       <PageHeader
-        logo={<Brand src={kialiLogo} alt="Kiali Logo" />}
+        logo={<Brand src={mspLogo} alt="MSP Logo" />}
         toolbar={<Masthead />}
         showNavToggle={true}
         onNavToggle={isMobileView ? this.onNavToggleMobile : this.onNavToggleDesktop}

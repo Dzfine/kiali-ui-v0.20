@@ -721,7 +721,7 @@ export class CytoscapeGraph extends React.Component<CytoscapeGraphProps, Cytosca
         if (this.isElementValid(ele)) {
           ele.removeClass(`${H.DEGRADED.name}  ${H.FAILURE.name} ${H.HEALTHY.name}`);
         }
-        console.error(API.getErrorMsg(`Could not fetch health for [${ele.data(CyNode.nodeType)}] [${key}]`, err));
+        console.error(API.getErrorMsg(`无法获取[${ele.data(CyNode.nodeType)}] [${key}]的健康状态`, err));
       });
   }
 }

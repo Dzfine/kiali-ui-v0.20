@@ -117,7 +117,7 @@ export class OverviewPage extends React.Component<OverviewProps, State> {
           }
         );
       })
-      .catch(namespacesError => this.handleAxiosError('Could not fetch namespace list', namespacesError));
+      .catch(namespacesError => this.handleAxiosError('无法获取命名空间列表', namespacesError));
   };
 
   fetchHealth(isAscending: boolean, sortField: SortField<NamespaceInfo>, type: OverviewType) {
@@ -178,7 +178,7 @@ export class OverviewPage extends React.Component<OverviewProps, State> {
           result.nsInfo.status = nsStatus;
         });
       })
-      .catch(err => this.handleAxiosError('Could not fetch health', err));
+      .catch(err => this.handleAxiosError('无法获取健康状态', err));
   }
 
   fetchMetrics() {
@@ -215,7 +215,7 @@ export class OverviewPage extends React.Component<OverviewProps, State> {
           return nsInfo;
         });
       })
-    ).catch(err => this.handleAxiosError('Could not fetch health', err));
+    ).catch(err => this.handleAxiosError('无法获取健康状态', err));
   }
 
   fetchTLS(isAscending: boolean, sortField: SortField<NamespaceInfo>) {
@@ -247,7 +247,7 @@ export class OverviewPage extends React.Component<OverviewProps, State> {
           };
         });
       })
-      .catch(err => this.handleAxiosError('Could not fetch TLS status', err));
+      .catch(err => this.handleAxiosError('无法获取TLS状态', err));
   }
 
   handleAxiosError(message: string, error: AxiosError) {

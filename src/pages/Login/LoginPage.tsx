@@ -10,7 +10,7 @@ import {
 import { ExclamationCircleIcon, ExclamationTriangleIcon } from '@patternfly/react-icons';
 import { KialiAppState, LoginSession, LoginStatus } from '../../store/Store';
 import { AuthStrategy } from '../../types/Auth';
-import { authenticationConfig, kialiLogo } from '../../config';
+import { authenticationConfig } from '../../config';
 import { KialiAppAction } from '../../actions/KialiAppAction';
 import LoginThunkActions from '../../actions/LoginThunkActions';
 
