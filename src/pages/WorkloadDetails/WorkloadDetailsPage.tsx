@@ -62,7 +62,6 @@ class WorkloadDetails extends React.Component<RouteComponentProps<WorkloadId>, W
   workloadValidations(workload: Workload): Validations {
     const noIstiosidecar: ObjectCheck = { message: 'Pod没有Istio sidecar', severity: 'warning', path: '' };
     const noAppLabel: ObjectCheck = { message: 'Pod没有应用标签', severity: 'warning', path: '' };
-    const noVersionLabel: ObjectCheck = { message: 'Pod没有版本标签', severity: 'warning', path: '' };
 
     const validations: Validations = {};
     if (workload.pods.length > 0) {
@@ -79,13 +78,9 @@ class WorkloadDetails extends React.Component<RouteComponentProps<WorkloadId>, W
         }
         if (!pod.labels) {
           validations.pod[pod.name].checks.push(noAppLabel);
-          validations.pod[pod.name].checks.push(noVersionLabel);
         } else {
           if (!pod.appLabel) {
             validations.pod[pod.name].checks.push(noAppLabel);
-          }
-          if (!pod.versionLabel) {
-            validations.pod[pod.name].checks.push(noVersionLabel);
           }
         }
         validations.pod[pod.name].valid = validations.pod[pod.name].checks.length === 0;
