@@ -15,7 +15,7 @@ export const presenceValues: FilterValue[] = [
 
 export const istioSidecarFilter: FilterType = {
   id: 'istiosidecar',
-  title: 'Istio Sidecar',
+  title: '代理Sidecar',
   placeholder: '按IStiosidecar验证筛选',
   filterType: 'select',
   action: FILTER_ACTION_UPDATE,

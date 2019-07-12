@@ -36,7 +36,7 @@ export namespace AppListFilters {
     },
     {
       id: 'istiosidecar',
-      title: 'IstioSidecar',
+      title: '代理Sidecar',
       isNumeric: false,
       param: 'is',
       compare: (a: AppListItem, b: AppListItem) => {

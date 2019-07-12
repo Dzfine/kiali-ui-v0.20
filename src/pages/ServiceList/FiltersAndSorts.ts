@@ -36,7 +36,7 @@ export namespace ServiceListFilters {
     },
     {
       id: 'istiosidecar',
-      title: 'Istio Sidecar',
+      title: '代理Sidecar',
       isNumeric: false,
       param: 'is',
       compare: (a: ServiceListItem, b: ServiceListItem) => {
