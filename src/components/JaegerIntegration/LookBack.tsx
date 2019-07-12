@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { FormSelect, FormSelectOption } from '@patternfly/react-core';
 import { config, serverConfig } from '../../config';
+import intl from '../../locales/KiwiInit';
 
 interface LookBackProps {
   disabled?: boolean;
@@ -9,7 +10,7 @@ interface LookBackProps {
 }
 
 export class LookBack extends React.PureComponent<LookBackProps> {
-  lookBackOptions = { ...serverConfig.durations, ...{ 0: '自定义时间范围' } };
+  lookBackOptions = { ...serverConfig.durations, ...{ 0: intl.get('lookBack.customTimeRange') } };
   lookbackDefault = config.toolbar.defaultDuration;
 
   constructor(props: LookBackProps) {

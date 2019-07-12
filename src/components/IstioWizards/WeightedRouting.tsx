@@ -4,6 +4,7 @@ import Slider from './Slider/Slider';
 import { WorkloadOverview } from '../../types/ServiceInfo';
 import { style } from 'typestyle';
 import { PfColors } from '../Pf/PfColors';
+import intl from '../../locales/KiwiInit';
 
 type Props = {
   serviceName: string;
@@ -191,7 +192,11 @@ class WeightedRouting extends React.Component<Props, State> {
     return (
       <>
         <ListView className={listStyle}>
-          <ListViewItem className={listHeaderStyle} heading={'工作负载'} description={'流量权重'} />
+          <ListViewItem
+            className={listHeaderStyle}
+            heading={intl.get('weightedRouting.workload')}
+            description={intl.get('weightedRouting.trafficWeight')}
+          />
           {this.state.workloads.map((workload, id) => {
             return (
               <ListViewItem
@@ -224,11 +229,11 @@ class WeightedRouting extends React.Component<Props, State> {
         {this.props.workloads.length > 1 && (
           <div className={evenlyButtonStyle}>
             <Button className={resetStyle} onClick={() => this.resetState()}>
-              均匀分布流量
+              {intl.get('weightedRouting.evenlyDistributeTraffic')}
             </Button>
           </div>
         )}
-        {!isValid && <div className={validationStyle}>所有权重的和必须是100%</div>}
+        {!isValid && <div className={validationStyle}>{intl.get('weightedRouting.validationStyle')} </div>}
       </>
     );
   }

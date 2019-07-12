@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Button, Form, FormGroup, Popover, TextInput } from '@patternfly/react-core';
 import { InfoAltIcon } from '@patternfly/react-icons';
+import intl from '../../locales/KiwiInit';
 
 interface TagsControlProps {
   disable?: boolean;
@@ -20,14 +21,14 @@ export class TagsControl extends React.PureComponent<TagsControlProps, {}> {
           position="right"
           bodyContent={
             <>
-              值应为{' '}
+              {intl.get('tagsControl.contentHeader1')}{' '}
               <a rel="noopener noreferrer" href="https://brandur.org/logfmt" target="_blank">
                 logfmt
               </a>{' '}
-              格式。
+              {intl.get('tagsControl.contentHeader2')}
               <ul>
-                <li>用空格连接</li>
-                <li>包含空白的值应该用引号括起来</li>
+                <li>{intl.get('tagsControl.liContent1')}</li>
+                <li>{intl.get('tagsControl.liContent2')}</li>
               </ul>
               <code>error=true db.statement="select * from User"</code>
             </>
@@ -37,7 +38,7 @@ export class TagsControl extends React.PureComponent<TagsControlProps, {}> {
             <Button variant="plain">
               <InfoAltIcon />
             </Button>
-            例如http.status_code=200 error=true
+            {intl.get('tagsControl.tagsHelper')}
           </>
         </Popover>
       </>
@@ -48,7 +49,12 @@ export class TagsControl extends React.PureComponent<TagsControlProps, {}> {
     const { tags } = this.props;
     return (
       <Form isHorizontal={true}>
-        <FormGroup label="标签" isRequired={true} fieldId="horizontal-form-name" helperText={this.tagsHelp()}>
+        <FormGroup
+          label={intl.get('tagsControl.tags')}
+          isRequired={true}
+          fieldId="horizontal-form-name"
+          helperText={this.tagsHelp()}
+        >
           <TextInput value={tags} type="text" onChange={this.props.onChange} aria-label="tagsJaegerTraces" />
         </FormGroup>
       </Form>

@@ -5,6 +5,7 @@ import { FormSelect, FormSelectOption, FormSelectOptionGroup } from '@patternfly
 import * as Api from '../../services/Api';
 import { PromisesRegistry } from '../../utils/CancelablePromises';
 import { ServiceOverview } from '../../types/ServiceList';
+import intl from '../../locales/KiwiInit';
 
 interface ServiceDropdownProps {
   disabled?: boolean;
@@ -73,11 +74,11 @@ export class ServiceDropdown extends React.PureComponent<ServiceDropdownProps, S
   labelServiceDropdown = (items: number) => {
     if (this.props.activeNamespaces.length > 0) {
       if (items === 0) {
-        return '选择另一个包含服务的命名空间';
+        return intl.get('serviceDropdown.selectItem1');
       }
-      return '选择服务';
+      return intl.get('serviceDropdown.selectItem2');
     }
-    return '选择命名空间';
+    return intl.get('serviceDropdown.selectItem3');
   };
 
   render() {

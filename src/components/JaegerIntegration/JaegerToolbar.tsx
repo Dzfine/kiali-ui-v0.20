@@ -5,6 +5,8 @@ import ServiceDropdown from './ServiceDropdown';
 import LookBack from './LookBack';
 import RightToolbar from './RightToolbar';
 import TagsControl from './TagsControl';
+import intl from '../../locales/KiwiInit';
+
 import {
   getUnixTimeStampInMSFromForm,
   logfmtTagsConv,
@@ -110,7 +112,11 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
             <>
               <GridItem span={4}>
                 <Form isHorizontal={true}>
-                  <FormGroup label={'服务'} isRequired={true} fieldId={'service_jaeger_form'}>
+                  <FormGroup
+                    label={intl.get('jaegerIToolbar.service')}
+                    isRequired={true}
+                    fieldId={'service_jaeger_form'}
+                  >
                     <ServiceDropdown
                       service={this.state.serviceSelected}
                       setService={(service: string) => this.setState({ serviceSelected: service })}
@@ -123,7 +129,7 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
           )}
           <GridItem span={4}>
             <Form isHorizontal={true}>
-              <FormGroup label={'回顾'} isRequired={true} fieldId={'lookback_jaeger_form'}>
+              <FormGroup label={intl.get('jaegerIToolbar.lookback')} isRequired={true} fieldId={'lookback_jaeger_form'}>
                 <LookBack
                   lookback={this.state.lookback !== 'custom' ? Number(this.state.lookback) : 0}
                   setLookback={(value, event) => {
@@ -140,11 +146,15 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
           {tz && (
             <>
               <GridItem span={12} className={separator}>
-                自定义时间
+                {intl.get('jaegerIToolbar.customLookback')}
               </GridItem>
               <GridItem span={4}>
                 <Form isHorizontal={true}>
-                  <FormGroup label={'开始时间'} fieldId={'dateTimeStartJaegerTraces'} helperText={<>时间以{tz}表示</>}>
+                  <FormGroup
+                    label={intl.get('jaegerIToolbar.startTime')}
+                    fieldId={'dateTimeStartJaegerTraces'}
+                    helperText={<>{intl.get('jaegerIToolbar.timeHelper', { tz: tz })}</>}
+                  >
                     <InputGroup>
                       <TextInput
                         value={dateTimes.start.date}
@@ -165,7 +175,11 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
               <GridItem span={1} />
               <GridItem span={4}>
                 <Form isHorizontal={true}>
-                  <FormGroup label={'结束时间'} fieldId={'dateTimeEndJaegerTraces'} helperText={<>时间以{tz}表示</>}>
+                  <FormGroup
+                    label={intl.get('jaegerIToolbar.endTimer')}
+                    fieldId={'dateTimeEndJaegerTraces'}
+                    helperText={<>{intl.get('jaegerIToolbar.timeHelper', { tz: tz })}</>}
+                  >
                     <InputGroup>
                       <TextInput
                         value={dateTimes.end.date}
@@ -188,7 +202,10 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
             </>
           )}
         </Grid>
-        <ExpandCollapse textCollapsed="显示高级选项" textExpanded="隐藏高级选项">
+        <ExpandCollapse
+          textCollapsed={intl.get('jaegerIToolbar.showOptions')}
+          textExpanded={intl.get('jaegerIToolbar.hideOptions')}
+        >
           <Grid>
             <GridItem span={7}>
               <TagsControl tags={this.state.tags} onChange={value => this.setState({ tags: value })} />
@@ -196,7 +213,11 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
             <GridItem span={1} />
             <GridItem span={3}>
               <Form isHorizontal={true}>
-                <FormGroup label="限制结果" isRequired={true} fieldId="horizontal-form-name">
+                <FormGroup
+                  label={intl.get('jaegerIToolbar.limitResults')}
+                  isRequired={true}
+                  fieldId="horizontal-form-name"
+                >
                   <TextInput
                     value={this.state.limit}
                     type="number"
@@ -208,14 +229,14 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
             </GridItem>
             <GridItem span={1} />
             <GridItem span={12} className={separator}>
-              跨度配置
+              {intl.get('jaegerIToolbar.spanConfiguration')}
             </GridItem>
             <GridItem span={2}>
               <Form isHorizontal={true}>
                 <FormGroup
-                  label="最小持续时间"
+                  label={intl.get('jaegerIToolbar.minDuration')}
                   fieldId="form-minDurationSpanJaegerTraces"
-                  helperText="例如1.2s、100ms、500us"
+                  helperText={intl.get('jaegerIToolbar.minDurationHelper')}
                 >
                   <TextInput
                     value={this.state.minDuration}
@@ -229,7 +250,11 @@ export class JaegerToolbar extends React.Component<JaegerToolbarProps, JaegerToo
             <GridItem span={1} />
             <GridItem span={2}>
               <Form isHorizontal={true}>
-                <FormGroup label="最大持续时间" fieldId="form-maxDurationSpanJaegerTraces" helperText="例如1.1s">
+                <FormGroup
+                  label={intl.get('jaegerIToolbar.maxDuration')}
+                  fieldId="form-maxDurationSpanJaegerTraces"
+                  helperText={intl.get('jaegerIToolbar.maxDurationHelper')}
+                >
                   <TextInput
                     value={this.state.minDuration}
                     type="text"
