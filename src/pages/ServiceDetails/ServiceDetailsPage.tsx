@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
-import { Nav, NavItem, TabContainer, TabContent, TabPane, Icon } from 'patternfly-react';
+import { Nav, NavItem, TabContainer, TabContent, TabPane } from 'patternfly-react';
 import ServiceId from '../../types/ServiceId';
 import * as API from '../../services/Api';
 import * as MessageCenter from '../../utils/MessageCenter';
@@ -246,28 +246,8 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
       '_blank'
     );
   };
+  /*  需要的时候复制到 <NavItem eventKey="metrics"><div>入站指标</div></NavItem>下面
 
-  render() {
-    const errorTraces = this.state.serviceDetailsInfo.errorTraces;
-    return (
-      <>
-        <BreadcrumbView location={this.props.location} />
-        <TabContainer
-          id="basic-tabs"
-          activeKey={this.activeTab('tab', 'info')}
-          onSelect={this.tabSelectHandler('tab', this.tabChangeHandler)}
-        >
-          <div>
-            <Nav bsClass="nav nav-tabs nav-tabs-pf">
-              <NavItem eventKey="info">
-                <div>概览</div>
-              </NavItem>
-              <NavItem eventKey="traffic">
-                <div>流量</div>
-              </NavItem>
-              <NavItem eventKey="metrics">
-                <div>入站指标</div>
-              </NavItem>
               {errorTraces !== undefined &&
                 (this.props.jaegerIntegration ? (
                   <NavItem eventKey="traces">
@@ -293,6 +273,29 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
                     </>
                   </NavItem>
                 ))}
+               */
+
+  render() {
+    const errorTraces = this.state.serviceDetailsInfo.errorTraces;
+    return (
+      <>
+        <BreadcrumbView location={this.props.location} />
+        <TabContainer
+          id="basic-tabs"
+          activeKey={this.activeTab('tab', 'info')}
+          onSelect={this.tabSelectHandler('tab', this.tabChangeHandler)}
+        >
+          <div>
+            <Nav bsClass="nav nav-tabs nav-tabs-pf">
+              <NavItem eventKey="info">
+                <div>概览</div>
+              </NavItem>
+              <NavItem eventKey="traffic">
+                <div>流量</div>
+              </NavItem>
+              <NavItem eventKey="metrics">
+                <div>入站指标</div>
+              </NavItem>
             </Nav>
             <TabContent>
               <TabPane eventKey="info">

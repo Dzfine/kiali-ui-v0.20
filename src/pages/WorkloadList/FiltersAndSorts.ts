@@ -44,7 +44,7 @@ export namespace WorkloadListFilters {
     },
     {
       id: 'istiosidecar',
-      title: 'IstioSidecar',
+      title: '代理Sidecar',
       isNumeric: false,
       param: 'is',
       compare: (a: WorkloadListItem, b: WorkloadListItem) => {

@@ -192,19 +192,19 @@ export default class SummaryPanelGraph extends React.Component<SummaryPanelPropT
         key="appsLink"
         to={`/${Paths.APPLICATIONS}?namespaces=${this.props.namespaces.map(ns => ns.name).join(',')}`}
       >
-        {' applications'}
+        {' 应用'}
       </Link>
       <Link
         key="servicesLink"
         to={`/${Paths.SERVICES}?namespaces=${this.props.namespaces.map(ns => ns.name).join(',')}`}
       >
-        {', services'}
+        {', 服务'}
       </Link>
       <Link
         key="workloadsLink"
         to={`/${Paths.WORKLOADS}?namespaces=${this.props.namespaces.map(ns => ns.name).join(',')}`}
       >
-        {', workloads'}
+        {', 工作负载'}
       </Link>
       <br />
       <br />
@@ -254,11 +254,7 @@ export default class SummaryPanelGraph extends React.Component<SummaryPanelPropT
 
     return (
       <>
-        <RpsChart
-          label="HTTP - 总请求流量"
-          dataRps={this.state.reqRates!}
-          dataErrors={this.state.errRates}
-        />
+        <RpsChart label="HTTP - 总请求流量" dataRps={this.state.reqRates!} dataErrors={this.state.errRates} />
         <TcpChart label="TCP - 总流量" receivedRates={this.state.tcpReceived} sentRates={this.state.tcpSent} />
       </>
     );

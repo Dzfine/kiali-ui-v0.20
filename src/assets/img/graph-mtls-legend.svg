@@ -106,7 +106,7 @@
   </text><text id="Node-Colors" font-size="15" font-weight="500" line-spacing="10" style="font-weight:500;font-size:15px;font-family:OpenSans-Semibold, 'Open Sans';fill:#030303;fill-rule:evenodd;stroke:none;stroke-width:1" x="-117.8495" y="-0.014825223">
     <tspan x="206.15048" y="15.985174" id="tspan47">节点颜色</tspan>
   </text><text id="Edges" font-size="15" font-weight="500" line-spacing="10" style="font-weight:500;font-size:15px;font-family:OpenSans-Semibold, 'Open Sans';fill:#030303;fill-rule:evenodd;stroke:none;stroke-width:1" x="-0.042237256" y="0.0040653171">
-    <tspan x="566.95782" y="16.004065" id="tspan51">边</tspan>
+    <tspan x="566.95782" y="16.004065" id="tspan51">连线</tspan>
   </text><text y="25.775566" x="551.57788" style="font-weight:normal;font-size:11.55796528px;font-family:OpenSans, 'Open Sans';fill:#030303;fill-rule:evenodd;stroke:none;stroke-width:0.96316379" line-spacing="18" font-weight="normal" font-size="12" id="&gt;-20%-Error" transform="scale(1.0383692,0.96304859)">
     <tspan id="tspan58" y="38.296696" x="610.33081" style="stroke-width:0.96316379">20% 错误</tspan>
   </text><text y="25.775566" x="551.66254" style="font-weight:normal;font-size:11.55796528px;font-family:OpenSans, 'Open Sans';fill:#030303;fill-rule:evenodd;stroke:none;stroke-width:0.96316379" line-spacing="18" font-weight="normal" font-size="12" id="0.1---20%-Error" transform="scale(1.0383692,0.96304859)">

@@ -244,7 +244,7 @@ export default class GraphHelpFind extends React.Component<GraphHelpFindProps> {
                     <div>节点</div>
                   </NavItem>
                   <NavItem eventKey="edges">
-                    <div>边界值</div>
+                    <div>连线</div>
                   </NavItem>
                   <NavItem eventKey="examples">
                     <div>案例</div>
