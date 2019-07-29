@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
-import { Nav, NavItem, TabContainer, TabContent, TabPane } from 'patternfly-react';
+import { Nav, NavItem, TabContainer, TabContent, TabPane, Icon } from 'patternfly-react';
 import ServiceId from '../../types/ServiceId';
 import * as API from '../../services/Api';
 import * as MessageCenter from '../../utils/MessageCenter';
@@ -246,34 +246,6 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
       '_blank'
     );
   };
-  /*  需要的时候复制到 <NavItem eventKey="metrics"><div>入站指标</div></NavItem>下面
-
-              {errorTraces !== undefined &&
-                (this.props.jaegerIntegration ? (
-                  <NavItem eventKey="traces">
-                    {errorTraces > 0 ? (
-                      <>
-                        错误链接{' '}
-                        <span>
-                          ({errorTraces}
-                          {errorTraces > 0 && (
-                            <Icon type={'fa'} name={'exclamation-circle'} style={{ color: 'red', marginLeft: '2px' }} />
-                          )}
-                          )
-                        </span>
-                      </>
-                    ) : (
-                      '链接'
-                    )}
-                  </NavItem>
-                ) : (
-                  <NavItem onClick={this.navigateToJaeger}>
-                    <>
-                      链接 <Icon type={'fa'} name={'external-link'} />
-                    </>
-                  </NavItem>
-                ))}
-               */
 
   render() {
     const errorTraces = this.state.serviceDetailsInfo.errorTraces;
@@ -296,6 +268,31 @@ class ServiceDetails extends React.Component<ServiceDetailsProps, ServiceDetails
               <NavItem eventKey="metrics">
                 <div>入站指标</div>
               </NavItem>
+              {errorTraces !== undefined &&
+              (this.props.jaegerIntegration ? (
+                <NavItem eventKey="traces">
+                  {errorTraces > 0 ? (
+                    <>
+                      错误链接{' '}
+                      <span>
+                          ({errorTraces}
+                        {errorTraces > 0 && (
+                          <Icon type={'fa'} name={'exclamation-circle'} style={{ color: 'red', marginLeft: '2px' }} />
+                        )}
+                        )
+                        </span>
+                    </>
+                  ) : (
+                    '链接'
+                  )}
+                </NavItem>
+              ) : (
+                <NavItem onClick={this.navigateToJaeger}>
+                  <>
+                    链接 <Icon type={'fa'} name={'external-link'} />
+                  </>
+                </NavItem>
+              ))}
             </Nav>
             <TabContent>
               <TabPane eventKey="info">

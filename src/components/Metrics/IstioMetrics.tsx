@@ -224,7 +224,7 @@ class IstioMetrics extends React.Component<IstioMetricsProps, MetricsState> {
         {this.grafanaLink && (
           <FormGroup style={{ borderRight: 'none' }}>
             <a id={'grafana_link'} href={this.grafanaLink} target="_blank" rel="noopener noreferrer">
-              View in Grafana <Icon type={'fa'} name={'external-link'} />
+              在Grafana中观察 <Icon type={'fa'} name={'external-link'} />
             </a>
           </FormGroup>
         )}

@@ -53,13 +53,12 @@ const navItems: MenuItem[] = [
     title: intl.get('menu.istioConfig'),
     to: '/' + Paths.ISTIO,
     pathsActive: [new RegExp('^/namespaces/(.*)/' + Paths.ISTIO + '/(.*)')]
+  },
+  {
+    iconClass: icons.menu.distributedTracing,
+    title: intl.get('menu.distributedTracing'),
+    to: '/jaeger'
   }
-  //  ,
-  //  {
-  //    iconClass: icons.menu.distributedTracing,
-  //    title: intl.get('menu.distributedTracing'),
-  //    to: '/jaeger'
-  //  }
 ];
 
 const defaultRoute = '/overview';
