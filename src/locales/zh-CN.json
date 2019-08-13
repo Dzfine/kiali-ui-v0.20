@@ -41,5 +41,6 @@
   "tagsControl.tags": "标签",
   "label.labelFormatError": "此标签格式错误。",
   "labels.moreLabels": "更多标签...",
-  "labels.noLabels": "没有标签"
+  "labels.noLabels": "没有标签",
+  "IstioConfig.deleteAction.tip": "该操作无法撤销。请确认是否执行该操作。"
 }

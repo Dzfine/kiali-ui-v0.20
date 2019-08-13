@@ -3,8 +3,8 @@ import { AboutModal, TextContent, TextList, TextListItem, Title } from '@pattern
 import { Component } from '../../store/Store';
 import { mspLogo } from '../../config';
 
-const KIALI_CORE_COMMIT_HASH = 'Kiali core commit hash';
-const KIALI_CORE_VERSION = 'Kiali core version';
+const KIALI_CORE_COMMIT_HASH = 'Cloudlink MSP core commit hash';
+const KIALI_CORE_VERSION = 'Cloudlink MSP core version';
 
 type AboutUIModalState = {
   showModal: boolean;

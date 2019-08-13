@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { DropdownButton, MenuItem, MessageDialog } from 'patternfly-react';
 import { style } from 'typestyle';
+import intl from '../../locales/KiwiInit';
 
 type Props = {
   objectKind?: string;
@@ -43,7 +44,7 @@ class IstioActionDropdown extends React.Component<Props, State> {
   };
 
   render() {
-    const objectName = this.props.objectKind ? this.props.objectKind : 'Istio object';
+    const objectName = this.props.objectKind ? this.props.objectKind : 'Istio对象';
 
     return (
       <>
@@ -58,12 +59,12 @@ class IstioActionDropdown extends React.Component<Props, State> {
           primaryAction={this.onDelete}
           secondaryAction={this.hideConfirmModal}
           onHide={this.hideConfirmModal}
-          primaryActionButtonContent="Delete"
-          secondaryActionButtonContent="Cancel"
+          primaryActionButtonContent="删除"
+          secondaryActionButtonContent="取消"
           primaryActionButtonBsStyle="danger"
           title="确定删除"
           primaryContent={`确定删除${objectName} '${this.props.objectName}'? `}
-          secondaryContent="It cannot be undone. Make sure this is something you really want to do!"
+          secondaryContent={intl.get('IstioConfig.deleteAction.tip')}
           accessibleName="deleteConfirmationDialog"
           accessibleDescription="deleteConfirmationDialogContent"
         />
