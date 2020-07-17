@@ -75,7 +75,7 @@
     "js-yaml": "3.13.1",
     "json-beautify": "1.0.1",
     "kiwi-intl": "^1.2.4",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "logfmt": "1.2.1",
     "moment": "2.24.0",
     "patternfly": "3.59.1",
