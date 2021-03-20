@@ -99,7 +99,7 @@
     "redux-persist-transform-filter": "0.0.18",
     "redux-thunk": "2.3.0",
     "reselect": "4.0.0",
-    "ssri": "6.0.1",
+    "ssri": "8.0.1",
     "typesafe-actions": "3.2.1",
     "typestyle": "2.0.1",
     "visibilityjs": "2.0.2"
