@@ -77,7 +77,7 @@
     "kiwi-intl": "^1.2.4",
     "lodash": "4.17.11",
     "logfmt": "1.2.1",
-    "moment": "2.24.0",
+    "moment": "2.29.4",
     "patternfly": "3.59.1",
     "patternfly-react": "2.31.1",
     "patternfly-react-extensions": "2.16.28",
